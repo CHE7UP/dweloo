@@ -57,7 +57,7 @@ const Testimonials = () => {
             <div className="flex flex-col bg-white rounded-xl">
               <div className="flex-auto p-4 md:p-6">
                 <p className="text-base italic md:text-lg text-gray-800">
-                  &quot; In September, I will be using this theme for 2 years. I went through multiple updates and changes and I&lsquo;m very glad to see the consistency and effort made by the team. &quot;
+                  &quot; In September, I will be using this theme for 2 years. I went through multiple updates and changes and I&apos;m very glad to see the consistency and effort made by the team. &quot;
                 </p>
               </div>
 
@@ -104,7 +104,7 @@ const Testimonials = () => {
                 src="/assets/img/template-previews/img4.jpg"
                 alt="Features Image"
                 width={375}
-                height={812}
+                height={500}
                 />
                   </div>
 
