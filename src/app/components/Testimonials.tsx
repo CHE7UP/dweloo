@@ -21,9 +21,9 @@ const Testimonials = () => {
           <div className="flex h-auto">
             <div className="flex flex-col bg-white rounded-xl">
               <div className="flex-auto p-4 md:p-6">
-                <p className="text-base italic md:text-lg text-gray-800">
-                  &quot;With Preline, we&lsquo;re able to easily track our performance in full detail. It&lsquo;s become an essential tool for us to grow and engage with our audience.&quot;
-                </p>
+              <p className="text-base italic md:text-lg text-gray-800">
+                &quot;With Preline, we&apos;re able to easily track our performance in full detail. It&apos;s become an essential tool for us to grow and engage with our audience.&quot;
+              </p>
               </div>
 
               <div className="p-4 bg-gray-100 rounded-b-xl md:px-7">
