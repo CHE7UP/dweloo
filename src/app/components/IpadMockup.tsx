@@ -1,5 +1,4 @@
 import React from "react";
-import { Ruler } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 interface IpadMockupProps {

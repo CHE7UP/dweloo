@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.dweloo.com/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://www.dweloo.com/about</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.dweloo.com/contact</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Schedule Appointment (Seattle) -->
+  <url>
+    <loc>https://www.dweloo.com/schedule-appointment-seattle</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Local Seattle Landing Page -->
+  <url>
+    <loc>https://www.dweloo.com/locations/seattle</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Services Overview -->
+  <url>
+    <loc>https://www.dweloo.com/services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Flooring Service -->
+  <url>
+    <loc>https://www.dweloo.com/services/flooring</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Painting Service -->
+  <url>
+    <loc>https://www.dweloo.com/services/painting</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Kitchen & Bath Service -->
+  <url>
+    <loc>https://www.dweloo.com/services/kitchen-bath</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Masonry Service -->
+  <url>
+    <loc>https://www.dweloo.com/services/masonry</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Landing Page -->
+  <url>
+    <loc>https://www.dweloo.com/blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!--
+    Dynamic Blog Posts:
+    For blog posts (the dynamic [slug] pages), consider generating entries dynamically during your build process.
+  -->
+</urlset>

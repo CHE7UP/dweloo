@@ -1,7 +1,5 @@
 import React from 'react';
-import { Ruler, Leaf } from "lucide-react";
-
-
+import { Ruler } from 'lucide-react';
 
 const QuoteMockup: React.FC = () => {
   return (

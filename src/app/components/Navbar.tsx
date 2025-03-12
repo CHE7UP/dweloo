@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
       <nav className="relative max-w-7xl w-full flex flex-wrap lg:grid lg:grid-cols-12 basis-full items-center px-4 md:px-6 lg:px-8 mx-auto">
         <div className="lg:col-span-3 flex items-center">
           {/* <!-- Logo with Text --> */}
-          <Link className="flex border border-red-300 items-center focus:outline-hidden focus:opacity-80" href="/" aria-label="Dweloo">
+          <Link className="flex items-center focus:outline-hidden focus:opacity-80" href="/" aria-label="Dweloo">
             <LogoWithText
               width="w-26"
               height="h-auto"
@@ -43,9 +43,14 @@ const Navbar: React.FC = () => {
     
         {/* <!-- Button Group --> */}
         <div className="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
-          <button type="button" className="relative py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border-2 border-[#B4D330] text-[#000000] bg-transparent hover:bg-[#B4D330] hover:text-black focus:outline-none focus:ring-2 focus:ring-[#B4D330] transition-all duration-300 ease-in-out before:absolute before:inset-0 before:rounded-xl before:border-2 before:border-[#B4D330] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100">
-            (206) 619-1091
-          </button>
+        <div className="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
+  <button 
+    type="button" 
+    className="hidden lg:inline-flex relative py-2 px-3 items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border-2 border-[#B4D330] text-[#000000] bg-transparent hover:bg-[#B4D330] hover:text-black focus:outline-none focus:ring-2 focus:ring-[#B4D330] transition-all duration-300 ease-in-out before:absolute before:inset-0 before:rounded-xl before:border-2 before:border-[#B4D330] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
+  >
+    (206) 619-1091
+  </button>
+</div>
     
           <div className="lg:hidden">
             <button type="button" className="hs-collapse-toggle size-9.5 flex justify-center items-center text-sm font-semibold rounded-xl border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none" id="hs-navbar-hcail-collapse" aria-expanded="false" aria-controls="hs-navbar-hcail" aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-hcail">
@@ -78,9 +83,23 @@ const Navbar: React.FC = () => {
             
             {/* Services dropdown - could be implemented with additional JS */}
             <div className="hs-dropdown relative inline-flex [--placement:bottom-right]">
-              <button id="hs-dropdown-default" type="button" className="inline-flex items-center gap-x-1 text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600">
+              <button 
+                id="hs-dropdown-default" 
+                type="button" 
+                className="inline-flex items-center gap-x-1 text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600"
+                >
                 Get Quote
-                <svg className="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <svg 
+                className="size-4" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
               </button>
             </div>
           </div>
