@@ -1,24 +1,26 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Prompt} from "next/font/google";
 import "./globals.css";
+
+
+
+import type { Metadata } from "next";
+import { Geist} from "next/font/google";
 import PrelineScript from "./components/PrelineScript";
 import Navbar from "./components/Navbar";
 import FooterComponent from "./components/FooterComponent";
 import FootBar from "./components/FootBar";
 
-const prompt = Prompt({
-  subsets: ["latin"],
-  weight: "700",
-  display: "swap",
-});
+// const prompt = Prompt({
+//   subsets: ["latin"],
+//   weight: "700",
+//   display: "swap",
+// });
 const geistSans = Geist({
   subsets: ["latin"],
-  display: "swap",
 });
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  display: "swap",
-});
+// const geistMono = Geist_Mono({
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
 export const metadata: Metadata = {
   title: "Dweloo",
@@ -48,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-       className={`${geistSans.className} ${geistMono.className} ${prompt.className} antialiased`}
+       className={`  ${geistSans.className} antialiased`}
       >
         <Navbar/>
         {children}
