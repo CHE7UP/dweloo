@@ -1,3 +1,7 @@
+import Image from 'next/image';
+
+
+
 const Testimonials = () => {
   return (
     <div className="overflow-hidden bg-gray-800">
@@ -18,18 +22,20 @@ const Testimonials = () => {
             <div className="flex flex-col bg-white rounded-xl">
               <div className="flex-auto p-4 md:p-6">
                 <p className="text-base italic md:text-lg text-gray-800">
-                  " With Preline, we're able to easily track our performance in full detail. It's become an essential tool for us to grow and engage with our audience. "
+                  &quot;With Preline, we&lsquo;re able to easily track our performance in full detail. It&lsquo;s become an essential tool for us to grow and engage with our audience.&quot;
                 </p>
               </div>
 
               <div className="p-4 bg-gray-100 rounded-b-xl md:px-7">
                 <div className="flex items-center gap-x-3">
                   <div className="shrink-0">
-                    <img
-                      className="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                      src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
-                      alt="Avatar"
-                    />
+                  <Image
+                className="max-w-full rounded-[1.25rem] h-auto"
+                src="/assets/img/template-previews/img4.jpg"
+                alt="Features Image"
+                width={375}
+                height={812}
+                />
                   </div>
 
                   <div className="grow">
@@ -51,18 +57,20 @@ const Testimonials = () => {
             <div className="flex flex-col bg-white rounded-xl">
               <div className="flex-auto p-4 md:p-6">
                 <p className="text-base italic md:text-lg text-gray-800">
-                  " In September, I will be using this theme for 2 years. I went through multiple updates and changes and I'm very glad to see the consistency and effort made by the team. "
+                  &quot; In September, I will be using this theme for 2 years. I went through multiple updates and changes and I'm very glad to see the consistency and effort made by the team. &quot;
                 </p>
               </div>
 
               <div className="p-4 bg-gray-100 rounded-b-xl md:px-7">
                 <div className="flex items-center gap-x-3">
                   <div className="shrink-0">
-                    <img
-                      className="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
-                      alt="Avatar"
-                    />
+                  <Image
+                className="max-w-full rounded-[1.25rem] h-auto"
+                src="/assets/img/template-previews/img4.jpg"
+                alt="Features Image"
+                width={375}
+                height={812}
+                />
                   </div>
 
                   <div className="grow">
@@ -84,18 +92,20 @@ const Testimonials = () => {
             <div className="flex flex-col bg-white rounded-xl">
               <div className="flex-auto p-4 md:p-6">
                 <p className="text-base italic md:text-lg text-gray-800">
-                  " Refreshing and Thought provoking design and it changes my view about how I design the websites. Great typography, modern clean white design, nice tones of the color. "
+                  &quot; Refreshing and Thought provoking design and it changes my view about how I design the websites. Great typography, modern clean white design, nice tones of the color. &quot;
                 </p>
               </div>
 
               <div className="p-4 bg-gray-100 rounded-b-xl md:px-7">
                 <div className="flex items-center gap-x-3">
                   <div className="shrink-0">
-                    <img
-                      className="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                      src="https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=900&h=900&q=80"
-                      alt="Avatar"
-                    />
+                  <Image
+                className="max-w-full rounded-[1.25rem] h-auto"
+                src="/assets/img/template-previews/img4.jpg"
+                alt="Features Image"
+                width={375}
+                height={812}
+                />
                   </div>
 
                   <div className="grow">

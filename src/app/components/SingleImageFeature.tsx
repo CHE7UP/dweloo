@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const SingleImageFeature: React.FC = () => {
   return (
@@ -6,11 +7,13 @@ const SingleImageFeature: React.FC = () => {
       {/* Grid */}
       <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
         <div>
-          <img
-            className="rounded-xl"
-            src="https://images.unsplash.com/photo-1648737963503-1a26da876aca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&h=900&q=80"
-            alt="Features Image"
-          />
+        <Image
+                className="max-w-full rounded-[1.25rem] h-auto"
+                src="/assets/img/template-previews/img4.jpg"
+                alt="Features Image"
+                width={375}
+                height={812}
+                />
         </div>
         {/* End Col */}
         <div className="mt-5 sm:mt-10 lg:mt-0">
