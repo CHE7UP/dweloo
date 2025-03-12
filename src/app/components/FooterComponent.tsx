@@ -16,6 +16,9 @@ const FooterComponent: React.FC = () => {
                 <span className="mt-2 block">Dweloo</span>
               </a>
             </div>
+            <div
+            className='border-t border-gray-800 col-span-full lg:col-span-4 lg:border-t-0 lg:border-l lg:border-gray-800'
+            ></div>
             {/* <!-- End Col --> */}
 
             <div className="col-span-1">
@@ -42,23 +45,22 @@ const FooterComponent: React.FC = () => {
             {/* <!-- End Col --> */}
 
             <div className="col-span-2">
-              <h4 className="font-semibold text-gray-100">Get renovation inspiration</h4>
-
-              <form>
-                <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white rounded-lg p-2">
-                  <div className="w-full">
-                    <label htmlFor="hero-input" className="sr-only">Subscribe to our newsletter</label>
-                    <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Enter your email"/>
-                  </div>
-                  <a className="w-full sm:w-auto whitespace-nowrap p-3 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
-                    Get Inspired
-                  </a>
-                </div>
-                <p className="mt-3 text-sm text-gray-400">
-                  Home improvement tips and exclusive offers. Never spam.
-                </p>
-              </form>
-            </div>
+  <h4 className="font-semibold text-gray-100">Get renovation inspiration</h4>
+  <form>
+    <div className="mt-4 flex flex-row items-center gap-3 bg-white rounded-lg p-2">
+      <div className="flex-grow">
+        <label htmlFor="hero-input" className="sr-only">Subscribe to our newsletter</label>
+        <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Enter your email"/>
+      </div>
+      <a className="whitespace-nowrap p-3 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
+        Get Inspired
+      </a>
+    </div>
+    <p className="mt-3 text-sm text-gray-400">
+      Home improvement tips and exclusive offers. Never spam.
+    </p>
+  </form>
+</div>
             {/* <!-- End Col --> */}
           </div>
           {/* <!-- End Grid --> */}
