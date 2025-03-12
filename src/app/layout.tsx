@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Prompt} from "next/font/google";
 import "./globals.css";
 import PrelineScript from "./components/PrelineScript";
 import Navbar from "./components/Navbar";
 import FooterComponent from "./components/FooterComponent";
 import FootBar from "./components/FootBar";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const prompt = Prompt({
   subsets: ["latin"],
+  weight: "700",
+  display: "swap",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const geistSans = Geist({
   subsets: ["latin"],
+  display: "swap",
+});
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +40,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,14 +48,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+       className={`${geistSans.className} ${geistMono.className} ${prompt.className} antialiased`}
       >
         <Navbar/>
         {children}
         <FootBar />
         <FooterComponent/>
+        <PrelineScript/>
       </body>
-      <PrelineScript/>
     </html>
   );
 }
