@@ -3,7 +3,6 @@ import React, { useRef, useEffect } from 'react';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
-
 import { Mesh } from 'three';
 
 const Floorplan = () => {
