@@ -71,7 +71,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <div className="relative h-96 w-full">
           <div className="absolute inset-0 bg-gray-200">
             <Image
-              src={service.imageUrl || `/api/placeholder/800/600`}
+              src={service.imageUrl || `/assets/img/demo-previews/img16.jpg/800/600`}
               alt={service.title}
               fill
               className="object-cover"

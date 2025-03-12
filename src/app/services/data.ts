@@ -23,7 +23,7 @@ export interface Service {
       title: "Flooring",
       shortDescription: "Professional flooring installation and repair services",
       description: "Our expert team provides comprehensive flooring solutions including hardwood, laminate, tile, and vinyl installation. We also offer refinishing, repair, and maintenance services to keep your floors looking their best.",
-      imageUrl: "/images/services/flooring.jpg",
+      imageUrl: "/assets/img/demo-previews/img16.jpg",
     },
     {
       id: "2",
@@ -31,7 +31,7 @@ export interface Service {
       title: "Painting",
       shortDescription: "Interior and exterior painting services",
       description: "Transform your space with our professional painting services. We offer interior and exterior painting for residential and commercial properties, using premium materials and techniques for a flawless finish that lasts.",
-      imageUrl: "/images/services/painting.jpg",
+      imageUrl: "/assets/img/demo-previews/img16.jpg",
     },
     {
       id: "3",
@@ -39,7 +39,7 @@ export interface Service {
       title: "Kitchen and Bath",
       shortDescription: "Custom kitchen and bathroom remodeling",
       description: "Elevate your home with our custom kitchen and bathroom remodeling services. From concept to completion, we handle every aspect of your renovation including design, demolition, construction, fixture installation, and finishing touches.",
-      imageUrl: "/images/services/kitchen-bath.jpg",
+      imageUrl: "/assets/img/demo-previews/img16.jpg",
     },
     {
       id: "4",
@@ -47,7 +47,7 @@ export interface Service {
       title: "Masonry",
       shortDescription: "Expert masonry construction and repair",
       description: "Our skilled masons provide top-quality brick, stone, and concrete work. Services include new construction, restoration, repairs, and decorative elements like patios, walkways, retaining walls, and fireplaces.",
-      imageUrl: "/images/services/masonry.jpg",
+      imageUrl: "/assets/img/demo-previews/img16.jpg",
     },
   ];
   
