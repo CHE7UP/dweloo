@@ -13,9 +13,9 @@ const HeroSection: React.FC = () => (
       <div>
        <AnimatedHeroText />
         {/* Buttons */}
-        <div className="mt-7 grid gap-3 w-full sm:inline-flex">
+        <div className="mt-4 grid gap-3 w-full sm:inline-flex">
           <a
-            className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-[#1976D2] text-white hover:border-[1px] hover:border-[#1E88E5] focus:outline-none focus:bg-white focus:color-[#B4D330] disabled:opacity-50 disabled:pointer-events-none"
+            className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-md font-bold rounded-lg border border-transparent bg-[#1976D2] text-white hover:border-[1px] hover:border-[#1E88E5] focus:outline-none focus:bg-white focus:color-[#B4D330] disabled:opacity-50 disabled:pointer-events-none"
             href="/calculate-my-project"
           >
             <svg 
@@ -30,35 +30,19 @@ const HeroSection: React.FC = () => (
               </path>
               </svg>
             Calculate My Project
-            {/* <svg
-          className="shrink-0 size-4"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="m9 18 6-6-6-6" />
-        </svg> */}
-
           </a>
-          <a
+          {/* <a
             className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
             href="#"
           >
             Contact sales team
-          </a>
+          </a> */}
         </div>
         {/* End Buttons */}
-
         {/* Review */}
-        <div className="mt-6 lg:mt-10 grid grid-cols-2 gap-x-5">
+        <div className="mt-1 lg:mt-10 grid grid-cols-2 gap-x-5">
           {/* Review */}
-          <div className="py-5">
+          <div className="py-1">
             <div className="flex gap-x-1">
               {/* <svg
                 className="size-4 text-gray-800"
@@ -126,7 +110,7 @@ const HeroSection: React.FC = () => (
               <span className="font-bold">4.6</span> /5 - from Google reviews
             </p> */}
 
-            <div className="mt-5">
+            <div className="mt-1">
               {/* Star */}
               {/* <svg
                 className="h-auto w-16 text-gray-800"
@@ -159,7 +143,7 @@ const HeroSection: React.FC = () => (
           {/* End Review */}
 
           {/* Review */}
-          <div className="py-5">
+          <div className="py-1">
             <div className="flex gap-x-1">
               {/* <svg
                 className="size-4 text-gray-800"
