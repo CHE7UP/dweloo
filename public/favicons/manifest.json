@@ -1,5 +1,5 @@
 {
-  "name": "Dweloo",
+  "name": "Dweloo - Home Improvements",
   "short_name": "Dweloo",
   "icons": [
     {
@@ -9,18 +9,13 @@
       "purpose": "maskable"
     },
     {
-      "src": "/favicons/favicon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
       "src": "/favicons/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#f9f9f9",
+  "theme_color": "#fff7f7",
+  "background_color": "#fffefe",
   "display": "standalone"
 }
