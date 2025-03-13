@@ -11,10 +11,10 @@ const FooterComponent: React.FC = () => {
           {/* <!-- Grid --> */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
             <div className="col-span-full lg:col-span-1">
-              <a className="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80" href="#" aria-label="Dweloo">
-                <Logo width="w-32" height="h-auto" fillColor="#B4D330" className="mb-2" />
+              <Link className="flex-none text-xl font-semibold text-white ml-[-15px] focus:outline-none focus:opacity-80" href="/" aria-label="Dweloo">
+                <Logo width="w-32" height="h-auto" fillColor="#1E88E5" className="mb-2" />
                 <span className="mt-2 block">Dweloo</span>
-              </a>
+              </Link>
             </div>
             <div
             className='border-t border-gray-800 col-span-full lg:col-span-4 lg:border-t-0 lg:border-l lg:border-gray-800'
@@ -38,7 +38,7 @@ const FooterComponent: React.FC = () => {
               <div className="mt-3 grid space-y-3">
                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">About Dweloo</a></p>
                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Home Improvement Blog</a></p>
-                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Careers</a> <span className="inline-block ms-1 text-xs bg-blue-700 text-white py-1 px-2 rounded-lg">We&lsquo;re hiring</span></p>
+                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Careers</a> <span className="inline-block ms-1 text-xs bg-[#1E88E5] text-white py-1 px-2 rounded-lg">We&lsquo;re hiring</span></p>
                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Success Stories</a></p>
               </div>
             </div>
@@ -50,9 +50,9 @@ const FooterComponent: React.FC = () => {
     <div className="mt-4 flex flex-row items-center gap-3 bg-white rounded-lg p-2">
       <div className="flex-grow">
         <label htmlFor="hero-input" className="sr-only">Subscribe to our newsletter</label>
-        <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Enter your email"/>
+        <input type="text" id="hero-input" name="hero-input" className="py-1 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Enter your email"/>
       </div>
-      <a className="whitespace-nowrap p-3 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
+      <a className="whitespace-nowrap p-2 inline-flex justify-center items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#1E88E5] text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
         Get Inspired
       </a>
     </div>

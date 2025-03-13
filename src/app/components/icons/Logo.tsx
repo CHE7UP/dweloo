@@ -63,7 +63,7 @@ const Logo: React.FC<LogoProps> = ({
   width,
   height,
   color = 'text-black',
-  fillColor = '#B4D330',
+  fillColor = '#0056B3',
   className = '',
   size = 'lg',
   strokeWidth,

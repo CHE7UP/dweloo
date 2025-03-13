@@ -15,7 +15,7 @@ const LogoWithText: React.FC<LogoWithTextProps> = ({
     width = '24',
     height = 'h-auto',
     color = 'text-gray-600',
-    fillColor = '#B4D330',
+    fillColor = '#0056B3',
     className = '',
   }) => {
     return (

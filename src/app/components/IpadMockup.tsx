@@ -28,7 +28,7 @@ export default IpadMockup;
 
 const FinalQuoteMockup: React.FC = () => {
   return (
-    <div className="w-[150px] h-[80px] rounded-[20px] shadow-lg p-4 bg-white flex flex-col justify-between border border-[#B4D330] absolute top-2/3 left-37 right-1 z-10 -translate-y-1/2">
+    <div className="w-[150px] h-[80px] rounded-[20px] shadow-lg p-4 bg-white flex flex-col justify-between border border-[#0056B3] absolute top-2/3 left-37 right-1 z-10 -translate-y-1/2">
       {/* Header */}
       
       <div className="flex items-center justify-between">
@@ -59,7 +59,7 @@ const FinalQuoteMockup: React.FC = () => {
 };
 const FinalQuoteMockup2: React.FC = () => {
   return (
-    <div className="w-[150px] h-[80px] rounded-[20px] shadow-lg p-4 bg-white flex flex-col justify-between border border-[#B4D330] absolute top-5/6 left-37 right-1 z-10 -translate-y-1/2">
+    <div className="w-[150px] h-[80px] rounded-[20px] shadow-lg p-4 bg-white flex flex-col justify-between border border-[#1E88E5] absolute top-5/6 left-37 right-1 z-10 -translate-y-1/2">
       {/* Header */}
       
       <div className="flex items-center justify-between">

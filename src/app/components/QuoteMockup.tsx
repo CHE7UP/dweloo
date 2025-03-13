@@ -3,7 +3,7 @@ import { Ruler } from 'lucide-react';
 
 const QuoteMockup: React.FC = () => {
   return (
-    <div className="w-[170px] h-[80px] rounded-[20px] shadow-lg p-4 bg-white flex flex-col justify-between border border-[#B4D330] absolute top-1/8 left-4 right-4 z-10 -translate-y-1/2">
+    <div className="w-[170px] h-[80px] rounded-[20px] shadow-lg p-4 bg-white flex flex-col justify-between border border-[#0056B3] absolute top-1/8 left-4 right-4 z-10 -translate-y-1/2">
       {/* Header */}
       
       <div className="flex items-center justify-between">

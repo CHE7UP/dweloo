@@ -13,7 +13,7 @@ const Floorplan = () => {
         <directionalLight position={[5, 10, 5]} intensity={1} />
         <HouseModel />
         <OrbitControls enableDamping />
-        <gridHelper args={[34, 34, "#B4D330", "#B4D330"]} />
+        <gridHelper args={[34, 34, "#1E88E5", "#1E88E5"]} />
       </Canvas>
     </div>
   );
@@ -201,7 +201,7 @@ const Floor: React.FC = () => {
         uniforms: {
           tileTexture: { value: texture },
           startColor: { value: new THREE.Color('white') },
-          endColor: { value: new THREE.Color('#B4D330') },
+          endColor: { value: new THREE.Color('#1E88E5') },
           progress: { value: -0.1 },
           edgeWidth: { value: 0.05 },
           objectPosition: { value: mainFloorObj.position.clone() },
@@ -218,7 +218,7 @@ const Floor: React.FC = () => {
         uniforms: {
           tileTexture: { value: texture },
           startColor: { value: new THREE.Color('white') },
-          endColor: { value: new THREE.Color('#B4D330') },
+          endColor: { value: new THREE.Color('#1E88E5') },
           progress: { value: -0.1 },
           edgeWidth: { value: 0.05 },
           objectPosition: { value: garageFloorObj.position.clone() },

@@ -20,12 +20,12 @@ const HeroSection: React.FC = () => (
   Home Upgrades Made Easy 
 </h1>
 <p className="mt-3 text-lg text-gray-800 text-center md:text-left max-w-3xl mx-auto md:mx-0">
-  The easiest way to upgrade your home with <span className="text-[#B4D330]"> Dweloo</span>
+  The easiest way to upgrade your home with <span className="text-[#1E88E5]"> Dweloo</span>
 </p>
         {/* Buttons */}
         <div className="mt-7 grid gap-3 w-full sm:inline-flex">
           <a
-            className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#B4D330] text-white hover:border-[1px] hover:border-[#B4D330] focus:outline-none focus:bg-white focus:color-[#B4D330] disabled:opacity-50 disabled:pointer-events-none"
+            className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#1E88E5] text-white hover:border-[1px] hover:border-[#1E88E5] focus:outline-none focus:bg-white focus:color-[#B4D330] disabled:opacity-50 disabled:pointer-events-none"
             href="/calculate-my-project"
           >
             <svg
