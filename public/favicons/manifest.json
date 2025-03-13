@@ -1,5 +1,5 @@
 {
-  "name": "Dweloo - Home Improvements",
+  "name": "www.dweloo.com",
   "short_name": "Dweloo",
   "icons": [
     {
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#fff7f7",
-  "background_color": "#fffefe",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "display": "standalone"
 }

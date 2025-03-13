@@ -86,7 +86,7 @@ const Logo: React.FC<LogoProps> = ({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 350 144"
+      viewBox="30 12 350 144"
       className={`${widthClass} ${heightClass} ${color} ${className}`}
     >
       <defs>

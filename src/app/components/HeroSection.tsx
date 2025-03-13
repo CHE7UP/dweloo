@@ -16,8 +16,8 @@ const HeroSection: React.FC = () => (
         <p className="mt-3 text-lg text-gray-800">
           The easiest way to upgrade your home with <span className="text-[#B4D330]"> Dweloo</span>
         </p> */}
-<h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight text-center md:text-left max-w-xl mx-auto md:mx-0">
-  Home Upgrades Made Easy 
+<h1 className="block text-3xl font-bold text-gray-700 sm:text-4xl lg:text-6xl lg:leading-tight text-center md:text-left max-w-xl mx-auto md:mx-0">
+New paint? Way simpler than you&apos;d expect.
 </h1>
 <p className="mt-3 text-lg text-gray-800 text-center md:text-left max-w-3xl mx-auto md:mx-0">
   The easiest way to upgrade your home with <span className="text-[#1E88E5]"> Dweloo</span>
@@ -25,19 +25,20 @@ const HeroSection: React.FC = () => (
         {/* Buttons */}
         <div className="mt-7 grid gap-3 w-full sm:inline-flex">
           <a
-            className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-lg font-bold rounded-lg border border-transparent bg-[#1E88E5] text-white hover:border-[1px] hover:border-[#1E88E5] focus:outline-none focus:bg-white focus:color-[#B4D330] disabled:opacity-50 disabled:pointer-events-none"
+            className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-[#1976D2] text-white hover:border-[1px] hover:border-[#1E88E5] focus:outline-none focus:bg-white focus:color-[#B4D330] disabled:opacity-50 disabled:pointer-events-none"
             href="/calculate-my-project"
           >
-            <svg
-              className="shrink-0 size-4"
-              width="24"
-              height="24"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 384 512">
-              <path
-                fill="white"
-                d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-384c0-35.3-28.7-64-64-64L64 0zM96 64l192 0c17.7 0 32 14.3 32 32l0 32c0 17.7-14.3 32-32 32L96 160c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-96 0c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z" />
-            </svg>
+            <svg 
+            viewBox="0 0 384 512" 
+            className="shrink-0 size-6"
+              width="30"
+              height="30"
+            xmlns="http://www.w3.org/2000/svg">
+              <path d="M336 0H48C22.38 0 0 22.38 0 48v416c0 25.6 22.38 48 48 48h288c25.62 0 48-22.38 48-48V48c0-25.62-22.4-48-48-48zM64 208c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-32zm0 96c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-32zm160 128c0 8.801-7.199 16-16 16H80c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h128c8.801 0 16 7.199 16 16v32zm0-96c0 8.801-7.199 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32zm0-96c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32zm96 192c0 8.801-7.199 16-16 16h-32c-8.799 0-16-7.199-16-16v-32c0-8.801 7.201-16 16-16h32c8.801 0 16 7.199 16 16v32zm0-96c0 8.801-7.199 16-16 16h-32c-8.799 0-16-7.199-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32zm0-96c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32zm0-96c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V80c0-8.8 7.2-16 16-16h224c8.8 0 16 7.2 16 16v64z" 
+            fill="#ffffff" 
+            >
+              </path>
+              </svg>
             Calculate My Project
             {/* <svg
           className="shrink-0 size-4"
