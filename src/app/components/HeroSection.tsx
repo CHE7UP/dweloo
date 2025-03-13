@@ -3,6 +3,7 @@ import React from 'react';
 import IpadMockup from './IpadMockup';
 import FloorPlan from './FloorPlan';
 import QuoteMockup from './QuoteMockup';
+import AnimatedHeroText from './AnimatedHeroText';
 
 
 const HeroSection: React.FC = () => (
@@ -10,18 +11,7 @@ const HeroSection: React.FC = () => (
     {/* Grid */}
     <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
       <div>
-        {/* <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight">
-          Home Upgrades Made Easy 
-        </h1>
-        <p className="mt-3 text-lg text-gray-800">
-          The easiest way to upgrade your home with <span className="text-[#B4D330]"> Dweloo</span>
-        </p> */}
-<h1 className="block text-3xl font-bold text-gray-700 sm:text-4xl lg:text-6xl lg:leading-tight text-center md:text-left max-w-xl mx-auto md:mx-0">
-New paint? Way simpler than you&apos;d expect.
-</h1>
-<p className="mt-3 text-lg text-gray-800 text-center md:text-left max-w-3xl mx-auto md:mx-0">
-  The easiest way to upgrade your home with <span className="text-[#1E88E5]"> Dweloo</span>
-</p>
+       <AnimatedHeroText />
         {/* Buttons */}
         <div className="mt-7 grid gap-3 w-full sm:inline-flex">
           <a
