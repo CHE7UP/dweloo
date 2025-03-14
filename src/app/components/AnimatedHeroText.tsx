@@ -59,7 +59,7 @@ const AnimatedHeroText: React.FC = () => {
         }
       }, 1000);
     }
-  }, [displayText, isTyping, currentTextIndex, isErasing]);
+  }, [displayText, isTyping, currentTextIndex, isErasing, heroTexts]);
   
   // Erasing effect
   useEffect(() => {
@@ -83,7 +83,7 @@ const AnimatedHeroText: React.FC = () => {
         }
       }, 500);
     }
-  }, [displayText, isErasing]);
+  }, [displayText, heroTexts, isErasing]);
   
   // Cleanup on unmount
   useEffect(() => {

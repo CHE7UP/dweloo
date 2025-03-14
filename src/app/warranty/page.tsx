@@ -5,7 +5,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import { warrantyData } from './data';
-import WarrantyForm from '../components/WarranyForm';
+import WarrantyForm from '../components/forms/WarranyForm';
 
 const Warranty = () => {
   const { 

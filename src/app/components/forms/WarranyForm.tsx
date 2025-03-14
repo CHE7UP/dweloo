@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { WarrantyClaim } from '../types';
+import { WarrantyClaim } from '../../types';
 import { useFirestore } from '@/hooks/useFirestore';
 import { documentId } from 'firebase/firestore';
 const WarrantyForm: React.FC = () => {
