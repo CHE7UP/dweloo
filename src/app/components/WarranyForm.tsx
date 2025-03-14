@@ -406,11 +406,10 @@ if (formSubmitted && success) {
             value={formData.description} 
             onChange={handleChange} 
             required 
-            rows="4"
+            rows={4}
             className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-700 placeholder-gray-400 resize-vertical"
           />
         </div>
-  
           <div className="flex flex-col md:col-span-2">
           <label htmlFor="damagePhoto" className="mb-2 font-medium text-gray-700">Upload Damage Photo</label>
           <input 
@@ -427,7 +426,7 @@ if (formSubmitted && success) {
         <button 
           type="submit" 
           disabled={isLoading} 
-          className="mt-6 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-70 disabled:cursor-not-allowed w-full md:w-auto"
+          className="mt-6 px-6 py-3 bg-[#1976D2] text-white font-medium rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-70 disabled:cursor-not-allowed w-full md:w-auto"
         >
           {isLoading ? 'Submitting...' : 'Submit Claim'}
         </button>
