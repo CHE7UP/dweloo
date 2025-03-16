@@ -15,11 +15,12 @@ export default function Home() {
   return (
     <div >
       <HeroSection/>
+      <CardSection/>
+      <ServicesSection/>
       <IconSectionGradient/>
       <VerticalTabs/>
       <Testimonials/>
-      <CardSection/>
-      <ServicesSection/>
+   
       <HorizontalTabs/>
       <FeatureStats/>
        <CardOnBackround  />
