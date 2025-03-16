@@ -6,6 +6,7 @@ import FeatureStats from "./components/FeatureStats";
 import HeroSection from "./components/HeroSection";
 import HorizontalTabs from "./components/HorizontalTabs";
 import IconSectionGradient from "./components/IconSectionGradient";
+import ProcessInfographic from "./components/ProcessInfographic";
 import ServicesSection from "./components/ServicesSection";
 import SingleImageFeature from "./components/SingleImageFeature";
 import Testimonials from "./components/Testimonials";
@@ -16,6 +17,8 @@ export default function Home() {
     <div >
       <HeroSection/>
       <CardSection/>
+      <ProcessInfographic/> 
+
       <ServicesSection/>
       <IconSectionGradient/>
       <VerticalTabs/>
