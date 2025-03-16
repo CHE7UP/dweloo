@@ -1,20 +1,26 @@
 import React from 'react';
 import Image from 'next/image';
+import Logo from './icons/Logo';
 
 const SingleImageFeature: React.FC = () => {
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       {/* Grid */}
       <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
-        <div>
-        <Image
-                className="max-w-full rounded-[1.25rem] h-auto"
-                src="/assets/img/template-previews/img4.jpg"
-                alt="Features Image"
-                width={375}
-                height={812}
-                />
-        </div>
+      <div className="relative">
+  <Image
+    className="max-w-full h-auto"
+    src="/assets/img/landing-page-assets/dweloo-boy-on-the-floor-playing.webp"
+    alt="Features Image"
+    width={375}
+    height={812}
+  />
+  <div className="absolute inset-0 flex py-6 px-36 md:px-8 lg:px-10 xl:px-12">
+    <Logo
+      className="opacity-70" // Adjust transparency (0-100)
+    />
+  </div>
+</div>
         {/* End Col */}
         <div className="mt-5 sm:mt-10 lg:mt-0">
           <div className="space-y-6 sm:space-y-8">

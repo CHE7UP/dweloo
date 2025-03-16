@@ -1,180 +1,159 @@
-import React from 'react';
-import Image from 'next/image';
+'use client';
 
-const VerticalTabs: React.FC = () => {
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { Users, Award, Clock, CreditCard } from 'lucide-react';
+
+const ValuePropositionCards = () => {
+  // Store all value proposition data in an array of objects
+  const valuePropositions = [
+    {
+      id: 1,
+      title: "Local Craftsmen",
+      description: "Our team consists of local, licensed, bonded, and insured craftsmen who take pride in their work.",
+      imageSrc: "/assets/img/local-craftsmen.jpg",
+      imageAlt: "Local craftsmen at work",
+      imageCaption: "Skilled Local Professionals",
+      imageDescription: "Each craftsman undergoes rigorous vetting and training",
+      icon: (isHovered: boolean) => (
+        <Users 
+          className={`flex-shrink-0 mt-1 transition-colors duration-300 ${isHovered ? 'text-[#0056B3]' : 'text-gray-800'}`} 
+          size={24} 
+        />
+      ),
+    },
+    {
+      id: 2,
+      title: "Lifetime Warranty",
+      description: "We stand behind our work with a lifetime warranty, giving you peace of mind for years to come.",
+      imageSrc: "/assets/img/warranty.jpg",
+      imageAlt: "Lifetime warranty certificate",
+      imageCaption: "Lifetime Peace of Mind",
+      imageDescription: "Our warranty protects your investment for years to come",
+      icon: (isHovered: boolean) => (
+        <Award 
+          className={`flex-shrink-0 mt-1 transition-colors duration-300 ${isHovered ? 'text-[#0056B3]' : 'text-gray-800'}`} 
+          size={24} 
+        />
+      ),
+    },
+    {
+      id: 3,
+      title: "10-Day Installation",
+      description: "We simplify your schedule—most projects start within 10 days of booking, delivering fast results without the wait.",
+      imageSrc: "/assets/img/installation.jpg",
+      imageAlt: "Fast installation timeline",
+      imageCaption: "Quick Turnaround",
+      imageDescription: "Most projects start within 10 days of booking",
+      icon: (isHovered: boolean) => (
+        <Clock 
+          className={`flex-shrink-0 mt-1 transition-colors duration-300 ${isHovered ? 'text-[#0056B3]' : 'text-gray-800'}`} 
+          size={24} 
+        />
+      ),
+    },
+    {
+      id: 4,
+      title: "Financing Options",
+      description: "Make your project affordable and stress-free with flexible monthly installments, deferred payments, and more, tailored to your budget.",
+      imageSrc: "/assets/img/materials.jpg",
+      imageAlt: "Financing options",
+      imageCaption: "Flexible Payment Solutions",
+      imageDescription: "Multiple financing options to fit your budget",
+      icon: (isHovered: boolean) => (
+        <CreditCard 
+          className={`flex-shrink-0 mt-1 transition-colors duration-300 ${isHovered ? 'text-[#0056B3]' : 'text-gray-800'}`} 
+          size={24} 
+        />
+      ),
+    },
+  ];
+
+  // State to track currently hovered card
+  const [hoveredCardId, setHoveredCardId] = useState<number | null>(null);
+
   return (
-    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-      {/* Features */}
+    <section className="max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16 mx-auto" aria-labelledby="value-proposition-heading">
+      {/* Features Section */}
       <div className="relative p-6 md:p-16">
-        {/* Grid */}
+        {/* Grid Layout */}
         <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
           <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
-            <h2 className="text-2xl text-gray-800 font-bold sm:text-3xl">
-              Fully customizable rules to match your unique needs
+            <h2 id="value-proposition-heading" className="text-2xl text-gray-800 font-bold sm:text-3xl mb-4">
+              Dweloo is Your Easy Home Improvement Solution
             </h2>
+            <p className="text-gray-600 mb-8">We combine skilled craftsmanship with exceptional service to transform your home with quality you can trust.</p>
 
-            {/* Tab Navs */}
-            <nav className="grid gap-4 mt-5 md:mt-10" aria-label="Tabs" role="tablist" aria-orientation="vertical">
-              <button
-                type="button"
-                className="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 focus:outline-none focus:bg-gray-200 p-4 md:p-5 rounded-xl active"
-                id="tabs-with-card-item-1"
-                aria-selected="true"
-                data-hs-tab="#tabs-with-card-1"
-                aria-controls="tabs-with-card-1"
-                role="tab"
-              >
-                <span className="flex gap-x-6">
-                  <svg
-                    className="shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 text-gray-800"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" />
-                    <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" />
-                    <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z" />
-                    <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" />
-                    <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
-                  </svg>
-                  <span className="grow">
-                    <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800">
-                      Advanced tools
-                    </span>
-                    <span className="block mt-1 text-gray-800">
-                      Use Preline thoroughly thought and automated libraries to manage your businesses.
-                    </span>
-                  </span>
-                </span>
-              </button>
+            {/* Value Proposition Cards */}
+            <div className="space-y-5">
+              {valuePropositions.map((prop) => (
+                <div 
+                  key={prop.id}
+                  className="group relative rounded-xl overflow-hidden transition-all duration-300 hover:bg-white hover:shadow-lg border border-transparent hover:border-gray-200"
+                  onMouseEnter={() => setHoveredCardId(prop.id)}
+                  onMouseLeave={() => setHoveredCardId(null)}
+                >
+                  <div className="p-5">
+                    <div className="flex gap-x-4">
+                      {prop.icon(hoveredCardId === prop.id)}
+                      <div className="grow">
+                        <h3 className="text-lg font-semibold text-gray-800 group-hover:text-[#0056B3] transition-colors duration-300">
+                          {prop.title}
+                        </h3>
+                        <p className="mt-2 text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                          {prop.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
 
-              <button
-                type="button"
-                className="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 focus:outline-none focus:bg-gray-200 p-4 md:p-5 rounded-xl"
-                id="tabs-with-card-item-2"
-                aria-selected="false"
-                data-hs-tab="#tabs-with-card-2"
-                aria-controls="tabs-with-card-2"
-                role="tab"
-              >
-                <span className="flex gap-x-6">
-                  <svg
-                    className="shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 text-gray-800"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                  {/* Hover overlay with image - Only visible on larger screens */}
+                  <div 
+                    className={`hidden lg:block absolute -right-64 top-0 h-full w-64 pointer-events-none transition-opacity duration-300 ${hoveredCardId === prop.id ? 'opacity-100' : 'opacity-0'}`}
                   >
-                    <path d="m12 14 4-4" />
-                    <path d="M3.34 19a10 10 0 1 1 17.32 0" />
-                  </svg>
-                  <span className="grow">
-                    <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800">
-                      Smart dashboards
-                    </span>
-                    <span className="block mt-1 text-gray-800">
-                      Quickly Preline sample components, copy-paste codes, and start right off.
-                    </span>
-                  </span>
-                </span>
-              </button>
-
-              <button
-                type="button"
-                className="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 focus:outline-none focus:bg-gray-200 p-4 md:p-5 rounded-xl"
-                id="tabs-with-card-item-3"
-                aria-selected="false"
-                data-hs-tab="#tabs-with-card-3"
-                aria-controls="tabs-with-card-3"
-                role="tab"
-              >
-                <span className="flex gap-x-6">
-                  <svg
-                    className="shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 text-gray-800"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-                    <path d="M5 3v4" />
-                    <path d="M19 17v4" />
-                    <path d="M3 5h4" />
-                    <path d="M17 19h4" />
-                  </svg>
-                  <span className="grow">
-                    <span className="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800">
-                      Powerful features
-                    </span>
-                    <span className="block mt-1 text-gray-800">
-                      Reduce time and effort on building modern look design with Preline only.
-                    </span>
-                  </span>
-                </span>
-              </button>
-            </nav>
-            {/* End Tab Navs */}
+                    <div className="relative h-full rounded-l-xl overflow-hidden shadow-lg">
+                      <div className="h-full bg-gray-200 flex items-center justify-center">
+                        {/* Placeholder for actual images */}
+                        <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                          <p className="text-gray-500 text-sm px-4 italic">Image preview</p>
+                        </div>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p className="text-white font-semibold text-sm">{prop.imageCaption}</p>
+                        <p className="text-white text-xs mt-1">{prop.imageDescription}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           {/* End Col */}
 
           <div className="lg:col-span-6">
             <div className="relative">
-              {/* Tab Content */}
-              <div>
-                <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1">
+              {/* Main Image */}
+              <div className="relative rounded-xl overflow-hidden shadow-xl">
                 <Image
-                className="max-w-full rounded-[1.25rem] h-auto"
-                src="/assets/img/template-previews/img4.jpg"
-                alt="Features Image"
-                width={375}
-                height={812}
+                  className="w-full h-auto object-cover"
+                  src="/assets/img/landing-page-assets/flooring-dweloo.webp"
+                  alt="Quality flooring installation by Dweloo"
+                  width={600}
+                  height={500}
+                  priority
                 />
-                </div>
-
-                <div id="tabs-with-card-2" className="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-2">
-                <Image
-                className="max-w-full rounded-[1.25rem] h-auto"
-                src="/assets/img/template-previews/img4.jpg"
-                alt="Features Image"
-                width={375}
-                height={812}
-                />
-                </div>
-
-                <div id="tabs-with-card-3" className="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-3">
-                <Image
-                className="max-w-full rounded-[1.25rem] h-auto"
-                src="/assets/img/template-previews/img4.jpg"
-                alt="Features Image"
-                width={375}
-                height={812}
-                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-white font-semibold text-2xl">Quality You Can Trust</h3>
+                    <p className="text-white/90 text-base mt-2">Every project backed by our commitment to excellence</p>
+                  </div>
                 </div>
               </div>
-              {/* End Tab Content */}
-
-              {/* SVG Element */}
-              <div className="hidden absolute top-0 end-0 translate-x-20 md:block lg:translate-x-20">
+              
+              {/* Decorative Elements */}
+              <div className="hidden md:block absolute -top-8 -right-8 z-[-1]">
                 <svg
-                  className="w-16 h-auto text-orange-500"
-                  width="121"
-                  height="135"
+                  className="w-20 h-20 text-yellow-400 opacity-70"
                   viewBox="0 0 121 135"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +178,9 @@ const VerticalTabs: React.FC = () => {
                   />
                 </svg>
               </div>
-              {/* End SVG Element */}
+
+              {/* Accent Circle */}
+              <div className="hidden md:block absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-blue-600/10 z-[-1]"></div>
             </div>
           </div>
           {/* End Col */}
@@ -207,13 +188,13 @@ const VerticalTabs: React.FC = () => {
         {/* End Grid */}
 
         {/* Background Color */}
-        <div className="absolute inset-0 grid grid-cols-12 size-full">
-          <div className="col-span-full lg:col-span-7 lg:col-start-6 bg-gray-100 w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full"></div>
+        <div className="absolute inset-0 grid grid-cols-12 w-full h-full">
+          <div className="col-span-full lg:col-span-7 lg:col-start-6 bg-gray-50 w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full"></div>
         </div>
         {/* End Background Color */}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default VerticalTabs;
+export default ValuePropositionCards;

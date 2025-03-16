@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 
 const ProcessInfographic = () => {
   const steps = [
@@ -30,7 +30,7 @@ const ProcessInfographic = () => {
           {steps.map((step, index) => (
             <React.Fragment key={index}>
               <div className="flex flex-col items-center text-center mb-8 md:mb-0">
-                <div className="w-32 h-32 mb-4 flex items-center justify-center relative">
+                <div className="w-48 h-48 mb-4 flex items-center justify-center relative">
                   <Image 
                     src={step.image} 
                     alt={step.text} 
@@ -44,16 +44,16 @@ const ProcessInfographic = () => {
               
               {index < steps.length - 1 && (
                 <>
-                  {/* Mobile arrow (down) */}
-                  <div className="block md:hidden text-blue-500 mb-8">
-                    <ChevronDown size={32} />
-                  </div>
-                  
-                  {/* Desktop arrow (right) */}
-                  <div className="hidden md:block text-blue-500 mx-8">
-                    <ChevronRight size={32} />
-                  </div>
-                </>
+                {/* Mobile arrow (down) */}
+                <div className="block md:hidden text-blue-500 mb-12 mt-4">
+                  <ArrowDown size={40} strokeWidth={2.5} />
+                </div>
+                
+                {/* Desktop arrow (right) */}
+                <div className="hidden md:block text-blue-500 mx-16">
+                  <ArrowRight size={40} strokeWidth={2.5} />
+                </div>
+              </>
               )}
             </React.Fragment>
           ))}

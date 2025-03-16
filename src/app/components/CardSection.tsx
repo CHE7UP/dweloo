@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
@@ -9,6 +10,7 @@ const services = [
       "Expert installation of hardwood, vinyl, tile, and laminate flooring for a durable and stylish finish.",
     image: "https://firebasestorage.googleapis.com/v0/b/fast-ai-solutions.appspot.com/o/dweloo%2Fassets%2Fdweloo-flooring-service-card.webp?alt=media&token=c94430dd-ca16-43cb-acc0-aed46811f771",
     cta: "Explore Options",
+    link: "/services/flooring",
   },
   {
     id: 2,
@@ -17,6 +19,7 @@ const services = [
       "Professional interior and exterior painting services with premium finishes and long-lasting results.",
     image: "https://firebasestorage.googleapis.com/v0/b/fast-ai-solutions.appspot.com/o/dweloo%2Fassets%2Fdweloo-painting-service-card.webp?alt=media&token=673557fd-8332-4ed3-b146-f936c05d8c40",
     cta: "Get a Free Quote",
+    link: "/services/painting",
   },
   {
     id: 3,
@@ -25,6 +28,7 @@ const services = [
       "Transform your kitchen and bathroom with expert remodeling, modern fixtures, and custom cabinetry.",
     image: "https://firebasestorage.googleapis.com/v0/b/fast-ai-solutions.appspot.com/o/dweloo%2Fassets%2Fdweloo-kitchen-bath-service-card.webp?alt=media&token=e6d40c8b-6977-4817-8e3a-4b7e1ab084b9",
     cta: "View Our Work",
+    link: "/services/kitchen-bath",
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ const services = [
       "High-quality masonry work, including brick, stone, and concrete solutions for durability and aesthetics.",
     image: "https://firebasestorage.googleapis.com/v0/b/fast-ai-solutions.appspot.com/o/dweloo%2Fassets%2Fdweloo-masonry-service-card.webp?alt=media&token=e690b7fe-fec5-45da-af75-a8934d9c9bbb",
     cta: "Learn More",
+    link: "/services/masonry",
   },
 ];
 
@@ -74,12 +79,11 @@ const ServicesSection: React.FC = () => {
             </div>
             {/* Call to Action - Removed shadow */}
             <div className="p-4 text-center">
-              <a
-                href="#"
+            <Link href={service.link}
                 className="inline-block px-6 py-3 text-sm font-medium text-gray-600 rounded-full hover:scale-105 transition-all duration-300 ease-in-out border border-gray-200"
               >
                 {service.cta}
-              </a>
+              </Link>
             </div>
           </div>
         ))}
