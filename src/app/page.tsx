@@ -8,6 +8,7 @@ import HeroSection from "./components/HeroSection";
 import ProcessInfographic from "./components/ProcessInfographic";
 import SingleImageFeature from "./components/SingleImageFeature";
 import CardOnBackround from "./components/CardOnBackround";
+import WhyDweloo from "./components/WhyDweloo";
 // import VerticalTabs from "./components/VerticalTabs";
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       {/* <IconSectionGradient/> */}
    
        <CardOnBackround  />
+       <WhyDweloo />
       {/* <FaqSection/> */}
       <FaQuestionsSection/>
     </div>
