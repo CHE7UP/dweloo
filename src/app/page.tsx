@@ -1,6 +1,5 @@
 // import CardOnBackround from "./components/CardOnBackround";
 import CardSection from "./components/CardSection";
-import FaqSection from "./components/FaqSection";
 import FaQuestionsSection from "./components/FaQuestionsSection";
 import DwelooFeatures from "./components/Features";
 import HeroSection from "./components/HeroSection";

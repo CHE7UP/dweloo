@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 const AnimatedHeroText: React.FC = () => {
-  const heroTexts = [
+  
+  
+ const heroTexts = useMemo(()=>[
     "That paint job you've been putting off? Done by Friday.",
     "The kitchen of your dreams isn't just for TV shows anymore.",
     "Those gorgeous floors you want? We handle everything—you just say 'wow'.",
     "Your bathroom can go from embarrassing to impressive this month.",
     "Cracked bricks or wobbly steps? Fixed before your in-laws visit."
-  ];
+  ], []);
 
   const [currentTextIndex, setCurrentTextIndex] = useState<number>(0);
   const [displayText, setDisplayText] = useState<string>('');
