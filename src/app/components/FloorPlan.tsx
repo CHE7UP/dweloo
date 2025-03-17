@@ -13,7 +13,7 @@ const Floorplan = () => {
         <directionalLight position={[5, 10, 5]} intensity={1} />
         <HouseModel />
         <OrbitControls enableDamping />
-        <gridHelper args={[34, 34, "#0056B3", "#0056B3"]} />
+        <gridHelper args={[34, 34, "#B0BEC5", "#B0BEC5"]} />
       </Canvas>
     </div>
   );
@@ -97,8 +97,8 @@ const Floor: React.FC = () => {
     context.fillRect(0, 0, canvas.width, canvas.height);
     
     // Create narrow rectangular tiles
-    const tileWidth = 150;
-    const tileHeight = 30;
+    const tileWidth = 150;  // narrow width
+    const tileHeight = 30; // shorter length (for horizontal planks)
     const gap = 4;
     
     context.fillStyle = '#f0f0f0';
@@ -118,7 +118,7 @@ const Floor: React.FC = () => {
     const texture = new THREE.CanvasTexture(canvas);
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.set(3, 3);
+    texture.repeat.set(3, 3); // Adjust based on floor size
     
     return texture;
   };
@@ -143,9 +143,9 @@ const Floor: React.FC = () => {
       
       // Get total scene width and leftmost point for continuous animation
       const mainFloorWidth = 11;
-      const mainFloorPos = mainFloorObj.position.x - mainFloorWidth/2;
+      const mainFloorPos = mainFloorObj.position.x - mainFloorWidth/2; // Left edge of main floor
       const garageFloorWidth = 5;
-      const garageFloorPos = garageFloorObj.position.x - garageFloorWidth/2;
+      const garageFloorPos = garageFloorObj.position.x - garageFloorWidth/2; // Left edge of garage floor
       
       // Find leftmost and rightmost points for our animation
       const leftmostPoint = Math.min(mainFloorPos, garageFloorPos);
@@ -163,7 +163,6 @@ const Floor: React.FC = () => {
         }
       `;
       
-      // Refined fragment shader with more subtle blue
       const fragmentShader = `
         uniform sampler2D tileTexture;
         uniform vec3 startColor;
@@ -176,16 +175,11 @@ const Floor: React.FC = () => {
         varying vec2 vUv;
         varying vec3 vPosition;
         
-        vec3 toneDownColor(vec3 color) {
-          // Reduce brightness to match the intended color more closely
-          return color * 0.75;
-        }
-        
         void main() {
           // Sample the texture for tile pattern
           vec4 texColor = texture2D(tileTexture, vUv);
           
-          // Calculate world X position
+          // Calculate world X position (need to account for rotation of floor)
           float worldX = objectPosition.x + vPosition.x;
           
           // Normalize position within the total width for consistent animation
@@ -194,26 +188,20 @@ const Floor: React.FC = () => {
           // Create a sharp left-to-right transition based on worldX
           float transition = smoothstep(progress - edgeWidth, progress + edgeWidth, normalizedX);
           
-          // Mix colors with toned down blue
-          vec3 adjustedEndColor = toneDownColor(endColor);
-          vec3 color = mix(startColor, adjustedEndColor, 1.0 - transition);
+          // Mix colors - note we use 1.0-transition to flip the direction (now white to green)
+          vec3 color = mix(startColor, endColor, 1.0 - transition);
           
-          // Use a more muted blend with the texture
-          vec3 finalColor = color * (texColor.rgb * 0.4 + 0.6);
-          
-          gl_FragColor = vec4(finalColor, 1.0);
+          // Apply the color while preserving the tile texture
+          gl_FragColor = vec4(color * texColor.rgb, 1.0);
         }
       `;
-      
-      // Apply a slightly darker version of #1E88E5
-      const targetColor = new THREE.Color('#1E88E5').multiplyScalar(0.9);
       
       // Create shader material for main floor
       const mainShaderMaterial = new THREE.ShaderMaterial({
         uniforms: {
           tileTexture: { value: texture },
           startColor: { value: new THREE.Color('white') },
-          endColor: { value: targetColor },
+          endColor: { value: new THREE.Color('#90CAF9') },
           progress: { value: -0.1 },
           edgeWidth: { value: 0.05 },
           objectPosition: { value: mainFloorObj.position.clone() },
@@ -225,12 +213,12 @@ const Floor: React.FC = () => {
         side: THREE.DoubleSide
       });
       
-      // Create shader material for garage floor with the same parameters
+      // Create shader material for garage floor with the same animated parameters
       const garageShaderMaterial = new THREE.ShaderMaterial({
         uniforms: {
           tileTexture: { value: texture },
           startColor: { value: new THREE.Color('white') },
-          endColor: { value: targetColor },
+          endColor: { value: new THREE.Color('#90CAF9') },
           progress: { value: -0.1 },
           edgeWidth: { value: 0.05 },
           objectPosition: { value: garageFloorObj.position.clone() },
@@ -294,6 +282,7 @@ const Floor: React.FC = () => {
     </group>
   );
 };
+
 
 // House model with rooms and connected garage
 const HouseModel = () => {
