@@ -12,19 +12,14 @@ interface LogoWithTextProps {
   className?: string;
 }
 const LogoWithText: React.FC<LogoWithTextProps> = ({
-    width = '24',
-    height = 'h-auto',
     color = 'text-gray-600',
-    fillColor = '#0056B3',
     className = '',
   }) => {
     return (
       <div className={`inline-flex relative ${className}`}>
         <Logo 
-          width={width} 
-          height={height} 
+
           color={color} 
-          fillColor={fillColor} 
           className="inline-block align-middle"
         />
         <span 

@@ -1,5 +1,6 @@
 // import CardOnBackround from "./components/CardOnBackround";
 import CardSection from "./components/CardSection";
+import DwelooCraftsmenQuality from "./components/DwelooCraftsmenQuality";
 import FaQuestionsSection from "./components/FaQuestionsSection";
 import DwelooFeatures from "./components/Features";
 import HeroSection from "./components/HeroSection";
@@ -16,6 +17,7 @@ export default function Home() {
       <ProcessInfographic/> 
       <SingleImageFeature/>
       <DwelooFeatures />
+      <DwelooCraftsmenQuality/>
       {/* <VerticalTabs/> */}
       {/* Uncomment the line below to include the IconSectionGradient component */}
 
