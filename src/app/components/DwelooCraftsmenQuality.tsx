@@ -37,7 +37,7 @@ const DwelooCraftsmenQuality = () => {
                 src="/assets/img/landing-page-assets/dweloo-craftsman.png"
                 alt="Dweloo Professional Craftsman"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />

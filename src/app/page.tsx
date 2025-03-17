@@ -7,6 +7,7 @@ import HeroSection from "./components/HeroSection";
 // import IconSectionGradient from "./components/IconSectionGradient";
 import ProcessInfographic from "./components/ProcessInfographic";
 import SingleImageFeature from "./components/SingleImageFeature";
+import CardOnBackround from "./components/CardOnBackround";
 // import VerticalTabs from "./components/VerticalTabs";
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
 
       {/* <IconSectionGradient/> */}
    
-       {/* <CardOnBackround  /> */}
+       <CardOnBackround  />
       {/* <FaqSection/> */}
       <FaQuestionsSection/>
     </div>
