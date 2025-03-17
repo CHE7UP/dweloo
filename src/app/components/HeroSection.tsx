@@ -2,7 +2,6 @@
 import React from 'react';
 import IpadMockup from './IpadMockup';
 import FloorPlan from './FloorPlan';
-import QuoteMockup from './QuoteMockup';
 import AnimatedHeroText from './AnimatedHeroText';
 
 
