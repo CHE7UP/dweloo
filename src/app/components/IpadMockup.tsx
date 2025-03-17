@@ -1,5 +1,7 @@
 import React from "react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import QuoteMockup from "./QuoteMockup";
+import QuoteMockup2 from "./QuoteMockup2";
+import QuoteMockup3 from "./QuoteMockup3";
 
 interface IpadMockupProps {
   children: React.ReactNode;
@@ -17,8 +19,10 @@ const IpadMockup: React.FC<IpadMockupProps> = ({ children }) => {
       {/* Screen area */}
       <div className="rounded-[2rem] overflow-hidden h-[426px] md:h-[654px] bg-white dark:bg-gray-800">
         {children}
-        <FinalQuoteMockup/>
-        <FinalQuoteMockup2/>
+        <QuoteMockup/>
+        <QuoteMockup2 />
+        <QuoteMockup3 />
+
       </div>
     </div>
   );
@@ -26,65 +30,3 @@ const IpadMockup: React.FC<IpadMockupProps> = ({ children }) => {
 
 export default IpadMockup;
 
-const FinalQuoteMockup: React.FC = () => {
-  return (
-    <div className="w-[150px] h-[80px] rounded-[20px] shadow-lg p-4 bg-white flex flex-col justify-between border border-[#0056B3] absolute top-2/3 left-37 right-1 z-10 -translate-y-1/2">
-      {/* Header */}
-      
-      <div className="flex items-center justify-between">
-       <div className="flex items-center justify-between mb-1">
-       <Avatar>
-  <AvatarImage src="https://github.com/shadcn.png" />
-  <AvatarFallback>CN</AvatarFallback>
-</Avatar>
-
-      </div>
-
-      </div>
-      <div className="space-y-2 flex-grow">
-      
-        <div className="flex items-center justify-between">
-
-            <div className="flex items-center">
-              {/* <div className="bg-gray-500 p-0.5 rounded-full mr-1">
-                < className="text-white w-3 h-3" />
-              </div> */}
-              <span className="font-bold text-gray-600 text-[7px]">Installation confirmed at 98115</span>
-            </div>
-        </div> 
- 
-        </div>
-    </div>
-  );
-};
-const FinalQuoteMockup2: React.FC = () => {
-  return (
-    <div className="w-[150px] h-[80px] rounded-[20px] shadow-lg p-4 bg-white flex flex-col justify-between border border-[#1E88E5] absolute top-5/6 left-37 right-1 z-10 -translate-y-1/2">
-      {/* Header */}
-      
-      <div className="flex items-center justify-between">
-       <div className="flex items-center justify-between mb-1">
-       <Avatar>
-  <AvatarImage src="https://github.com/shadcn.png" />
-  <AvatarFallback>CN</AvatarFallback>
-</Avatar>
-
-      </div>
-
-      </div>
-      <div className="space-y-2 flex-grow">
-      
-        <div className="flex items-center justify-between">
-
-            <div className="flex items-center">
-              {/* <div className="bg-gray-500 p-0.5 rounded-full mr-1">
-                < className="text-white w-3 h-3" />
-              </div> */}
-              <span className="font-bold text-gray-600 text-[7px]">Installation confirmed at 98115</span>
-            </div>
-        </div> 
- 
-        </div>
-    </div>
-  );
-};
