@@ -1,4 +1,4 @@
-import CardOnBackround from "./components/CardOnBackround";
+// import CardOnBackround from "./components/CardOnBackround";
 import CardSection from "./components/CardSection";
 import FaqSection from "./components/FaqSection";
 import FaQuestionsSection from "./components/FaQuestionsSection";
@@ -22,8 +22,8 @@ export default function Home() {
 
       {/* <IconSectionGradient/> */}
    
-       <CardOnBackround  />
-      <FaqSection/>
+       {/* <CardOnBackround  /> */}
+      {/* <FaqSection/> */}
       <FaQuestionsSection/>
     </div>
   );

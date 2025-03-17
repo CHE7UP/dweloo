@@ -29,7 +29,6 @@ const DwelooFeatures = () => {
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-800">dweloo - home improvement made easy</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
