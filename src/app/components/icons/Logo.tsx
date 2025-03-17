@@ -50,61 +50,44 @@
 import React from 'react';
 
 interface LogoProps {
-  width?: string;
-  height?: string;
+  size?: number;
   color?: string;
-  fillColor?: string;
   className?: string;
-  size?: 'sm' | 'md' | 'lg';
   strokeWidth?: number;
 }
 
 const Logo: React.FC<LogoProps> = ({
-  width,
-  height,
-  color = 'text-black',
-  fillColor = '#0056B3',
+  size = 40,
+  color = '#0056B3',
   className = '',
-  size = 'lg',
-  strokeWidth,
+  strokeWidth = 4,
 }) => {
-  // Size presets with corresponding values
-  const sizeMap = {
-    sm: { width: 'w-16', height: 'h-auto', strokeWidth: 6 },
-    md: { width: 'w-24', height: 'h-auto', strokeWidth: 8 },
-    lg: { width: 'w-32', height: 'h-auto', strokeWidth: 10 },
-  };
-
-  // Use provided values or defaults from size preset
-  const widthClass = width || sizeMap[size].width;
-  const heightClass = height || sizeMap[size].height;
-  const strokeWidthValue = strokeWidth !== undefined ? strokeWidth : sizeMap[size].strokeWidth;
-  
   // Create a unique mask ID
   const maskId = `smileMask-${Math.random().toString(36).substr(2, 9)}`;
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="30 12 350 144"
-      className={`${widthClass} ${heightClass} ${color} ${className}`}
+      viewBox="0 0 120 120"
+      width={size}
+      height={size}
+      className={className}
     >
       <defs>
         <mask id={maskId}>
-          <rect x="0" y="0" width="240" height="144" fill="white" />
+          <rect x="0" y="0" width="120" height="120" fill="white" />
           <path
-            d="M96,100 Q120,128 144,100"
+            d="M32,68 Q56,96 80,68"
             fill="none"
             stroke="black"
-            strokeWidth={strokeWidthValue}
+            strokeWidth={strokeWidth}
             strokeLinecap="round"            
           />
         </mask>
       </defs>
-
       <path
-        d="M120,40 C128,40 176,72 176,80 L176,128 C176,132 172,136 168,136 L72,136 C68,136 64,132 64,128 L64,80 C64,72 112,40 120,40 Z"
-        fill={fillColor}
+        d="M56,8 C64,8 112,40 112,48 L112,96 C112,100 108,104 104,104 L8,104 C4,104 0,100 0,96 L0,48 C0,40 48,8 56,8 Z"
+        fill={color}
         mask={`url(#${maskId})`}
       />
     </svg>

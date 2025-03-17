@@ -34,6 +34,7 @@ const Navbar: React.FC = () => {
           {/* <!-- Logo with Text --> */}
           <Link className="flex items-center focus:outline-hidden focus:opacity-80" href="/" aria-label="Dweloo">
             <LogoWithText
+              color='#1976D2'
               width="w-26"
               height="h-auto"
               fillColor="#1976D2"

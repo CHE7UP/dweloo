@@ -2,11 +2,12 @@ import CardOnBackround from "./components/CardOnBackround";
 import CardSection from "./components/CardSection";
 import FaqSection from "./components/FaqSection";
 import FaQuestionsSection from "./components/FaQuestionsSection";
+import DwelooFeatures from "./components/Features";
 import HeroSection from "./components/HeroSection";
 // import IconSectionGradient from "./components/IconSectionGradient";
 import ProcessInfographic from "./components/ProcessInfographic";
 import SingleImageFeature from "./components/SingleImageFeature";
-import VerticalTabs from "./components/VerticalTabs";
+// import VerticalTabs from "./components/VerticalTabs";
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
       <CardSection/>
       <ProcessInfographic/> 
       <SingleImageFeature/>
-      <VerticalTabs/>
+      <DwelooFeatures />
+      {/* <VerticalTabs/> */}
       {/* Uncomment the line below to include the IconSectionGradient component */}
 
       {/* <IconSectionGradient/> */}

@@ -6,40 +6,47 @@ const SingleImageFeature: React.FC = () => {
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       {/* Grid */}
-      <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
-      <div className="relative">
+      <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-24">
+        <div className="relative mx-auto md:mx-0 max-w-md md:max-w-full">
+        <div className="aspect-[3/4] w-full relative">
   <Image
-    className="max-w-full h-auto"
+    className="rounded-lg shadow-lg object-cover"
     src="/assets/img/landing-page-assets/dweloo-boy-on-the-floor-playing.webp"
-    alt="Features Image"
-    width={375}
-    height={812}
+    alt="Child playing on newly renovated floor"
+    fill
+    sizes="(max-width: 768px) 100vw, 50vw"
+    priority
   />
-  <div className="absolute inset-0 flex py-6 px-36 md:px-8 lg:px-10 xl:px-12">
+  <div className="absolute inset-0 flex flex-col items-center justify-center">
     <Logo
-      className="opacity-70" // Adjust transparency (0-100)
+      color='#fff'
+      className="opacity-60 w-1/2 h-1/2" 
     />
+    <p className="text-white opacity-60 mt-0 text-3xl font-bold tracking-wider text-center">
+      Home Improvement Made Easy.
+    </p>
   </div>
 </div>
+        </div>
         {/* End Col */}
-        <div className="mt-5 sm:mt-10 lg:mt-0">
+        <div className="mt-8 md:mt-0">
           <div className="space-y-6 sm:space-y-8">
             {/* Title */}
-            <div className="space-y-2 md:space-y-4">
+            <div className="space-y-3 md:space-y-4">
               <h2 className="font-bold text-3xl lg:text-4xl text-gray-800">
-                We tackle the challenges start-ups face
+              Stress-free from start to finish
               </h2>
-              <p className="text-gray-500">
-                Besides working with start-up enterprises as a partner for digitalization, we have built enterprise products for common pain points that we have encountered in various products and projects.
+              <p className="text-lg text-gray-600">
+              One point of contact, constant updates, and zero mysteries
               </p>
             </div>
             {/* End Title */}
             {/* List */}
-            <ul className="space-y-2 sm:space-y-4">
-              <li className="flex gap-x-3">
-                <span className="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600">
+            <ul className="space-y-4 sm:space-y-6">
+              <li className="flex gap-x-4">
+                <span className="mt-0.5 flex-shrink-0 size-6 flex justify-center items-center rounded-full bg-blue-50 text-blue-600">
                   <svg
-                    className="shrink-0 size-3.5"
+                    className="size-4"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -54,15 +61,18 @@ const SingleImageFeature: React.FC = () => {
                   </svg>
                 </span>
                 <div className="grow">
-                  <span className="text-sm sm:text-base text-gray-500">
-                    <span className="font-bold">Easy & fast</span> designing
+                  <span className="text-base font-medium text-gray-800">
+                    No more contractor ghosting
                   </span>
+                  <p className="mt-1 text-gray-600">
+                    We show up when we say we will—every time, no excuses
+                  </p>
                 </div>
               </li>
-              <li className="flex gap-x-3">
-                <span className="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600">
+              <li className="flex gap-x-4">
+                <span className="mt-0.5 flex-shrink-0 size-6 flex justify-center items-center rounded-full bg-blue-50 text-blue-600">
                   <svg
-                    className="shrink-0 size-3.5"
+                    className="size-4"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -77,15 +87,18 @@ const SingleImageFeature: React.FC = () => {
                   </svg>
                 </span>
                 <div className="grow">
-                  <span className="text-sm sm:text-base text-gray-500">
-                    Powerful <span className="font-bold">features</span>
+                  <span className="text-base font-medium text-gray-800">
+                    Zero budget surprises
                   </span>
+                  <p className="mt-1 text-gray-600">
+                    The price we quote is the price you pay—guaranteed
+                  </p>
                 </div>
               </li>
-              <li className="flex gap-x-3">
-                <span className="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600">
+              <li className="flex gap-x-4">
+                <span className="mt-0.5 flex-shrink-0 size-6 flex justify-center items-center rounded-full bg-blue-50 text-blue-600">
                   <svg
-                    className="shrink-0 size-3.5"
+                    className="size-4"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -100,9 +113,11 @@ const SingleImageFeature: React.FC = () => {
                   </svg>
                 </span>
                 <div className="grow">
-                  <span className="text-sm sm:text-base text-gray-500">
-                    User Experience Design
+                  <span className="text-base font-medium text-gray-800">
+                    Lifetime craftmanship guarantee
                   </span>
+                  <p className="mt-1 text-gray-600">
+                  Our promise is backed by a lifetime warranty guarantee                 </p>
                 </div>
               </li>
             </ul>
