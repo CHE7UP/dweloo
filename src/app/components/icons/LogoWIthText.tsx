@@ -23,7 +23,7 @@ const LogoWithText: React.FC<LogoWithTextProps> = ({
           className="inline-block align-middle"
         />
         <span 
-          className="absolute text-2xl font-bold text-gray-700 top-1/7 left-12 right-1 z-10 text-[30px]">
+          className="absolute text-2xl font-bold text-gray-700 top-1/11 left-10 right-1 z-10 text-[30px]">
           dweloo
         </span>
       </div>

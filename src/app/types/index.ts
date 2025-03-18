@@ -23,3 +23,15 @@ export interface WarrantyClaim {
     success: boolean;
     documentId: string | null;
   }
+
+  export interface CareerApplication {
+    id?: string;
+    fullName: string;
+    city: string;
+    phoneNumber: string;
+    message: string;
+    resumeUrl?: string;
+    status: 'new' | 'reviewed' | 'contacted' | 'rejected';
+    createdAt?: unknown;
+    updatedAt?: unknown;
+  }

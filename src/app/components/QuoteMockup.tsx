@@ -37,10 +37,9 @@ const QuoteMockup: React.FC = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <Ruler className="text-[#1976D2] w-3 h-3 mr-1" />
-          <span className="text-gray-700 text-[6.5px]">Area Coverage</span>
+          <span className="text-gray-700 font-bold text-[6.5px]">Area Coverage</span>
         </div>
-        <span className="text-gray-700 text-[6.5px]"> Hardwood</span>
-        <span className="text-gray-700 text-[6.5px]">1500 sq ft</span>
+        <span className="text-gray-700 font-bold text-[6.5px]">1500 sq ft</span>
       </div>
     </div>
   </div>

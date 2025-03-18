@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from './icons/Logo' // Import the Logo component we created earlier
 import Link from 'next/link';
+import SubscriptionForm from './forms/SubsicriptionForm';
 
 const FooterComponent: React.FC = () => {
   return (
@@ -40,7 +41,7 @@ const FooterComponent: React.FC = () => {
               <div className="mt-3 grid space-y-3">
                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">About Dweloo</a></p>
                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Home Improvement Blog</a></p>
-                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Careers</a> <span className="inline-block ms-1 text-xs bg-[#1E88E5] text-white py-1 px-2 rounded-lg">We&lsquo;re hiring</span></p>
+                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/careers">Careers</a> <span className="inline-block ms-1 text-xs bg-[#1E88E5] text-white py-1 px-2 rounded-lg">We&lsquo;re hiring</span></p>
                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Success Stories</a></p>
               </div>
             </div>
@@ -48,20 +49,7 @@ const FooterComponent: React.FC = () => {
 
             <div className="col-span-2">
   <h4 className="font-semibold text-gray-100">Get renovation inspiration</h4>
-  <form>
-    <div className="mt-4 flex flex-row items-center gap-3 bg-white rounded-lg p-2">
-      <div className="flex-grow">
-        <label htmlFor="hero-input" className="sr-only">Subscribe to our newsletter</label>
-        <input type="text" id="hero-input" name="hero-input" className="py-1 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Enter your email"/>
-      </div>
-      <a className="whitespace-nowrap p-2 inline-flex justify-center items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#1E88E5] text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
-        Get Inspired
-      </a>
-    </div>
-    <p className="mt-3 text-sm text-gray-400">
-      Home improvement tips and exclusive offers. Never spam.
-    </p>
-  </form>
+  <SubscriptionForm />
 </div>
             {/* <!-- End Col --> */}
           </div>
@@ -69,7 +57,7 @@ const FooterComponent: React.FC = () => {
 
           <div className="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
             <div className="flex justify-between items-center">
-              <p className="text-sm text-gray-400">
+              <p className="text-xs text-gray-400">
                 © 2025 Dweloo Home Improvement. All rights reserved.
               </p>
             </div>

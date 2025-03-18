@@ -1,9 +1,16 @@
 rules_version = '2';
-
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /warrantyClaims/{docId} {
-      allow read, write: if true;
+    // Common rule for all form collections
+    match /{formCollection}/{docId} {
+      allow write: if 
+        formCollection == "warrantyClaims" || 
+        formCollection == "careerApplications" ||
+        formCollection == "quoteForms" ||  // Example of another form type
+        formCollection == "subscriptions";  // Example of another form type
+      
+      // Restrict read access
+      allow read: if false;  // No public read access
     }
   }
 }
