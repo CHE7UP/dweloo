@@ -7,7 +7,8 @@ service cloud.firestore {
         formCollection == "warrantyClaims" || 
         formCollection == "careerApplications" ||
         formCollection == "quoteForms" ||  // Example of another form type
-        formCollection == "subscriptions";  // Example of another form type
+      formCollection == "subscriptions" ||// Example of another form type
+        formCollection == "flooringConsultations";  // Example of another form type
       
       // Restrict read access
       allow read: if false;  // No public read access

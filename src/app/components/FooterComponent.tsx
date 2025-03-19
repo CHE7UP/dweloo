@@ -10,11 +10,12 @@ const FooterComponent: React.FC = () => {
       <div className="mt-auto bg-gray-900 w-full">
         <div className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 lg:pt-20 mx-auto">
           {/* <!-- Grid --> */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5">
             <div className="col-span-full lg:col-span-1">
               <Link className="flex-none text-xl font-semibold text-white ml-[-15px] focus:outline-none focus:opacity-80" href="/" aria-label="Dweloo">
                 <Logo 
                 className="mb-2" 
+                color='#ffffff'
                 />
                 <span className="mt-2 block">Dweloo</span>
               </Link>

@@ -14,7 +14,6 @@ const navigationLinks = {
     { name: 'Projects', path: '/projects' },
     { name: 'About', path: '/about' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Reviews', path: '/reviews' },
     { name: 'Contact', path: '/contact' },
   ]
 };
@@ -47,7 +46,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
   <button 
     type="button" 
-    className="hidden lg:inline-flex relative py-2 px-3 items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border-2 border-[#B4D330] text-[#000000] bg-transparent hover:bg-[#B4D330] hover:text-black focus:outline-none focus:ring-2 focus:ring-[#B4D330] transition-all duration-300 ease-in-out before:absolute before:inset-0 before:rounded-xl before:border-2 before:border-[#B4D330] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
+    className="hidden lg:inline-flex relative py-2 px-3 items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border-2 border-[#0056B3] text-[#000000] bg-transparent hover:bg-[#B4D330] hover:text-black focus:outline-none focus:ring-2 focus:ring-[#B4D330] transition-all duration-300 ease-in-out before:absolute before:inset-0 before:rounded-xl before:border-2 before:border-[#B4D330] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
   >
     (206) 619-1091
   </button>
