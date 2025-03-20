@@ -1932,7 +1932,7 @@ const FlooringQuestionnaireForm: React.FC = () => {
         case 'number':
           return (
             <input
-              id={question.id}
+               id={question.id}
               type={question.type}
               className="w-full mt-4 p-3 border-2 border-gray-300 rounded-lg focus:border-[#1976D2] focus:ring-[#1976D2] text-black"
               value={(formData[question.id] || '') as string}
