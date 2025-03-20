@@ -1478,7 +1478,7 @@ import { FormData, Question, FirestoreHookResult } from './types';
 
 const FlooringQuestionnaireForm: React.FC = () => {
 
-  const firestoreHook = useFirestore('flooringConsultations');
+  const firestoreHook = useFirestore('instantQuotes');
   const { addDocument, error, success } = firestoreHook as unknown as FirestoreHookResult;
   
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -1835,7 +1835,7 @@ const FlooringQuestionnaireForm: React.FC = () => {
         <div className="p-4 border border-gray-200 rounded-lg bg-white">
           <h4 className="font-semibold text-gray-800">Have Questions?</h4>
           <p className="mt-2 text-sm text-gray-600">
-            For immediate assistance, call us at <a href="tel:5551234567" className="text-blue-600 font-semibold">(555) 123-4567</a> or email us at <a href="mailto:info@flooringpros.com" className="text-blue-600 font-semibold">info@flooringpros.com</a>
+            For immediate assistance, call us at <a href="tel:(206)619-2804" className="text-blue-600 font-semibold">(206) 619-2804</a> or email us at <a href="mailto:contact@dweloo.com" className="text-blue-600 font-semibold">info@flooringpros.com</a>
           </p>
         </div>
       </div>

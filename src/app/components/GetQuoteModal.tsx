@@ -28,14 +28,17 @@ const GetQuoteModal: React.FC<GetQuoteModalProps> = ({ isOpen, onClose }) => {
   return (
     <>
       {/* Modal Overlay - updated for backdrop blur effect */}
-      <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-30" onClick={onClose}>        {/* Modal Content - updated for glass effect */}
+      <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center transform transition-all z-30" onClick={onClose}>        {/* Modal Content - updated for glass effect */}
         <div 
-          className="bg-white bg-opacity-10 rounded-lg shadow-xl w-full max-w-md mx-4 overflow-hidden transform transition-all"
+          className="bg-white bg-opacity-15 rounded-lg shadow-xl w-full max-w-md mx-4 overflow-hidden transform transition-all"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="bg-blue-600 bg-opacity-80 backdrop-blur-sm px-4 py-3 flex justify-between items-center">
+          <div className="bg-[#1976D2] bg-opacity-80 backdrop-blur-sm px-4 py-3 flex justify-between items-center">
             <h3 className="text-lg font-semibold text-white">Get an Instant Quote</h3>
-            <button onClick={onClose} className="text-white hover:text-gray-200">
+            <button 
+              type="button"
+              aria-label="Close"
+            onClick={onClose} className="text-white hover:text-gray-200 cursor-pointer">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
