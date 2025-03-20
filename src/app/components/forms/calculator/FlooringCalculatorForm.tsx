@@ -1469,7 +1469,6 @@
 // };
 
 // export default FlooringQuestionnaireForm;
-
 'use client';
 
 import React, { useState, useRef } from 'react';
@@ -1481,9 +1480,6 @@ const FlooringQuestionnaireForm: React.FC = () => {
 
   const firestoreHook = useFirestore('flooringConsultations');
   const { addDocument, error, success } = firestoreHook as unknown as FirestoreHookResult;
-  
-  
-  // const { addDocument, error, success } = useFirestore('flooringConsultations') as FirestoreHookResult;
   
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [formData, setFormData] = useState<FormData>({});
@@ -1497,7 +1493,7 @@ const FlooringQuestionnaireForm: React.FC = () => {
     {
       id: 'flooringType',
       question: 'What type of flooring are you interested in?',
-      type: 'checkbox',
+      type: 'radio', // Changed from checkbox to radio
       options: [
         'Laminate',
         'Engineered Wood',
@@ -1511,12 +1507,16 @@ const FlooringQuestionnaireForm: React.FC = () => {
       id: 'squareFeet',
       question: 'How many square feet does your project cover?',
       type: 'number',
+      min: 100,  // Added minimum value
+      max: 20000, // Added maximum value
       isRequired: true
     },
     {
       id: 'roomCount',
       question: 'How many rooms will be included in this project?',
       type: 'number',
+      min: 1,  // Added minimum value
+      max: 30, // Added maximum value
       isRequired: true
     },
     {
@@ -1530,6 +1530,8 @@ const FlooringQuestionnaireForm: React.FC = () => {
       id: 'stairCount',
       question: 'How many stairs?',
       type: 'number',
+      min: 1,  // Added minimum value
+      max: 50, // Added maximum value
       isRequired: true,
       dependsOn: { id: 'hasStairs', value: 'Yes' }
     },
@@ -1544,6 +1546,8 @@ const FlooringQuestionnaireForm: React.FC = () => {
       id: 'toiletCount',
       question: 'How many toilets?',
       type: 'number',
+      min: 1,  // Added minimum value
+      max: 10, // Added maximum value
       isRequired: true,
       dependsOn: { id: 'toiletRemoval', value: 'Yes' }
     },
@@ -1794,27 +1798,67 @@ const FlooringQuestionnaireForm: React.FC = () => {
   const renderThankYouScreen = () => (
     <div className="p-6 bg-green-50 border-l-4 border-green-500 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-green-700">Thank You!</h2>
-      <p className="mt-3 text-green-600">
-        Your information has been submitted successfully. We&apos;ll be in touch soon with your personalized flooring quote and to schedule your FREE design consultation!
+      <p className="mt-3 text-gray-700">
+        Your information has been submitted successfully. We&apos;re excited to help you with your flooring project!
       </p>
-      <div className="mt-4 p-4 bg-white rounded-lg shadow-sm">
-        <h3 className="text-lg font-semibold text-gray-800">Your Estimated Quote</h3>
+      
+      <div className="mt-6 p-4 bg-white rounded-lg shadow-sm">
+        <h3 className="text-lg font-semibold text-gray-800">Your Estimated Installation Quote</h3>
         <InstantQuoteCalculator 
           formData={formData} 
           onQuoteCalculated={captureQuoteValue}
         />
-        <p className="mt-2 text-sm text-gray-600 font-semibold">* Quote is for materials only. Installation costs will be determined during your consultation.</p>
+        <p className="mt-2 text-sm text-gray-600 italic">
+          * This estimate covers labor and installation costs only. Materials can be purchased separately or through us at competitive prices.
+        </p>
       </div>
-      <button
-        onClick={() => {
-          setFormData({});
-          setCurrentQuestionIndex(0);
-          setFormSubmitted(false);
-        }}
-        className="mt-5 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-      >
-        Start a New Consultation
-      </button>
+      
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="p-4 border border-gray-200 rounded-lg bg-white">
+          <h4 className="font-semibold text-gray-800">Next Steps</h4>
+          <ul className="mt-2 space-y-2 text-sm text-gray-600">
+            <li className="flex items-start">
+              <span className="mr-2 text-green-500">✓</span>
+              <span>A flooring consultant will contact you at your preferred time to discuss your project in detail.</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-2 text-green-500">✓</span>
+              <span>We&apos;ll help you choose the right materials for your space and budget.</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-2 text-green-500">✓</span>
+              <span>You&apos;ll receive a final quote that includes both materials and installation.</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div className="p-4 border border-gray-200 rounded-lg bg-white">
+          <h4 className="font-semibold text-gray-800">Have Questions?</h4>
+          <p className="mt-2 text-sm text-gray-600">
+            For immediate assistance, call us at <a href="tel:5551234567" className="text-blue-600 font-semibold">(555) 123-4567</a> or email us at <a href="mailto:info@flooringpros.com" className="text-blue-600 font-semibold">info@flooringpros.com</a>
+          </p>
+        </div>
+      </div>
+      
+      <div className="mt-6 flex flex-col sm:flex-row gap-4">
+        <a
+         href="/schedule-consultation"
+          className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+        >
+          Schedule Your Consultation
+        </a>
+        
+        <a
+         href="/flooring-materials"
+         className="px-6 py-3 bg-white border border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+        >
+          Browse Flooring Materials
+        </a>
+      </div>
+      
+      <p className="mt-6 text-sm text-gray-500">
+        A copy of your quote has been sent to {formData.email}. If you don&apos;t see it, please check your spam folder.
+      </p>
     </div>
   );
 
@@ -1836,7 +1880,7 @@ const FlooringQuestionnaireForm: React.FC = () => {
                     key={i}
                     className={`px-4 py-3 border-2 rounded-lg cursor-pointer transition-all ${
                       isChecked 
-                        ? 'bg-blue-600 text-white border-blue-700' 
+                        ? 'bg-[#1976D2] text-white border-[#1976D2]' 
                         : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'
                     }`}
                   >
@@ -1860,7 +1904,7 @@ const FlooringQuestionnaireForm: React.FC = () => {
                   key={i}
                   className={`px-4 py-3 border-2 rounded-lg cursor-pointer transition-all ${
                     formData[question.id] === option 
-                      ? 'bg-blue-600 text-white border-blue-700' 
+                      ? 'bg-[#1976D2] text-white border-[#1976D2]' 
                       : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'
                   }`}
                 >
@@ -1878,20 +1922,36 @@ const FlooringQuestionnaireForm: React.FC = () => {
         case 'textarea':
           return (
             <textarea
-              className="w-full mt-4 p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-blue-500 text-black"
-              value={formData[question.id] || ''}
+              placeholder="Have any special requests or important details? Let us know here!"
+              className="w-full mt-4 p-3 border-2 border-gray-300 rounded-lg focus:border-[#1976D2] focus:ring-[#1976D2] text-black"
+              value={(formData[question.id] || '') as string}
               onChange={(e) => handleChange(question.id, e.target.value)}
               rows={4}
+            />
+          );
+        case 'number':
+          return (
+            <input
+              id={question.id}
+              type={question.type}
+              className="w-full mt-4 p-3 border-2 border-gray-300 rounded-lg focus:border-[#1976D2] focus:ring-[#1976D2] text-black"
+              value={(formData[question.id] || '') as string}
+              onChange={(e) => handleChange(question.id, e.target.value)}
+              min={question.min || 0}
+              max={question.max || undefined}
+              aria-label={question.label || `Enter ${question.id}`}
             />
           );
         default:
           return (
             <input
+              id={question.id}
               type={question.type}
-              className="w-full mt-4 p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-blue-500 text-black"
-              value={formData[question.id] || ''}
+              className="w-full mt-4 p-3 border-2 border-gray-300 rounded-lg focus:border-[#1976D2] focus:ring-[#1976D2] text-black"
+              value={(formData[question.id] || '') as string}
               onChange={(e) => handleChange(question.id, e.target.value)}
               pattern={question.pattern}
+              aria-label={question.label || `Enter ${question.id}`}
             />
           );
       }
@@ -1932,7 +1992,7 @@ const FlooringQuestionnaireForm: React.FC = () => {
             <button
               onClick={handleNext}
               disabled={!isCurrentQuestionValid()}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:pointer-events-none"
+              className="px-6 py-2 bg-[#1976D2] text-white rounded-lg hover:bg-[#1565C0] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1976D2] focus:ring-opacity-50 disabled:opacity-50 disabled:pointer-events-none"
             >
               Next
             </button>
@@ -1947,7 +2007,7 @@ const FlooringQuestionnaireForm: React.FC = () => {
         
         <div className="w-full bg-gray-200 h-2 mt-6 rounded-full overflow-hidden">
           <div 
-            className="bg-blue-600 h-full transition-all duration-500 ease-in-out"
+            className="bg-[#1976D2] h-full transition-all duration-500 ease-in-out"
             style={{ width: `${((index + 1) / questionnaire.length) * 100}%` }}
           ></div>
         </div>
@@ -1957,9 +2017,10 @@ const FlooringQuestionnaireForm: React.FC = () => {
 
   // Determine if we should show the quote calculator
   const shouldShowQuoteCalculator = (): boolean => {
+    // Modified to check for a single selected flooring type (string) instead of an array
     return (
       !!formData.squareFeet && 
-      (Array.isArray(formData.flooringType) && formData.flooringType.length > 0) && 
+      !!formData.flooringType && 
       !formSubmitted
     );
   };

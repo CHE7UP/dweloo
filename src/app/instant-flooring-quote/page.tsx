@@ -7,7 +7,7 @@ const FloringQuotePage: NextPage = () => {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
         <header className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">Professional Flooring Quote</h1>
+          <h1 className="text-4xl font-bold text-gray-800 mb-2">Get Instant Flooring Quote</h1>
           <p className="text-xl text-gray-600">Get an instant estimate for your flooring project</p>
         </header>
 
@@ -66,7 +66,7 @@ const FloringQuotePage: NextPage = () => {
               <h3 className="text-xl font-semibold mb-3">Our Guarantee</h3>
               <ul className="list-disc pl-5 space-y-2">
                 <li className="text-gray-700">5-year installation warranty</li>
-                <li className="text-gray-700">Manufacturer's warranty on all materials</li>
+                <li className="text-gray-700">Manufacturer&apos;s warranty on all materials</li>
                 <li className="text-gray-700">100% satisfaction guarantee</li>
                 <li className="text-gray-700">Clean-up and removal of all debris</li>
                 <li className="text-gray-700">Flexible financing options available</li>

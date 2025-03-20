@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => (
         <div className="mt-4 grid gap-3 w-full sm:inline-flex">
           <a
             className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-md font-bold rounded-lg border border-transparent bg-[#1976D2] text-white hover:border-[1px] hover:border-[#1E88E5] focus:outline-none focus:bg-white focus:color-[#B4D330] disabled:opacity-50 disabled:pointer-events-none"
-            href="/calculate-my-project"
+            href="/instant-flooring-quote"
           >
             <svg 
             viewBox="0 0 384 512" 

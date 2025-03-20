@@ -38,6 +38,9 @@ export interface FormData {
       value: string;
     };
     pattern?: string;
+    label?: string;
+    min?: number;
+    max?: number;
   }
   
   // Quote state interface
