@@ -530,11 +530,11 @@ const FlooringQuestionnaireForm: React.FC = () => {
           <h4 className="text-sm font-medium text-gray-700 mb-3">What&apos;s Next</h4>
           <ul className="space-y-2">
             <li className="flex items-center">
-              <ArrowRight className="text-blue-600 mr-2" size={14} />
+              <ArrowRight className="text-[#1976D2] mr-2" size={14} />
               <span className="text-sm text-gray-600">Consultant will contact you within 24 hours</span>
             </li>
             <li className="flex items-center">
-              <ArrowRight className="text-blue-600 mr-2" size={14} />
+              <ArrowRight className="text-[#1976D2] mr-2" size={14} />
               <span className="text-sm text-gray-600">Final quote after site assessment</span>
             </li>
           </ul>
@@ -544,11 +544,11 @@ const FlooringQuestionnaireForm: React.FC = () => {
           <h4 className="text-sm font-medium text-gray-700 mb-3">Need Help?</h4>
           <div className="flex flex-col space-y-2">
             <a href="tel:(206)619-2804" className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors">
-              <Phone className="text-blue-600 mr-2" size={14} />
+              <Phone className="text-[#1976D2] mr-2" size={14} />
               (206) 619-2804
             </a>
             <a href="mailto:info@dweloo.com" className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors">
-              <Mail className="text-blue-600 mr-2" size={14} />
+              <Mail className="text-[#1976D2] mr-2" size={14} />
               info@dweloo.com
             </a>
           </div>
@@ -556,23 +556,24 @@ const FlooringQuestionnaireForm: React.FC = () => {
       </div>
       
       {/* CTAs */}
-      <div className="mt-8 flex flex-col sm:flex-row gap-3">
-        <a
-          href="/schedule-consultation"
-          className="px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors text-center flex items-center justify-center"
-        >
-          <span>Schedule Consultation</span>
-          <Calendar className="ml-2" size={16} />
-        </a>
-        
-        <a
-          href="/color-selection"
-          className="px-4 py-2 bg-white border border-gray-300 text-gray-700 text-sm rounded hover:bg-gray-50 transition-colors text-center flex items-center justify-center"
-        >
-          <span>Browse Colors</span>
-          <Palette className="ml-2" size={16} />
-        </a>
-      </div>
+      <div className="mt-8 max-w-[350px]">
+  <div className="flex flex-row gap-2">
+    <a
+      href="/schedule-consultation-seattle"
+      className="flex-1 px-3 py-4 bg-[#1976D2] text-white text-md rounded hover:bg-blue-700 transition-colors text-center flex items-center justify-center"
+    >
+      <span>Schedule</span>
+      <Calendar className="ml-1" size={16} />
+    </a>
+    <a
+      href="/flooring-selection"
+      className="flex-1 px-3 py-4 bg-white border border-gray-300 text-gray-700 text-md rounded hover:bg-gray-50 transition-colors text-center flex items-center justify-center"
+    >
+      <span>Browse</span>
+      <Palette className="ml-1" size={16} />
+    </a>
+  </div>
+</div>
     </div>
   );
 
@@ -652,8 +653,7 @@ const FlooringQuestionnaireForm: React.FC = () => {
           return (
             <div>
               <input
-                id={question.id}
-                type={question.type}
+                 type={question.type}
                 className="w-full mt-4 p-3 border-2 border-gray-300 rounded-lg focus:border-[#1976D2] focus:ring-[#1976D2] text-black"
                 value={(formData[question.id] || '') as string}
                 onChange={(e) => handleChange(question.id, e.target.value)}

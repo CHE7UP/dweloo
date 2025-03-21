@@ -66,6 +66,7 @@ export interface QuoteState {
   preparation: number;
   removal: number;  // Make sure this exists for the calculator
   total: number;
+  totalMax: number;
 }
 
 // InstantQuoteCalculator props

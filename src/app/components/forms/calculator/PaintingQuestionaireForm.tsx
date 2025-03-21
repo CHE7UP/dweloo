@@ -572,23 +572,24 @@ const PaintingQuestionnaireForm: React.FC = () => {
       </div>
       
       {/* CTAs */}
-      <div className="mt-8 flex flex-col sm:flex-row gap-3">
-        <a
-          href="/schedule-consultation"
-          className="px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors text-center flex items-center justify-center"
-        >
-          <span>Schedule Consultation</span>
-          <Calendar className="ml-2" size={16} />
-        </a>
-        
-        <a
-          href="/color-selection"
-          className="px-4 py-2 bg-white border border-gray-300 text-gray-700 text-sm rounded hover:bg-gray-50 transition-colors text-center flex items-center justify-center"
-        >
-          <span>Browse Colors</span>
-          <Palette className="ml-2" size={16} />
-        </a>
-      </div>
+      <div className="mt-8 max-w-[350px]">
+  <div className="flex flex-row gap-2">
+    <a
+      href="/schedule-consultation-seattle"
+      className="flex-1 px-3 py-4 bg-[#1976D2] text-white text-md rounded hover:bg-blue-700 transition-colors text-center flex items-center justify-center"
+    >
+      <span>Schedule</span>
+      <Calendar className="ml-1" size={16} />
+    </a>
+    <a
+      href="/paint-selection"
+      className="flex-1 px-3 py-4 bg-white border border-gray-300 text-gray-700 text-md rounded hover:bg-gray-50 transition-colors text-center flex items-center justify-center"
+    >
+      <span>Browse</span>
+      <Palette className="ml-1" size={16} />
+    </a>
+  </div>
+</div>
     </div>
   );
 
@@ -668,8 +669,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
           return (
             <div>
               <input
-                id={question.id}
-                type={question.type}
+                 type={question.type}
                 className="w-full mt-4 p-3 border-2 border-gray-300 rounded-lg focus:border-[#1976D2] focus:ring-[#1976D2] text-black"
                 value={(formData[question.id] || '') as string}
                 onChange={(e) => handleChange(question.id, e.target.value)}
