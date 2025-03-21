@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
               color='#1976D2'
               width="w-26"
               height="h-auto"
-              fillColor="#1976D2"
+              fillColor="#F22F46"
             />
           </Link>
         </div>

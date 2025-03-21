@@ -80,6 +80,7 @@ const InstantQuotePaintingCalculator: React.FC<InstantQuoteCalculatorProps> = ({
     // Calculate totals
     const subtotal = materialsCost + laborCost;
     const total = subtotal + preparationCost + removalCost;
+    const totalMax = Math.round(total + total/5);
     
     // Update quote state
     setQuote({
@@ -88,7 +89,8 @@ const InstantQuotePaintingCalculator: React.FC<InstantQuoteCalculatorProps> = ({
       labor: laborCost,
       preparation: preparationCost,
       removal: removalCost,
-      total
+      total,
+      totalMax
     });
   }, [formData]);
 
@@ -115,7 +117,6 @@ const InstantQuotePaintingCalculator: React.FC<InstantQuoteCalculatorProps> = ({
     }).format(amount);
   };
 
-  const totalMax = Math.round(quote.total + quote.total/5);
   // If showQuote is false, don't render anything
   if (!showQuote) {
     return null;
@@ -126,7 +127,7 @@ const InstantQuotePaintingCalculator: React.FC<InstantQuoteCalculatorProps> = ({
       <div className="mt-4">
         <div className="flex justify-between items-center">
           <span className="text-gray-700 font-medium">Estimated Total:</span>
-          <span className="text-l font-bold text-[#1976D2]">{formatCurrency(quote.total)} - {formatCurrency(totalMax)}</span>
+          <span className="text-l font-bold text-[#1976D2]">{formatCurrency(quote.total)} - {formatCurrency(quote.totalMax)}</span>
         </div>
       </div>
     </div>
