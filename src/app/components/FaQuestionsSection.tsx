@@ -91,18 +91,7 @@ const FaQuestionsSection: React.FC = () => {
         <div>
           <p>You can schedule your virtual or in-person consultation for the date and time that works best for you.</p>
           <p className="mt-2">
-            <CtaLink href="/schedule-consultation">Book your free consultation</CtaLink> or call us at (555) 123-4567.
-          </p>
-        </div>
-      )
-    },
-    {
-      question: "How can I get free material samples?",
-      answer: (
-        <div>
-          <p>Dweloo offers free material samples delivered directly to your home so you can see and feel the quality before making a decision.</p>
-          <p className="mt-2">
-            <CtaLink href="/request-samples">Request your free samples</CtaLink> today and we&apos;ll ship them within 24 hours.
+            <CtaLink href="/schedule-appointment-seattle">Book your free consultation</CtaLink> or call us at (206) 619-2804.
           </p>
         </div>
       )
@@ -113,7 +102,7 @@ const FaQuestionsSection: React.FC = () => {
         <div>
           <p>Every home is unique, and we provide personalized quotes based on your specific needs and preferences.</p>
           <p className="mt-2">
-            <CtaLink href="/instant-quote">Get an instant quote</CtaLink> or schedule a <CtaLink href="/schedule-consultation">detailed consultation</CtaLink> for a comprehensive estimate.
+            <CtaLink href="/instant-flooring-quote">Get an instant quote</CtaLink> or schedule a <CtaLink href="/schedule-appointment-seattle">detailed consultation</CtaLink> for a comprehensive estimate.
           </p>
         </div>
       )
@@ -124,7 +113,7 @@ const FaQuestionsSection: React.FC = () => {
         <div>
           <p>Dweloo provides a wide range of home improvement services including flooring installation, kitchen remodeling, bathroom renovations, and more.</p>
           <p className="mt-2">
-            <CtaLink href="/services">Explore our services</CtaLink> or <CtaLink href="/schedule-consultation">book a consultation</CtaLink> to discuss your specific project needs.
+            <CtaLink href="/services">Explore our services</CtaLink> or <CtaLink href="/schedule-appointment-seattle">book a consultation</CtaLink> to discuss your specific project needs.
           </p>
         </div>
       )
@@ -146,7 +135,7 @@ const FaQuestionsSection: React.FC = () => {
         <div>
           <p>Our craftsmen are experienced professionals who undergo rigorous training and background checks. Each specializes in their respective field to ensure the highest quality work.</p>
           <p className="mt-2">
-            <CtaLink href="/about-our-team">Learn about our expert team</CtaLink> or <CtaLink href="/past-projects">view our portfolio</CtaLink> to see the quality of our work.
+            <CtaLink href="/about">Learn about our expert team</CtaLink> or <CtaLink href="/past-projects">view our portfolio</CtaLink> to see the quality of our work.
           </p>
         </div>
       )
