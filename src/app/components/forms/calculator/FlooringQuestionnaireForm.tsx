@@ -2,9 +2,9 @@
 
 import React, { useState, useRef } from 'react';
 import { useFirestore } from '@/hooks/useFirestore';
+import InstantQuoteCalculator from './InstantQuoteCalculator';
 import { FormData, Question, FirestoreHookResult } from './types';
-import InstantQuotePaintingCalculator from './InstantQuotePaintingCalc';
-import { Check, ArrowRight, Phone, Mail, Calendar, Palette } from 'lucide-react';
+import { ArrowRight, Calendar, Palette, Phone, Mail, Check } from 'lucide-react';
 
 // Validation utilities
 const validations = {
@@ -49,7 +49,7 @@ const formatPhoneNumber = (value: string): string => {
   }
 };
 
-const PaintingQuestionnaireForm: React.FC = () => {
+const FlooringQuestionnaireForm: React.FC = () => {
   const firestoreHook = useFirestore('instantQuotes');
   const { addDocument, error } = firestoreHook as unknown as FirestoreHookResult;
   
@@ -64,14 +64,15 @@ const PaintingQuestionnaireForm: React.FC = () => {
   // Define the questionnaire structure
   const questionnaire: Question[] = [
     {
-      id: 'paintingType',
-      question: 'What type of painting project are you interested in?',
-      type: 'checkbox',
+      id: 'flooringType',
+      question: 'What type of flooring are you interested in?',
+      type: 'radio', // Changed from checkbox to radio
       options: [
-        'Interior walls',
-        'Exterior walls',
-        'Ceilings',
-        'Trim/doors/windows',
+        'Laminate',
+        'Engineered Wood',
+        'Hardwood',
+        'Luxury Vinyl Plank/Tile',
+        'Carpet'
       ],
       isRequired: true
     },
@@ -79,50 +80,68 @@ const PaintingQuestionnaireForm: React.FC = () => {
       id: 'squareFeet',
       question: 'How many square feet does your project cover?',
       type: 'number',
-      min: 50,
-      max: 20000,
+      min: 100,  // Added minimum value
+      max: 20000, // Added maximum value
       isRequired: true
     },
     {
-      id: 'highAreas',
-      question: 'Will the project include any high or difficult-to-reach areas?',
+      id: 'roomCount',
+      question: 'How many rooms will be included in this project?',
+      type: 'number',
+      min: 1,  // Added minimum value
+      max: 30, // Added maximum value
+      isRequired: true
+    },
+    {
+      id: 'hasStairs',
+      question: 'Will the project include any stairs?',
       type: 'radio',
       options: ['Yes', 'No'],
       isRequired: true
     },
     {
-      id: 'highAreaDetails',
-      question: 'Please specify the type of high or difficult-to-reach areas:',
-      type: 'text',
+      id: 'stairCount',
+      question: 'How many stairs?',
+      type: 'number',
+      min: 1,  // Added minimum value
+      max: 50, // Added maximum value
       isRequired: true,
-      dependsOn: { id: 'highAreas', value: 'Yes' }
+      dependsOn: { id: 'hasStairs', value: 'Yes' }
     },
     {
-      id: 'furnitureMoving',
-      question: 'Do you need furniture or fixtures moved/covered during the project?',
+      id: 'toiletRemoval',
+      question: 'Will toilets need to be removed during installation?',
       type: 'radio',
       options: ['Yes', 'No'],
       isRequired: true
     },
     {
-      id: 'surfaceCondition',
-      question: 'What is the condition of the surfaces to be painted?',
-      type: 'checkbox',
+      id: 'toiletCount',
+      question: 'How many toilets?',
+      type: 'number',
+      min: 1,  // Added minimum value
+      max: 10, // Added maximum value
+      isRequired: true,
+      dependsOn: { id: 'toiletRemoval', value: 'Yes' }
+    },
+    {
+      id: 'removalNeeded',
+      question: 'Do you need removal and disposal of existing flooring?',
+      type: 'radio',
       options: [
-        'Peeling/cracked paint',
-        'Stains or water damage',
-        'Wallpaper to remove',
-        'Smooth/new drywall',
-        'Other'
+        'Yes',
+        'No, I\'ll handle removal',
+        'No, the area is already prepared'
       ],
       isRequired: true
     },
     {
-      id: 'surfaceConditionOther',
-      question: 'Please specify the other surface condition:',
-      type: 'text',
+      id: 'existingFlooringType',
+      question: 'What type of existing flooring will be removed?',
+      type: 'radio',
+      options: ['Carpet', 'Laminate', 'Hardwood', 'Tile', 'Vinyl', 'Other'],
       isRequired: true,
-      dependsOn: { id: 'surfaceCondition', value: ['Other'] }
+      dependsOn: { id: 'removalNeeded', value: 'Yes' }
     },
     {
       id: 'timeline',
@@ -138,13 +157,14 @@ const PaintingQuestionnaireForm: React.FC = () => {
     },
     {
       id: 'motivation',
-      question: 'What\'s the primary reason for your painting project?',
+      question: 'What\'s the primary reason for your new flooring?',
       type: 'radio',
       options: [
         'Moving into a new home',
         'Renovation/updating my space',
         'Preparing to sell my home',
         'New construction',
+        'Replacing damaged flooring'
       ],
       isRequired: true
     },
@@ -162,14 +182,14 @@ const PaintingQuestionnaireForm: React.FC = () => {
     },
     {
       id: 'specialConsiderations',
-      question: 'Do any of these apply to your project?',
+      question: 'Do any of these apply to your home?',
       type: 'checkbox',
       options: [
         'Pets in the home',
         'Children in the home',
-        'Need low-odor or eco-friendly paint',
-        'Specific color matching required',
-        'Historic home with special requirements'
+        'Need waterproof/water-resistant flooring',
+        'Concerned about sound between floors',
+        'Have floor heating system'
       ],
       isRequired: false
     },
@@ -206,7 +226,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
       isRequired: true
     },
     {
-      id: 'FullName',
+      id: 'fullName',
       question: 'What is your first and last name?',
       type: 'text',
       isRequired: true
@@ -234,7 +254,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
   // Helper function to provide placeholders for specific fields
   const getPlaceholder = (id: string): string => {
     switch (id) {
-      case 'FullName':
+      case 'fullName':
         return 'First and Last Name';
       case 'phone':
         return '(123) 456-7890';
@@ -257,19 +277,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
       }
       
       const dependencyValue = formData[question.dependsOn.id];
-      
-      // Handle both string and array dependencies
-      if (Array.isArray(question.dependsOn.value)) {
-        if (Array.isArray(dependencyValue)) {
-          // Check if any of the dependsOn values are in the form data array
-          const hasMatch = question.dependsOn.value.some(val => 
-            dependencyValue.includes(val)
-          );
-          if (hasMatch) {
-            return { question, index };
-          }
-        }
-      } else if (dependencyValue === question.dependsOn.value) {
+      if (dependencyValue === question.dependsOn.value) {
         return { question, index };
       }
       index++;
@@ -283,8 +291,8 @@ const PaintingQuestionnaireForm: React.FC = () => {
   const handleChange = (id: string, value: string) => {
     let formattedValue = value;
     let errorMessage = '';
-   
-     // Special handling for number inputs
+
+         // Special handling for number inputs
   if (question?.type === 'number') {
     // Parse the input as a number
     const numValue = parseFloat(value);
@@ -307,6 +315,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
       }
     }
   } 
+    
     // Apply formatting for phone numbers
     if (id === 'phone') {
       formattedValue = formatPhoneNumber(value);
@@ -315,7 +324,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
     // Validate fields when they're filled out
     if (value) {
       switch (id) {
-        case 'FullName':
+        case 'fullName':
           if (!validations.fullName(value)) {
             errorMessage = 'Please enter both your first and last name';
           }
@@ -371,6 +380,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
 
   // Get quote calculation from InstantQuoteCalculator
   const getQuoteAmount = (): number => {
+    // This will be populated by the ref in QuoteCalculator
     return calculatedQuoteRef.current || 0;
   };
 
@@ -398,7 +408,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
       if (value) {
         let errorMessage = '';
         switch (question.id) {
-          case 'FullName':
+          case 'fullName':
             if (!validations.fullName(value)) {
               errorMessage = 'Please enter both your first and last name';
             }
@@ -483,40 +493,14 @@ const PaintingQuestionnaireForm: React.FC = () => {
     let prevIndex = currentQuestionIndex - 1;
     while (prevIndex >= 0) {
       const prevQuestion = questionnaire[prevIndex];
-      if (!prevQuestion.dependsOn) {
+      if (!prevQuestion.dependsOn || formData[prevQuestion.dependsOn.id] === prevQuestion.dependsOn.value) {
         setCurrentQuestionIndex(prevIndex);
         break;
       }
-
-      // Handle both string and array dependencies
-      const dependencyValue = formData[prevQuestion.dependsOn.id];
-      if (Array.isArray(prevQuestion.dependsOn.value)) {
-        if (Array.isArray(dependencyValue)) {
-          const hasMatch = prevQuestion.dependsOn.value.some(val => 
-            dependencyValue.includes(val)
-          );
-          if (hasMatch) {
-            setCurrentQuestionIndex(prevIndex);
-            break;
-          }
-        }
-      } else if (dependencyValue === prevQuestion.dependsOn.value) {
-        setCurrentQuestionIndex(prevIndex);
-        break;
-      }
-      
       prevIndex--;
     }
   };
 
-  // Determine if we should show the quote calculator
-  const shouldShowQuoteCalculator = (): boolean => {
-    return Boolean(
-      !!formData.squareFeet && 
-      (formData.paintingType && Array.isArray(formData.paintingType) && formData.paintingType.length > 0) && 
-      !formSubmitted
-    );
-  };
 
   const renderThankYouScreen = () => (
     <div className="p-6 bg-white rounded-lg shadow-md">
@@ -530,7 +514,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
       <h2 className="text-xl font-semibold text-gray-800">Quote Ready</h2>
       
       <div className="mt-4">
-        <InstantQuotePaintingCalculator
+        <InstantQuoteCalculator
           formData={formData} 
           onQuoteCalculated={captureQuoteValue}
           showQuote={true} 
@@ -703,8 +687,8 @@ const PaintingQuestionnaireForm: React.FC = () => {
               {validationErrors[question.id] && (
                 <div className="mt-2 text-red-600 text-sm">{validationErrors[question.id]}</div>
               )}
-              {question.id === 'FullName' && (
-                <div className="mt-1 text-xs text-gray-500">Please your first and last name</div>
+              {question.id === 'fullName' && (
+                <div className="mt-1 text-xs text-gray-500">Please enter both your first and last name</div>
               )}
               {question.id === 'phone' && (
                 <div className="mt-1 text-xs text-gray-500">Format: (123) 456-7890</div>
@@ -726,7 +710,9 @@ const PaintingQuestionnaireForm: React.FC = () => {
           <h2 className="text-xl font-bold text-gray-800">
             {question.question}
           </h2>
-
+          {/* <div className="text-sm text-gray-500">
+            Question {index + 1} of {questionnaire.length}
+          </div> */}
         </div>
         
         {renderInputField()}
@@ -741,13 +727,14 @@ const PaintingQuestionnaireForm: React.FC = () => {
           >
             Back
           </button>
-        )}
+         )} 
           {isLastQuestion ? (
             <button
               onClick={handleSubmit}
-              disabled={isLoading}
-              className="w-full px-5 py-3 bg-blue-500 text-white cursor-pointer font-medium rounded-lg hover:bg-blue-700 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"            >
-              {isLoading ? 'Submitting...' : 'Get My Painting Quote'}
+              disabled={!isCurrentQuestionValid() || isLoading}
+              className="w-full px-5 py-3 bg-blue-500 text-white cursor-pointer font-medium rounded-lg hover:bg-blue-700 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+              {isLoading ? 'Submitting...' : 'Get Flooring Estimate'}
             </button>
           ) : (
             <button
@@ -762,7 +749,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
         
         {isLastQuestion && (
           <p className="mt-4 text-xs text-gray-500 text-center">
-            By submitting, you&apos;ll receive a personalized painting quote!
+            By submitting, you&apos;ll receive a personalized flooring quote!
           </p>
         )}
         
@@ -776,9 +763,17 @@ const PaintingQuestionnaireForm: React.FC = () => {
     );
   };
 
+  // Determine if we should show the quote calculator
+  const shouldShowQuoteCalculator = (): boolean => {
+    return Boolean(
+      !!formData.squareFeet && 
+      !!formData.flooringType && 
+      !formSubmitted
+    );
+  };
+
   return (
-    <div className="max-w-2xl mx-auto">
-      
+    <div className="max-w-2xl mx-auto">      
       {error && (
         <div className="p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded-md mb-6">
           {error}
@@ -789,15 +784,15 @@ const PaintingQuestionnaireForm: React.FC = () => {
       
       {shouldShowQuoteCalculator() && (
         <div className="mt-6">
-          <InstantQuotePaintingCalculator 
+          <InstantQuoteCalculator 
             formData={formData} 
             onQuoteCalculated={captureQuoteValue}
           />
-          <p className="mt-2 text-sm text-gray-600 font-semibold text-center">* Quote includes labor, materials, and preparation. Final price may vary based on site inspection.</p>
+          <p className="mt-2 text-sm text-gray-600 font-semibold text-center">* Labor and preparation only. Materials not included. Final price subject to site inspection</p>
         </div>
       )}
     </div>
   );
-}
+};
 
-export default PaintingQuestionnaireForm;
+export default FlooringQuestionnaireForm;

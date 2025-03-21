@@ -1,55 +1,65 @@
 import React from 'react';
-import { NextPage } from 'next';
 import PaintingQuestionnaireForm from '../components/forms/calculator/PaintingQuestionaireForm';
+import { NextPage } from 'next';
+import {Clock, DollarSign, Shield, Users} from "lucide-react";
 
 const PaintingQuotePage: NextPage = () => {
   return (
-    <div className="min-h-screen bg-white py-8">
+    <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
-        <header className="mb-1 text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">Instant Painting Quote</h1>
-          <p className="text-xl text-gray-600">Get an instant estimate for your painting project with Dweloo</p>
-        </header>
+      <header className="mb-1 text-center">
+      <h1 className="text-3xl font-bold text-gray-800 mb-2">Dweloo</h1>
+      <h2 className="text-xl font-medium text-gray-700">Instant Painting Quote</h2>
+      </header>
 
           <PaintingQuestionnaireForm />
         </div>
-
-
-
-        <div className="mt-12 bg-white rounded-lg shadow-lg p-6 md:p-8">
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <ol className="list-decimal pl-5 space-y-2">
-                <li className="text-gray-700">Simple and easy-to-use online form</li>
-                <li className="text-gray-700">Free in-home consultation with our flooring experts</li>
-                <li className="text-gray-700">Personalized recommendations based on your needs</li>
-                <li className="text-gray-700">Transparent pricing with no hidden fees</li>
-                <li className="text-gray-700">Professional installation by certified technicians</li>
-                <li className="text-gray-700">Final walkthrough to ensure your complete satisfaction</li>
-              </ol>
+        <div className="mt-12 bg-white rounded-lg p-6 md:p-8">
+        <div className="mb-6">
+          <h3 className="text-xl font-semibold text-gray-800 mb-6">Why Customers Choose Dweloo</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="flex items-start">
+              <div className="mr-4 mt-1 text-blue-600">
+                <Shield size={24} />
+              </div>
+              <div>
+                <h4 className="font-medium text-gray-800 mb-1">Lifetime Warranty Protection</h4>
+                <p className="text-gray-600 text-sm">Enjoy peace of mind with our industry-leading lifetime warranty on all workmanship.</p>
+              </div>
             </div>
             
-            {/* <div>
-              <h3 className="text-xl font-semibold mb-3">Our Guarantee</h3>
-              <ul className="list-disc pl-5 space-y-2">
-                <li className="text-gray-700">5-year installation warranty</li>
-                <li className="text-gray-700">Manufacturer&apos;s warranty on all materials</li>
-                <li className="text-gray-700">100% satisfaction guarantee</li>
-                <li className="text-gray-700">Clean-up and removal of all debris</li>
-                <li className="text-gray-700">Flexible financing options available</li>
-              </ul>
-            </div> */}
+            <div className="flex items-start">
+              <div className="mr-4 mt-1 text-blue-600">
+                <Users size={24} />
+              </div>
+              <div>
+                <h4 className="font-medium text-gray-800 mb-1">Expert Local Craftsmen</h4>
+                <p className="text-gray-600 text-sm">Our skilled installers live in your community and take pride in beautifying local homes.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <div className="mr-4 mt-1 text-blue-600">
+                <Clock size={24} />
+              </div>
+              <div>
+                <h4 className="font-medium text-gray-800 mb-1">Efficient Project Completion</h4>
+                <p className="text-gray-600 text-sm">We respect your time with streamlined workflows that deliver stunning results on schedule.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <div className="mr-4 mt-1 text-blue-600">
+                <DollarSign size={24} />
+              </div>
+              <div>
+                <h4 className="font-medium text-gray-800 mb-1">Crystal-Clear Pricing</h4>
+                <p className="text-gray-600 text-sm">No surprises or hidden fees—just honest, upfront quotes you can trust from start to finish.</p>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* <div className="mt-12 bg-blue-600 rounded-lg shadow-lg p-6 md:p-8 text-center text-white">
-          <h2 className="text-2xl font-bold mb-3">Ready to Transform Your Space?</h2>
-          <p className="text-lg mb-6">Complete the form above to get your instant quote or call us directly!</p>
-          <div className="inline-block bg-white text-blue-600 font-bold py-3 px-6 rounded-lg text-xl hover:bg-gray-100 transition duration-300">
-            Call Now: (555) 123-4567
-          </div>
-        </div> */}
+        </div>
       </div>
   );
 };
