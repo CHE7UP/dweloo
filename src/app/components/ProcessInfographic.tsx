@@ -31,12 +31,14 @@ const ProcessInfographic = () => {
             <React.Fragment key={index}>
               <div className="flex flex-col items-center text-center mb-8 md:mb-0">
                 <div className="w-48 h-48 mb-4 flex items-center justify-center relative">
+                  {/* Using next/image with correct loading strategy */}
                   <Image 
                     src={step.image} 
                     alt={step.text} 
                     fill
                     style={{ objectFit: 'contain' }}
-                    priority={index === 0}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 192px"
                   />
                 </div>
                 <p className="text-lg font-medium text-gray-800">{step.text}</p>

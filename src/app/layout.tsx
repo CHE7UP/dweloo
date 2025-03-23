@@ -1,26 +1,18 @@
 import "./globals.css";
-
-
-
 import type { Metadata } from "next";
-import { Geist} from "next/font/google";
+import { Geist } from "next/font/google";
 import PrelineScript from "./components/PrelineScript";
 import Navbar from "./components/Navbar";
 import FooterComponent from "./components/FooterComponent";
 import FootBar from "./components/FootBar";
 
-// const prompt = Prompt({
-//   subsets: ["latin"],
-//   weight: "700",
-//   display: "swap",
-// });
+// Configure Geist font with display strategy
 const geistSans = Geist({
   subsets: ["latin"],
+  display: "swap", // Add display strategy
+  adjustFontFallback: false, // Disable automatic fallback adjustment
+  preload: true, // Ensure proper preloading
 });
-// const geistMono = Geist_Mono({
-//   subsets: ["latin"],
-//   display: "swap",
-// });
 
 export const metadata: Metadata = {
   title: "Dweloo",
@@ -48,15 +40,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-       className={`  ${geistSans.className} antialiased`}
-      >
-        <Navbar/>
+    <html lang="en" className={geistSans.className}>
+      <body className="antialiased">
+        <Navbar />
         {children}
         <FootBar />
-        <FooterComponent/>
-        <PrelineScript/>
+        <FooterComponent />
+        <PrelineScript />
       </body>
     </html>
   );
