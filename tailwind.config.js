@@ -22,6 +22,16 @@ module.exports = {
           'prompt': ["var(--font-prompt)", 'system-ui'] // Added Prompt font
         },
       },
+      animation: {
+        'fadeout': 'fadeout 2s ease-in-out forwards',
+    },
+      keyframes: {
+        fadeout: {
+          '0%': { opacity: 1 },
+          '90%': { opacity: 0.6 },
+          '100%': { opacity: 0 },
+        },
+      },
     },
     plugins: [
       // eslint-disable-next-line @typescript-eslint/no-require-imports

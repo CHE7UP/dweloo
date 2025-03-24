@@ -36,19 +36,25 @@ const SubscriptionForm: React.FC = () => {
     setFormSubmitted(false);
   };
 
+    // This effect runs when formSubmitted and success change
+    React.useEffect(() => {
+      if (formSubmitted && success) {
+        const timer = setTimeout(() => {
+          handleReset();
+        }, 3000);
+        
+        return () => clearTimeout(timer);
+      }
+    }, [formSubmitted, success]);
+
   if (formSubmitted && success) {
+  
     return (
-      <div className="p-6 bg-green-50 border-l-4 border-green-500 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-green-700">Subscription Successful!</h2>
-        <p className="mt-3 text-green-600">
-          Thank you for subscribing to our newsletter.
-        </p>        
-        <button
-          onClick={handleReset}
-          className="mt-5 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-        >
-          Subscribe Another Email
-        </button>
+      <div className="p-4 bg-white border-l-2 border-[#1976D2] rounded shadow-sm animate-fade-out">
+        <h3 className="text-lg font-medium text-[#1976D2]">Subscription confirmed</h3>
+        <p className="mt-1 text-sm text-gray-600">
+          Home inspiration coming your way soon.
+        </p>
       </div>
     );
   }
