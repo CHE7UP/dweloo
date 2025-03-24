@@ -5,6 +5,7 @@ import { useFirestore } from '@/hooks/useFirestore';
 import InstantQuoteCalculator from './InstantQuoteCalculator';
 import { FormData, Question, FirestoreHookResult } from './types';
 import { ArrowRight, Calendar, Palette, Phone, Mail, Check } from 'lucide-react';
+import Link from 'next/link';
 
 // Validation utilities
 const validations = {
@@ -565,13 +566,13 @@ const FlooringQuestionnaireForm: React.FC = () => {
       <span>Schedule</span>
       <Calendar className="ml-1" size={16} />
     </a>
-    <a
-      href="/flooring-selection"
+    <Link
+      href="/"
       className="flex-1 px-3 py-4 bg-white border border-gray-300 text-gray-700 text-md rounded hover:bg-gray-50 transition-colors text-center flex items-center justify-center"
     >
       <span>Browse</span>
       <Palette className="ml-1" size={16} />
-    </a>
+    </Link>
   </div>
 </div>
     </div>

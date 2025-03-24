@@ -1,4 +1,7 @@
 // /book-consultation/page.tsx
+'use client'
+
+
 import React from 'react';
 
 export default function BookConsultation() {
@@ -13,7 +16,6 @@ export default function BookConsultation() {
         </p>
         <div className="mt-4 w-24 h-1 bg-[#1976D2] mx-auto rounded"></div>
       </div>
-
       <div className="w-full bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="border-b border-gray-200 bg-[#1976D2] text-white py-3 px-4">
           <h2 className="text-lg font-medium">Select a Time</h2>
@@ -29,7 +31,6 @@ export default function BookConsultation() {
           ></iframe>
         </div>
       </div>
-
       <div className="mt-10 text-center max-w-2xl mx-auto">
         <h3 className="text-xl font-medium text-gray-900 mb-3">
           What to Expect

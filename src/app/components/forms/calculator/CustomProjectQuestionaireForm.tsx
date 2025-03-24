@@ -1,11 +1,9 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useFirestore } from '@/hooks/useFirestore';
 import { FormData, Question, FirestoreHookResult } from './types';
-import InstantQuotePaintingCalculator from './InstantQuotePaintingCalc';
-import { Check, ArrowRight, Phone, Mail, Calendar, Palette } from 'lucide-react';
-import Link from 'next/link';
+import { ArrowRight, Calendar, Phone, Mail, Check } from 'lucide-react';
 
 // Validation utilities
 const validations = {
@@ -50,7 +48,7 @@ const formatPhoneNumber = (value: string): string => {
   }
 };
 
-const PaintingQuestionnaireForm: React.FC = () => {
+const FlooringQuestionnaireForm: React.FC = () => {
   const firestoreHook = useFirestore('instantQuotes');
   const { addDocument, error } = firestoreHook as unknown as FirestoreHookResult;
   
@@ -59,134 +57,75 @@ const PaintingQuestionnaireForm: React.FC = () => {
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
-  // Reference to store the calculated quote amount
-  const calculatedQuoteRef = useRef<number | null>(null);
 
   // Define the questionnaire structure
   const questionnaire: Question[] = [
     {
-      id: 'paintingType',
-      question: 'What type of painting project are you interested in?',
-      type: 'checkbox',
-      options: [
-        'Interior walls',
-        'Exterior walls',
-        'Ceilings',
-        'Trim/doors/windows',
-      ],
-      isRequired: true
-    },
-    {
-      id: 'squareFeet',
-      question: 'How many square feet does your project cover?',
-      type: 'number',
-      min: 50,
-      max: 20000,
-      isRequired: true
-    },
-    {
-      id: 'highAreas',
-      question: 'Will the project include any high or difficult-to-reach areas?',
+      id: 'projectScope',
+      question: 'What type of renovation project are you planning?',
       type: 'radio',
-      options: ['Yes', 'No'],
-      isRequired: true
-    },
-    {
-      id: 'highAreaDetails',
-      question: 'Please specify the type of high or difficult-to-reach areas:',
-      type: 'text',
-      isRequired: true,
-      dependsOn: { id: 'highAreas', value: 'Yes' }
-    },
-    {
-      id: 'furnitureMoving',
-      question: 'Do you need furniture or fixtures moved/covered during the project?',
-      type: 'radio',
-      options: ['Yes', 'No'],
-      isRequired: true
-    },
-    {
-      id: 'surfaceCondition',
-      question: 'What is the condition of the surfaces to be painted?',
-      type: 'checkbox',
       options: [
-        'Peeling/cracked paint',
-        'Stains or water damage',
-        'Wallpaper to remove',
-        'Smooth/new drywall',
+        'Whole house renovation',
+        'Kitchen renovation',
+        'Bathroom renovation',
+        'Flooring installation',
+        'Painting',
         'Other'
       ],
       isRequired: true
     },
     {
-      id: 'surfaceConditionOther',
-      question: 'Please specify the other surface condition:',
+      id: 'projectScopeOther',
+      question: 'Please specify your renovation project:',
       type: 'text',
       isRequired: true,
-      dependsOn: { id: 'surfaceCondition', value: ['Other'] }
+      dependsOn: { id: 'projectScope', value: 'Other' }
+    },
+    {
+      id: 'homeAge',
+      question: 'How old is your home?',
+      type: 'radio',
+      options: [
+        'Less than 5 years',
+        '5-15 years',
+        '16-30 years',
+        '31-50 years',
+        '51-100 years',
+        'Over 100 years'
+      ],
+      isRequired: true
+    },
+    {
+      id: 'renovationReason',
+      question: 'What is the primary reason for your renovation?',
+      type: 'radio',
+      options: [
+        'Update appearance/style',
+        'Fix damage/disrepair',
+        'Increase home value for sale',
+        'New home purchase renovation',
+        'Accessibility modifications'
+      ],
+      isRequired: true
     },
     {
       id: 'timeline',
-      question: 'When would you like to have this project completed?',
+      question: 'When would you like to start this renovation project?',
       type: 'radio',
       options: [
-        'As soon as possible (within 7 days)',
-        'Within 30 days',
-        'Within 60 days',
-        'Just exploring options for now'
+        'As soon as possible',
+        'Within 1 month',
+        'Within 2-3 months',
+        'Within 4-6 months',
+        'More than 6 months from now'
       ],
       isRequired: true
     },
     {
-      id: 'motivation',
-      question: 'What\'s the primary reason for your painting project?',
-      type: 'radio',
-      options: [
-        'Moving into a new home',
-        'Renovation/updating my space',
-        'Preparing to sell my home',
-        'New construction',
-      ],
-      isRequired: true
-    },
-    {
-      id: 'decisionStage',
-      question: 'Where are you in your decision process?',
-      type: 'radio',
-      options: [
-        'Just starting to research',
-        'Getting quotes from multiple companies',
-        'Ready to choose a provider',
-        'Have a firm budget and timeline in place'
-      ],
-      isRequired: true
-    },
-    {
-      id: 'specialConsiderations',
-      question: 'Do any of these apply to your project?',
-      type: 'checkbox',
-      options: [
-        'Pets in the home',
-        'Children in the home',
-        'Need low-odor or eco-friendly paint',
-        'Specific color matching required',
-        'Historic home with special requirements'
-      ],
+      id: 'additionalDetails',
+      question: 'Please provide any additional details or specific requirements for your renovation:',
+      type: 'textarea',
       isRequired: false
-    },
-    {
-      id: 'referralSource',
-      question: 'How did you hear about us?',
-      type: 'radio',
-      options: [
-        'Friend or family recommendation',
-        'Google search',
-        'Social media',
-        'Previous customer',
-        'Advertisement',
-        'Other'
-      ],
-      isRequired: true
     },
     {
       id: 'zipCode',
@@ -196,46 +135,41 @@ const PaintingQuestionnaireForm: React.FC = () => {
       pattern: '[0-9]{5}'
     },
     {
-      id: 'contactTime',
-      question: 'When is the best time to contact you?',
-      type: 'radio',
-      options: [
-        'Morning (8am-12pm)',
-        'Afternoon (12pm-5pm)',
-        'Evening (5pm-8pm)'
-      ],
-      isRequired: true
-    },
-    {
-      id: 'FullName',
-      question: 'What is your first and last name?',
+      id: 'fullName',
+      question: 'What is your full name?',
       type: 'text',
       isRequired: true
     },
     {
-      id: 'phone',
+      id: 'phoneNumber',
       question: 'What is your phone number?',
       type: 'tel',
       isRequired: true
     },
     {
       id: 'email',
-      question: 'What email address should we send your quote to?',
+      question: 'What is your email address?',
       type: 'email',
       isRequired: true
     },
     {
-      id: 'additionalComments',
-      question: 'Is there anything else we should know about your project?',
-      type: 'textarea',
-      isRequired: false
+      id: 'bestTimeToContact',
+      question: 'What is the best time to contact you?',
+      type: 'checkbox',
+      options: [
+        'Weekday mornings (8am-12pm)',
+        'Weekday afternoons (12pm-5pm)',
+        'Weekday evenings (5pm-8pm)',
+        'Weekends'
+      ],
+      isRequired: true
     }
   ];
 
   // Helper function to provide placeholders for specific fields
   const getPlaceholder = (id: string): string => {
     switch (id) {
-      case 'FullName':
+      case 'fullName':
         return 'First and Last Name';
       case 'phone':
         return '(123) 456-7890';
@@ -258,19 +192,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
       }
       
       const dependencyValue = formData[question.dependsOn.id];
-      
-      // Handle both string and array dependencies
-      if (Array.isArray(question.dependsOn.value)) {
-        if (Array.isArray(dependencyValue)) {
-          // Check if any of the dependsOn values are in the form data array
-          const hasMatch = question.dependsOn.value.some(val => 
-            dependencyValue.includes(val)
-          );
-          if (hasMatch) {
-            return { question, index };
-          }
-        }
-      } else if (dependencyValue === question.dependsOn.value) {
+      if (dependencyValue === question.dependsOn.value) {
         return { question, index };
       }
       index++;
@@ -284,30 +206,31 @@ const PaintingQuestionnaireForm: React.FC = () => {
   const handleChange = (id: string, value: string) => {
     let formattedValue = value;
     let errorMessage = '';
-   
-     // Special handling for number inputs
-  if (question?.type === 'number') {
-    // Parse the input as a number
-    const numValue = parseFloat(value);
-    
-    // Validate number input
-    if (value !== '' && (isNaN(numValue) || numValue < 0 || numValue > 1000000)) {
-      errorMessage = numValue < 0 
-        ? 'Value cannot be negative' 
-        : numValue > 1000000 
-          ? 'Value cannot exceed 1,000,000' 
-          : 'Please enter a valid number';
+
+    // Special handling for number inputs
+    if (question?.type === 'number') {
+      // Parse the input as a number
+      const numValue = parseFloat(value);
       
-      // If the value is invalid, don't update formData (keep previous value)
-      if (numValue < 0 || numValue > 1000000) {
-        setValidationErrors(prev => ({
-          ...prev,
-          [id]: errorMessage
-        }));
-        return;
+      // Validate number input
+      if (value !== '' && (isNaN(numValue) || numValue < 0 || numValue > 1000000)) {
+        errorMessage = numValue < 0 
+          ? 'Value cannot be negative' 
+          : numValue > 1000000 
+            ? 'Value cannot exceed 1,000,000' 
+            : 'Please enter a valid number';
+        
+        // If the value is invalid, don't update formData (keep previous value)
+        if (numValue < 0 || numValue > 1000000) {
+          setValidationErrors(prev => ({
+            ...prev,
+            [id]: errorMessage
+          }));
+          return;
+        }
       }
-    }
-  } 
+    } 
+    
     // Apply formatting for phone numbers
     if (id === 'phone') {
       formattedValue = formatPhoneNumber(value);
@@ -316,7 +239,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
     // Validate fields when they're filled out
     if (value) {
       switch (id) {
-        case 'FullName':
+        case 'fullName':
           if (!validations.fullName(value)) {
             errorMessage = 'Please enter both your first and last name';
           }
@@ -370,16 +293,6 @@ const PaintingQuestionnaireForm: React.FC = () => {
     });
   };
 
-  // Get quote calculation from InstantQuoteCalculator
-  const getQuoteAmount = (): number => {
-    return calculatedQuoteRef.current || 0;
-  };
-
-  // Function to capture the quote value
-  const captureQuoteValue = (quoteValue: number) => {
-    calculatedQuoteRef.current = quoteValue;
-  };
-
   // Handle form submission
   const handleSubmit = async () => {
     // Validate only the current question or last question
@@ -399,7 +312,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
       if (value) {
         let errorMessage = '';
         switch (question.id) {
-          case 'FullName':
+          case 'fullName':
             if (!validations.fullName(value)) {
               errorMessage = 'Please enter both your first and last name';
             }
@@ -435,22 +348,14 @@ const PaintingQuestionnaireForm: React.FC = () => {
     setIsLoading(true);
     
     try {
-      // Get the final quote amount
-      const quoteAmount = getQuoteAmount();
-      
-      // Add the quote amount to the form data
-      const finalFormData = {
+      // Submit the form data
+      await addDocument({
         ...formData,
-        quoteAmount: quoteAmount,
         submittedAt: new Date()
-      };
-      
-      // Submit the form data with the quote amount
-      await addDocument(finalFormData);
+      });
       setFormSubmitted(true);
     } catch (err) {
       console.error('Error submitting form:', err);
-      // You might want to display this error to the user
     } finally {
       setIsLoading(false);
     }
@@ -484,39 +389,12 @@ const PaintingQuestionnaireForm: React.FC = () => {
     let prevIndex = currentQuestionIndex - 1;
     while (prevIndex >= 0) {
       const prevQuestion = questionnaire[prevIndex];
-      if (!prevQuestion.dependsOn) {
+      if (!prevQuestion.dependsOn || formData[prevQuestion.dependsOn.id] === prevQuestion.dependsOn.value) {
         setCurrentQuestionIndex(prevIndex);
         break;
       }
-
-      // Handle both string and array dependencies
-      const dependencyValue = formData[prevQuestion.dependsOn.id];
-      if (Array.isArray(prevQuestion.dependsOn.value)) {
-        if (Array.isArray(dependencyValue)) {
-          const hasMatch = prevQuestion.dependsOn.value.some(val => 
-            dependencyValue.includes(val)
-          );
-          if (hasMatch) {
-            setCurrentQuestionIndex(prevIndex);
-            break;
-          }
-        }
-      } else if (dependencyValue === prevQuestion.dependsOn.value) {
-        setCurrentQuestionIndex(prevIndex);
-        break;
-      }
-      
       prevIndex--;
     }
-  };
-
-  // Determine if we should show the quote calculator
-  const shouldShowQuoteCalculator = (): boolean => {
-    return Boolean(
-      !!formData.squareFeet && 
-      (formData.paintingType && Array.isArray(formData.paintingType) && formData.paintingType.length > 0) && 
-      !formSubmitted
-    );
   };
 
   const renderThankYouScreen = () => (
@@ -524,22 +402,14 @@ const PaintingQuestionnaireForm: React.FC = () => {
       {/* Success Banner */}
       <div className="mb-6 bg-green-50 py-3 px-4 rounded-lg border border-green-100 flex items-center justify-center">
         <Check className="text-green-500 mr-2" size={18} />
-        <p className="text-green-700 text-sm font-medium">Quote sent to {formData.email}</p>
+        <p className="text-green-700 text-sm font-medium">Request received! Confirmation sent to {formData.email}</p>
       </div>
       
-      {/* Quote Section */}
-      <h2 className="text-xl font-semibold text-gray-800">Quote Ready</h2>
-      
-      <div className="mt-4">
-        <InstantQuotePaintingCalculator
-          formData={formData} 
-          onQuoteCalculated={captureQuoteValue}
-          showQuote={true} 
-        />
-        <p className="mt-1 text-xs text-gray-500">
-          *Estimate based on provided information. Final cost may vary.
-        </p>
-      </div>
+      {/* Thank You Message */}
+      <h2 className="text-xl font-semibold text-gray-800 mb-4">Thank You for Your Interest!</h2>
+      <p className="text-gray-600">
+        We&apos;ve received your flooring project details and our specialist will contact you within 24 hours to discuss your needs and provide a personalized quote.
+      </p>
         
       {/* What's Next & Help Section */}
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -547,12 +417,16 @@ const PaintingQuestionnaireForm: React.FC = () => {
           <h4 className="text-sm font-medium text-gray-700 mb-3">What&apos;s Next</h4>
           <ul className="space-y-2">
             <li className="flex items-center">
-              <ArrowRight className="text-blue-600 mr-2" size={14} />
-              <span className="text-sm text-gray-600">Consultant will contact you within 24 hours</span>
+              <ArrowRight className="text-[#1976D2] mr-2" size={14} />
+              <span className="text-sm text-gray-600">Specialist will contact you within 24 hours</span>
             </li>
             <li className="flex items-center">
-              <ArrowRight className="text-blue-600 mr-2" size={14} />
-              <span className="text-sm text-gray-600">Final quote after site assessment</span>
+              <ArrowRight className="text-[#1976D2] mr-2" size={14} />
+              <span className="text-sm text-gray-600">On-site assessment will be scheduled</span>
+            </li>
+            <li className="flex items-center">
+              <ArrowRight className="text-[#1976D2] mr-2" size={14} />
+              <span className="text-sm text-gray-600">Detailed quote will be provided after assessment</span>
             </li>
           </ul>
         </div>
@@ -561,36 +435,27 @@ const PaintingQuestionnaireForm: React.FC = () => {
           <h4 className="text-sm font-medium text-gray-700 mb-3">Need Help?</h4>
           <div className="flex flex-col space-y-2">
             <a href="tel:(206)619-2804" className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors">
-              <Phone className="text-blue-600 mr-2" size={14} />
+              <Phone className="text-[#1976D2] mr-2" size={14} />
               (206) 619-2804
             </a>
             <a href="mailto:info@dweloo.com" className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors">
-              <Mail className="text-blue-600 mr-2" size={14} />
+              <Mail className="text-[#1976D2] mr-2" size={14} />
               info@dweloo.com
             </a>
           </div>
         </div>
       </div>
       
-      {/* CTAs */}
+      {/* CTA */}
       <div className="mt-8 max-w-[350px]">
-  <div className="flex flex-row gap-2">
-    <a
-      href="/schedule-consultation-seattle"
-      className="flex-1 px-3 py-4 bg-[#1976D2] text-white text-md rounded hover:bg-blue-700 transition-colors text-center flex items-center justify-center"
-    >
-      <span>Schedule</span>
-      <Calendar className="ml-1" size={16} />
-    </a>
-    <Link
-      href="/"
-      className="flex-1 px-3 py-4 bg-white border border-gray-300 text-gray-700 text-md rounded hover:bg-gray-50 transition-colors text-center flex items-center justify-center"
-    >
-      <span>Browse</span>
-      <Palette className="ml-1" size={16} />
-    </Link>
-  </div>
-</div>
+        <a
+          href="/schedule-consultation-seattle"
+          className="w-full px-4 py-3 bg-[#1976D2] text-white text-md rounded hover:bg-blue-700 transition-colors text-center flex items-center justify-center"
+        >
+          <span>Schedule Consultation</span>
+          <Calendar className="ml-2" size={16} />
+        </a>
+      </div>
     </div>
   );
 
@@ -670,7 +535,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
           return (
             <div>
               <input
-                 type={question.type}
+                type={question.type}
                 className="w-full mt-4 p-3 border-2 border-gray-300 rounded-lg focus:border-[#1976D2] focus:ring-[#1976D2] text-black"
                 value={(formData[question.id] || '') as string}
                 onChange={(e) => handleChange(question.id, e.target.value)}
@@ -704,8 +569,8 @@ const PaintingQuestionnaireForm: React.FC = () => {
               {validationErrors[question.id] && (
                 <div className="mt-2 text-red-600 text-sm">{validationErrors[question.id]}</div>
               )}
-              {question.id === 'FullName' && (
-                <div className="mt-1 text-xs text-gray-500">Please your first and last name</div>
+              {question.id === 'fullName' && (
+                <div className="mt-1 text-xs text-gray-500">Please enter both your first and last name</div>
               )}
               {question.id === 'phone' && (
                 <div className="mt-1 text-xs text-gray-500">Format: (123) 456-7890</div>
@@ -727,28 +592,26 @@ const PaintingQuestionnaireForm: React.FC = () => {
           <h2 className="text-xl font-bold text-gray-800">
             {question.question}
           </h2>
-
         </div>
         
         {renderInputField()}
         
         <div className="flex justify-between mt-8">
-        {!isLastQuestion && (
-          <button
-            onClick={handlePrevious}
-            className={`px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors ${
-              currentQuestionIndex === 0 ? 'invisible' : ''
-            }`}
-          >
-            Back
-          </button>
-        )}
+          {currentQuestionIndex > 0 && (
+            <button
+              onClick={handlePrevious}
+              className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+            >
+              Back
+            </button>
+          )}
           {isLastQuestion ? (
             <button
               onClick={handleSubmit}
-              disabled={isLoading}
-              className="w-full px-5 py-3 bg-blue-500 text-white cursor-pointer font-medium rounded-lg hover:bg-blue-700 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"            >
-              {isLoading ? 'Submitting...' : 'Get My Painting Quote'}
+              disabled={isLoading || !isCurrentQuestionValid()}
+              className="w-full px-5 py-3 bg-[#1976D2] text-white cursor-pointer font-medium rounded-lg hover:bg-blue-700 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isLoading ? 'Submitting...' : 'Get Custom Quote'}
             </button>
           ) : (
             <button
@@ -763,7 +626,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
         
         {isLastQuestion && (
           <p className="mt-4 text-xs text-gray-500 text-center">
-            By submitting, you&apos;ll receive a personalized painting quote!
+            By submitting, you agree to be contacted by our home specialists.
           </p>
         )}
         
@@ -779,7 +642,6 @@ const PaintingQuestionnaireForm: React.FC = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
-      
       {error && (
         <div className="p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded-md mb-6">
           {error}
@@ -787,18 +649,8 @@ const PaintingQuestionnaireForm: React.FC = () => {
       )}
       
       {formSubmitted ? renderThankYouScreen() : renderQuestionForm()}
-      
-      {shouldShowQuoteCalculator() && (
-        <div className="mt-6">
-          <InstantQuotePaintingCalculator 
-            formData={formData} 
-            onQuoteCalculated={captureQuoteValue}
-          />
-          <p className="mt-2 text-sm text-gray-600 font-semibold text-center">* Quote includes labor, materials, and preparation. Final price may vary based on site inspection.</p>
-        </div>
-      )}
     </div>
   );
-}
+};
 
-export default PaintingQuestionnaireForm;
+export default FlooringQuestionnaireForm;

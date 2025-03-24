@@ -150,7 +150,7 @@ const GetQuoteModal: React.FC<GetQuoteModalProps> = ({ isOpen, onClose }) => {
             />
             
             <ServiceButton
-              href="/instant-trimming-quote"
+              href="/instant-trims-quote"
               icon={
                     <svg
                       width="24"

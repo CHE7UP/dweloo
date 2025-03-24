@@ -91,7 +91,7 @@ const FaQuestionsSection: React.FC = () => {
         <div>
           <p>You can schedule your virtual or in-person consultation for the date and time that works best for you.</p>
           <p className="mt-2">
-            <CtaLink href="/schedule-appointment-seattle">Book your free consultation</CtaLink> or call us at (206) 619-2804.
+            <CtaLink href="/schedule-consultation-seattle">Book your free consultation</CtaLink> or call us at (206) 619-2804.
           </p>
         </div>
       )

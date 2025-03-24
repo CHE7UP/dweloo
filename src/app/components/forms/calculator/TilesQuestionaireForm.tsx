@@ -3,8 +3,8 @@
 import React, { useState, useRef } from 'react';
 import { useFirestore } from '@/hooks/useFirestore';
 import { FormData, Question, FirestoreHookResult } from './types';
-import InstantQuotePaintingCalculator from './InstantQuotePaintingCalc';
 import { Check, ArrowRight, Phone, Mail, Calendar, Palette } from 'lucide-react';
+import InstantQuoteTilesCalculator from './InstantTilingCalcualtor';
 import Link from 'next/link';
 
 // Validation utilities
@@ -50,7 +50,7 @@ const formatPhoneNumber = (value: string): string => {
   }
 };
 
-const PaintingQuestionnaireForm: React.FC = () => {
+const TilesQuestionnaireForm: React.FC = () => {
   const firestoreHook = useFirestore('instantQuotes');
   const { addDocument, error } = firestoreHook as unknown as FirestoreHookResult;
   
@@ -65,72 +65,100 @@ const PaintingQuestionnaireForm: React.FC = () => {
   // Define the questionnaire structure
   const questionnaire: Question[] = [
     {
-      id: 'paintingType',
-      question: 'What type of painting project are you interested in?',
+      id: 'projectType',
+      question: 'What type of tiling project are you interested in?',
       type: 'checkbox',
       options: [
-        'Interior walls',
-        'Exterior walls',
-        'Ceilings',
-        'Trim/doors/windows',
-      ],
-      isRequired: true
-    },
-    {
-      id: 'squareFeet',
-      question: 'How many square feet does your project cover?',
-      type: 'number',
-      min: 50,
-      max: 20000,
-      isRequired: true
-    },
-    {
-      id: 'highAreas',
-      question: 'Will the project include any high or difficult-to-reach areas?',
-      type: 'radio',
-      options: ['Yes', 'No'],
-      isRequired: true
-    },
-    {
-      id: 'highAreaDetails',
-      question: 'Please specify the type of high or difficult-to-reach areas:',
-      type: 'text',
-      isRequired: true,
-      dependsOn: { id: 'highAreas', value: 'Yes' }
-    },
-    {
-      id: 'furnitureMoving',
-      question: 'Do you need furniture or fixtures moved/covered during the project?',
-      type: 'radio',
-      options: ['Yes', 'No'],
-      isRequired: true
-    },
-    {
-      id: 'surfaceCondition',
-      question: 'What is the condition of the surfaces to be painted?',
-      type: 'checkbox',
-      options: [
-        'Peeling/cracked paint',
-        'Stains or water damage',
-        'Wallpaper to remove',
-        'Smooth/new drywall',
+        'Kitchen floor',
+        'Kitchen backsplash',
+        'Bathroom floor',
+        'Bathroom wall',
+        'Shower enclosure',
+        'Bathtub surround',
         'Other'
       ],
       isRequired: true
     },
     {
-      id: 'surfaceConditionOther',
-      question: 'Please specify the other surface condition:',
+      id: 'projectTypeOther',
+      question: 'Please specify the other tiling project:',
       type: 'text',
       isRequired: true,
-      dependsOn: { id: 'surfaceCondition', value: ['Other'] }
+      dependsOn: { id: 'projectType', value: ['Other'] }
+    },
+    {
+      id: 'squareFeet',
+      question: 'How many total square feet does your tiling project cover? (walls+floor if applicable)',
+      type: 'number',
+      min: 10,
+      max: 20000,
+      isRequired: true
+    },
+    {
+      id: 'currentSurface',
+      question: 'What is the current surface where tiles will be installed?',
+      type: 'checkbox',
+      options: [
+        'Bare concrete/subfloor',
+        'Existing tile',
+        'Linoleum/vinyl',
+        'Hardwood',
+        'Drywall',
+        'Cement board/backer board',
+      ],
+      isRequired: true
+    },
+    {
+      id: 'currentSurfaceOther',
+      question: 'Please specify the other current surface:',
+      type: 'text',
+      isRequired: true,
+      dependsOn: { id: 'currentSurface', value: ['Other'] }
+    },
+    {
+      id: 'tileType',
+      question: 'What type of tile are you interested in using?',
+      type: 'checkbox',
+      options: [
+        'Ceramic',
+        'Porcelain',
+        'Natural stone (marble, granite, etc.)',
+        'Glass',
+        'Meplex',
+        'Mosaic',
+        'Large format (12"x24" or larger)',
+        'Penny/hex tiles',
+        'Unsure/need recommendations'
+      ],
+      isRequired: true
+    },
+    {
+      id: 'demolition',
+      question: 'Do you need removal/demolition of existing materials?',
+      type: 'radio',
+      options: ['Yes', 'No'],
+      isRequired: true
+    },
+    {
+      id: 'specialFeatures',
+      question: 'Are you interested in any of these special features?',
+      type: 'checkbox',
+      options: [
+        'Heated flooring',
+        'Custom tile pattern/design',
+        'Accent borders or inserts',
+        'Built-in niches/shelving',
+        'Curb-less shower entry',
+        'None'
+      ],
+      isRequired: false
     },
     {
       id: 'timeline',
-      question: 'When would you like to have this project completed?',
+      question: 'When would you like to have this tiling project completed?',
       type: 'radio',
       options: [
-        'As soon as possible (within 7 days)',
+        'As soon as possible (within 14 days)',
         'Within 30 days',
         'Within 60 days',
         'Just exploring options for now'
@@ -139,40 +167,29 @@ const PaintingQuestionnaireForm: React.FC = () => {
     },
     {
       id: 'motivation',
-      question: 'What\'s the primary reason for your painting project?',
+      question: 'What\'s the primary reason for your tiling project?',
       type: 'radio',
       options: [
         'Moving into a new home',
         'Renovation/updating my space',
         'Preparing to sell my home',
         'New construction',
+        'Repair/replacing damaged tiles'
       ],
       isRequired: true
     },
     {
-      id: 'decisionStage',
-      question: 'Where are you in your decision process?',
-      type: 'radio',
-      options: [
-        'Just starting to research',
-        'Getting quotes from multiple companies',
-        'Ready to choose a provider',
-        'Have a firm budget and timeline in place'
-      ],
-      isRequired: true
-    },
-    {
-      id: 'specialConsiderations',
-      question: 'Do any of these apply to your project?',
+      id: 'accessIssues',
+      question: 'Are there any access issues we should know about?',
       type: 'checkbox',
       options: [
-        'Pets in the home',
-        'Children in the home',
-        'Need low-odor or eco-friendly paint',
-        'Specific color matching required',
-        'Historic home with special requirements'
+        'Narrow doorways/hallways',
+        'Limited parking',
+        'Multiple floor building with no elevator',
+        'Limited work hours (HOA/building restrictions)',
+        'No access issues'
       ],
-      isRequired: false
+      isRequired: true
     },
     {
       id: 'referralSource',
@@ -207,7 +224,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
       isRequired: true
     },
     {
-      id: 'FullName',
+      id: 'fullName',
       question: 'What is your first and last name?',
       type: 'text',
       isRequired: true
@@ -226,7 +243,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
     },
     {
       id: 'additionalComments',
-      question: 'Is there anything else we should know about your project?',
+      question: 'Is there anything else we should know about your tiling project?',
       type: 'textarea',
       isRequired: false
     }
@@ -531,7 +548,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
       <h2 className="text-xl font-semibold text-gray-800">Quote Ready</h2>
       
       <div className="mt-4">
-        <InstantQuotePaintingCalculator
+        <InstantQuoteTilesCalculator
           formData={formData} 
           onQuoteCalculated={captureQuoteValue}
           showQuote={true} 
@@ -748,7 +765,7 @@ const PaintingQuestionnaireForm: React.FC = () => {
               onClick={handleSubmit}
               disabled={isLoading}
               className="w-full px-5 py-3 bg-blue-500 text-white cursor-pointer font-medium rounded-lg hover:bg-blue-700 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"            >
-              {isLoading ? 'Submitting...' : 'Get My Painting Quote'}
+              {isLoading ? 'Submitting...' : 'Get My Quote'}
             </button>
           ) : (
             <button
@@ -788,17 +805,17 @@ const PaintingQuestionnaireForm: React.FC = () => {
       
       {formSubmitted ? renderThankYouScreen() : renderQuestionForm()}
       
-      {shouldShowQuoteCalculator() && (
+      {!shouldShowQuoteCalculator() && (
         <div className="mt-6">
-          <InstantQuotePaintingCalculator 
+          <InstantQuoteTilesCalculator
             formData={formData} 
             onQuoteCalculated={captureQuoteValue}
           />
-          <p className="mt-2 text-sm text-gray-600 font-semibold text-center">* Quote includes labor, materials, and preparation. Final price may vary based on site inspection.</p>
+          <p className="mt-2 text-sm text-gray-600 font-semibold text-center">** Quote includes labor only. Materials and preparation costs not included. Final price may vary based on site inspection.</p>
         </div>
       )}
     </div>
   );
 }
 
-export default PaintingQuestionnaireForm;
+export default TilesQuestionnaireForm;

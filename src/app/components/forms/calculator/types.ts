@@ -9,6 +9,7 @@ export interface FormData {
   preparationNeeded?: string;
   surfaceCondition?: string[];
   surfaceConditionOther?: string;
+  projectScope?: string[];
   removal?: string; // From calculator component
 
   // Flooring specific fields

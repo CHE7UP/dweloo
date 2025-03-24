@@ -140,7 +140,7 @@ const FootBar: React.FC = () => {
     },
     {
       label: "Trims",
-      href: "/instant-trimming-quote",
+      href: "/instant-trims-quote",
       icon: (
         <svg
           width="24"
