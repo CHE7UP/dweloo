@@ -29,12 +29,11 @@ const InstantQuoteTilesCalculator: React.FC<InstantQuoteCalculatorProps> = ({
     // Initialize calculation variables
     let materialsCost = 0;
     let laborCost = 0;
-    let preparationCost = 0;
+    const preparationCost = 0;
     let removalCost = 0;
 
     // Every project starts with $400 base price
     const baseCost = 400;
-
     // Get square footage from form data - force conversion to number
     const squareFeet = parseInt(String(formData.squareFeet || '0')) || 0;
     
