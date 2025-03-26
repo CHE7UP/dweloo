@@ -11,7 +11,7 @@ const QuoteMockup2: React.FC = () => {
         direction="top"
         distance="12"
         easing="ease-in-out"
-        className="w-[150px] h-[85px] rounded-[20px] shadow-lg p-3 bg-white flex flex-col justify-between border border-gray-200 absolute top-4/8 left-37 right-1 z-10 -translate-y-1/2" 
+        className="w-[170px] h-[85px] rounded-[20px] shadow-lg p-3 bg-white flex flex-col justify-between border border-gray-200 absolute top-4/8 left-35 right-2 z-10 -translate-y-1/2" 
         >
         {/* Header */}
         <div className="flex items-center justify-between mb-1">

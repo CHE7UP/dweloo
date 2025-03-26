@@ -1,5 +1,8 @@
 'use client';
 
+//this components is not used in the navbar
+
+
 import React, { useState, useRef } from 'react';
 
 interface AnimatedHamburgerButtonProps {
@@ -29,7 +32,6 @@ interface AnimatedHamburgerButtonProps {
 const AnimatedHamburgerButton: React.FC<AnimatedHamburgerButtonProps> = ({ 
   id = "hs-navbar-collapse",
   targetId = "hs-navbar-menu",
-  color = "#1976D2",
   className = ""
 }) => {
   const [isOpen, setIsOpen] = useState(false);

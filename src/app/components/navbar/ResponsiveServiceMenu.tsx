@@ -1,5 +1,7 @@
 'use client';
 
+//this components is not used in the navbar
+
 import React, { useState, useEffect, ReactElement, cloneElement, Children } from 'react';
 
 interface ResponsiveServiceMenuProps {

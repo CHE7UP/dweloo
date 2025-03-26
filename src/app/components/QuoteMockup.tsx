@@ -18,17 +18,17 @@ const QuoteMockup: React.FC = () => {
 
   return (
     <div 
-    className={`w-[150px] h-[70px] rounded-[20px] shadow-lg p-3 bg-white flex flex-col justify-between border border-gray-200 absolute top-1/8 left-4 right-4 z-10 -translate-y-1/2 transition-all duration-1000 ease-in-out ${
+    className={`w-[170px] h-[90px] rounded-[20px] shadow-lg p-3 bg-white flex flex-col justify-between border border-gray-200 absolute top-1/8 left-1 right-4 z-10 -translate-y-1/2 transition-all duration-1000 ease-in-out ${
       isVisible 
         ? 'opacity-100 translate-x-0' 
         : 'opacity-0 -translate-x-12 w-0'
     }`}
   >
     {/* Header */}
-    <div className="flex items-center justify-between mb-1">
+    <div className="flex items-center justify-between mb-2">
       <div>
-        <p className="text-[#1976D2] font-semibold text-[7px]">Total Estimated Cost</p>
-        <p className="text-[10px] font-bold text-gray-800">$7,250</p>
+        <p className="text-[#1976D2] font-semibold text-[11px] mb-2">Total Estimated Cost</p>
+        <p className="text-[13px] font-bold text-gray-800">$7,250</p>
       </div>
     </div>
     
@@ -37,9 +37,9 @@ const QuoteMockup: React.FC = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <Ruler className="text-[#1976D2] w-3 h-3 mr-1" />
-          <span className="text-gray-700 font-bold text-[6.5px]">Area Coverage</span>
+          <span className="text-gray-700  text-[9.5px]">Area Coverage</span>
         </div>
-        <span className="text-gray-700 font-bold text-[6.5px]">1500 sq ft</span>
+        <span className="text-gray-700  text-[9.5px]">1500 sq ft</span>
       </div>
     </div>
   </div>

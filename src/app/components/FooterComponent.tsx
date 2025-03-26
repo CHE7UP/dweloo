@@ -29,9 +29,12 @@ const FooterComponent: React.FC = () => {
               <h4 className="font-semibold text-gray-100">Services</h4>
 
               <div className="mt-3 grid space-y-3">
-                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Home Renovations</a></p>
-                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Interior Design</a></p>
-                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Project Planning</a></p>
+                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/services">Flooring</a></p>
+                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/services">Painting</a></p>
+                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/services">Tiling</a></p>
+                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/services">Trims</a></p>
+                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/services">Custom Renovations</a></p>
+
               </div>
             </div>
             {/* <!-- End Col --> */}
@@ -40,18 +43,18 @@ const FooterComponent: React.FC = () => {
               <h4 className="font-semibold text-gray-100">Company</h4>
 
               <div className="mt-3 grid space-y-3">
-                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">About Dweloo</a></p>
-                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Home Improvement Blog</a></p>
+                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/about">About Dweloo</a></p>
+                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/blog">Home Improvement Blog</a></p>
+                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="past-project">Past Projects</a></p>
                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/careers">Careers</a> <span className="inline-block ms-1 text-xs bg-[#1E88E5] text-white py-1 px-2 rounded-lg">We&lsquo;re hiring</span></p>
-                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="#">Success Stories</a></p>
               </div>
             </div>
             {/* <!-- End Col --> */}
 
             <div className="col-span-2">
-  <h4 className="font-semibold text-gray-100">Get renovation inspiration</h4>
-  <SubscriptionForm />
-</div>
+              <h4 className="font-semibold text-gray-100">Get renovation inspiration</h4>
+              <SubscriptionForm />
+            </div>
             {/* <!-- End Col --> */}
           </div>
           {/* <!-- End Grid --> */}
