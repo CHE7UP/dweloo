@@ -50,10 +50,10 @@ const Navbar = () => {
           {/* Logo with Text */}
           <Link className="flex items-center focus:outline-none focus:opacity-80" href="/" aria-label="Dweloo">
             <LogoWithText
-              color="#1976D2"
+              color="#1273EB"
               width="w-26"
               height="h-auto"
-              fillColor="#1976D2"
+              fillColor="#1273EB"
             />
           </Link>
         </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
           
           {/* Mobile menu button with improved styling */}
           <button 
-            className="lg:hidden inline-flex p-2 text-[#1976D2] hover:text-[#1976D2]/70 focus:outline-none cursor-pointer"
+            className="lg:hidden inline-flex p-2 text-[#1273EB] hover:text-[#1976D2]/120 focus:outline-none cursor-pointer"
             onClick={toggleMobileMenu}
             aria-label="Toggle navigation menu"
           >
@@ -95,8 +95,8 @@ const Navbar = () => {
                   href={link.path} 
                   className={`${
                     isActive(link.path) 
-                      ? "relative inline-block text-[#1976D2] font-medium focus:outline-none before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 before:bg-[#1976D2]" 
-                      : "inline-block text-gray-800 hover:text-[#1976D2] focus:outline-none transition-colors duration-300"
+                      ? "relative inline-block text-[#1273EB] font-medium focus:outline-none before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 before:bg-[#1976D2]" 
+                      : "inline-block text-gray-800 hover:text-[#1273EB] focus:outline-none transition-colors duration-300"
                   }`}
                   aria-current={isActive(link.path) ? "page" : undefined}
                 >

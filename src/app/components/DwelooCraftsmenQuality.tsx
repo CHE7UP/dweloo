@@ -21,7 +21,7 @@ const DwelooCraftsmenQuality = () => {
                 {qualities.map((quality, index) => (
                   <li key={index} className="flex items-start my-22">
                     <div className="flex-shrink-0 mt-1 px-4 my12">
-                      <CheckCircle size={24} color="#0056B3" />
+                      <CheckCircle size={24} color="#1273EB" />
                     </div>
                     <p className="ml-9 text-lg text-gray-600 ">{quality}</p>
                   </li>

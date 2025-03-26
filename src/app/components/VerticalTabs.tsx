@@ -32,7 +32,7 @@ const ValuePropositionCards = () => {
       imageDescription: "Our warranty protects your investment for years to come",
       icon: (isHovered: boolean) => (
         <Award 
-          className={`flex-shrink-0 mt-1 transition-colors duration-300 ${isHovered ? 'text-[#0056B3]' : 'text-gray-800'}`} 
+          className={`flex-shrink-0 mt-1 transition-colors duration-300 ${isHovered ? 'text-[#1273EB]' : 'text-gray-800'}`} 
           size={24} 
         />
       ),
@@ -47,7 +47,7 @@ const ValuePropositionCards = () => {
       imageDescription: "Most projects start within 10 days of booking",
       icon: (isHovered: boolean) => (
         <Clock 
-          className={`flex-shrink-0 mt-1 transition-colors duration-300 ${isHovered ? 'text-[#0056B3]' : 'text-gray-800'}`} 
+          className={`flex-shrink-0 mt-1 transition-colors duration-300 ${isHovered ? 'text-[#1273EB]' : 'text-gray-800'}`} 
           size={24} 
         />
       ),
@@ -62,7 +62,7 @@ const ValuePropositionCards = () => {
       imageDescription: "Multiple financing options to fit your budget",
       icon: (isHovered: boolean) => (
         <CreditCard 
-          className={`flex-shrink-0 mt-1 transition-colors duration-300 ${isHovered ? 'text-[#0056B3]' : 'text-gray-800'}`} 
+          className={`flex-shrink-0 mt-1 transition-colors duration-300 ${isHovered ? 'text-[#1273EB]' : 'text-gray-800'}`} 
           size={24} 
         />
       ),
@@ -97,7 +97,7 @@ const ValuePropositionCards = () => {
                     <div className="flex gap-x-4">
                       {prop.icon(hoveredCardId === prop.id)}
                       <div className="grow">
-                        <h3 className="text-lg font-semibold text-gray-800 group-hover:text-[#0056B3] transition-colors duration-300">
+                        <h3 className="text-lg font-semibold text-gray-800 group-hover:text-[#1273EB] transition-colors duration-300">
                           {prop.title}
                         </h3>
                         <p className="mt-2 text-gray-600 group-hover:text-gray-700 transition-colors duration-300">

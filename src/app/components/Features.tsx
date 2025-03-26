@@ -33,7 +33,7 @@ const DwelooFeatures = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col items-center text-center p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="mb-5 bg-[#0056B3] p-4 rounded-full flex items-center justify-center w-16 h-16">
+              <div className="mb-5 bg-[#1273EB] p-4 rounded-full flex items-center justify-center w-16 h-16">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>

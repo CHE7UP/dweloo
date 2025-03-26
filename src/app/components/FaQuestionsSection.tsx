@@ -36,15 +36,15 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
   return (
     <div className="w-full">
       {items.map((item, index) => (
-        <div key={`accordion-${index}`} className="border-b border-gray-200">
+        <div key={`accordion-${index}`} className="border-b border-gray-200 cursor-pointer">
           <button
             onClick={() => toggleItem(index)}
             className="w-full text-left py-4 px-1 flex justify-between items-center hover:text-[#1976D2] transition-colors"
           >
-            <span className="text-lg font-medium text-gray-900">{item.question}</span>
+            <span className="text-lg font-medium text-gray-600 hover:text-[#1273EB] cursor-pointer">{item.question}</span>
             <ChevronDown 
               size={20} 
-              className={`text-gray-500 transition-transform duration-300 ${openItem === index ? 'transform rotate-180' : ''}`} 
+              className={`transition-transform duration-300 text-[#1273EB] ${openItem === index ? 'transform rotate-180' : ''}`} 
             />
           </button>
           <div 
@@ -65,13 +65,15 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
 // Custom Card component
 const CustomCard: React.FC<CustomCardProps> = ({ question, answer }) => {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow hover:border-[#1976D2]">
+    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow hover:border-[#1273EB] cursor-pointer">
       <div className="p-4 border-b border-gray-100">
         <div className="flex items-start">
-          <div className="mr-2 text-[#1976D2] mt-1">
-            <ChevronRight size={18} />
+          <div className="mr-2 text-[#1273EB] mt-1">
+            <ChevronRight 
+              className="text-[#1273EB] transition-transform duration-300"
+            size={18} />
           </div>
-          <h3 className="text-lg font-medium text-gray-900">{question}</h3>
+          <h3 className="text-lg font-medium text-gray-900 cursor-pointer">{question}</h3>
         </div>
       </div>
       <div className="p-4 text-gray-700">
@@ -158,7 +160,7 @@ const FaQuestionsSection: React.FC = () => {
       <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-2 text-gray-600">FREQUENTLY ASKED QUESTIONS</h2>
-          <p className="text-lg text-[#1976D2]">Have questions? We got answers!</p>
+          <p className="text-lg text-[#1273EB]">Have questions? We got answers!</p>
         </div>
 
         {/* Mobile view - Accordion */}
@@ -182,13 +184,13 @@ const FaQuestionsSection: React.FC = () => {
           <div className="bg-gray-50 border border-gray-200 rounded-lg max-w-md mx-auto">
             <div className="p-6">
               <div className="flex justify-center mb-4">
-                <div className="p-2 rounded-full bg-[#1976D2]/10">
-                  <MessageCircle size={24} className="text-[#1976D2]" />
+                <div className="p-2 rounded-full bg-[#1273EB]/10">
+                  <MessageCircle size={24} className="text-[#1273EB]" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Still have questions?</h3>
+              <h3 className="text-xl text-gray-500 font-bold mb-2">Still have questions?</h3>
               <p className="text-gray-600 mb-4">Can&apos;t find the answer you&apos;re looking for? Please chat to our friendly team.</p>
-              <a href="/contact" className="px-6 py-2 bg-[#1976D2] text-white rounded-md hover:bg-[#1976D2]/90 transition-colors inline-block">
+              <a href="/contact" className="px-6 py-2 bg-[#1273EB] text-white rounded-md hover:bg-[#1273EB]/90 transition-colors inline-block">
                 Get in touch
               </a>
             </div>

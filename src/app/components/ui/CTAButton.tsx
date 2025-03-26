@@ -19,8 +19,8 @@ const CTAButton: React.FC<CTAButtonProps> = ({
         py-3 px-4 
         inline-flex justify-center items-center gap-x-2 
         text-md font-bold rounded-lg 
-        bg-[#1976D2] text-white 
-        hover:bg-[#1565C0] 
+        bg-[#1273EB] text-white 
+        hover:bg-[#0F5ED6] 
         active:bg-[#0D47A1] active:scale-95 
         transition-all duration-200 
         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 

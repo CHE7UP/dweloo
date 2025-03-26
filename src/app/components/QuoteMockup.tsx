@@ -27,7 +27,7 @@ const QuoteMockup: React.FC = () => {
     {/* Header */}
     <div className="flex items-center justify-between mb-2">
       <div>
-        <p className="text-[#1976D2] font-semibold text-[11px] mb-2">Total Estimated Cost</p>
+        <p className="text-[#1273EB] font-semibold text-[11px] mb-2">Total Estimated Cost</p>
         <p className="text-[13px] font-bold text-gray-800">$7,250</p>
       </div>
     </div>
@@ -36,7 +36,7 @@ const QuoteMockup: React.FC = () => {
     <div className="space-y-1 flex-grow">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <Ruler className="text-[#1976D2] w-3 h-3 mr-1" />
+          <Ruler className="text-[#1273EB] w-3 h-3 mr-1" />
           <span className="text-gray-700  text-[9.5px]">Area Coverage</span>
         </div>
         <span className="text-gray-700  text-[9.5px]">1500 sq ft</span>

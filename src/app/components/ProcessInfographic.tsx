@@ -47,12 +47,12 @@ const ProcessInfographic = () => {
               {index < steps.length - 1 && (
                 <>
                 {/* Mobile arrow (down) */}
-                <div className="block md:hidden text-blue-500 mb-12 mt-4">
+                <div className="block md:hidden text-[#1273EB] mb-12 mt-4">
                   <ArrowDown size={40} strokeWidth={2.5} />
                 </div>
                 
                 {/* Desktop arrow (right) */}
-                <div className="hidden md:block text-blue-500 mx-16">
+                <div className="hidden md:block text-[#1273EB] mx-16">
                   <ArrowRight size={40} strokeWidth={2.5} />
                 </div>
               </>

@@ -121,7 +121,7 @@ const AnimatedHeroText: React.FC = () => {
         <span className="text-gray-800">{textParts.firstPart}</span>
           <span className={`transition-all duration-500 ${
             highlightActive 
-              ? 'text-[#1976D2] font-extrabold scale-105' 
+              ? 'text-[#1273EB] font-extrabold scale-105' 
               : 'text-gray-800'
           }`}>
             {textParts.secondPart}

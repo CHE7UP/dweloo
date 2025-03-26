@@ -50,8 +50,8 @@ const SubscriptionForm: React.FC = () => {
   if (formSubmitted && success) {
   
     return (
-      <div className="p-4 bg-white border-l-2 border-[#1976D2] rounded shadow-sm animate-fade-out">
-        <h3 className="text-lg font-medium text-[#1976D2]">Subscription confirmed</h3>
+      <div className="p-4 bg-white border-l-2 border-[#1273EB] rounded shadow-sm animate-fade-out">
+        <h3 className="text-lg font-medium text-[#1273EB]">Subscription confirmed</h3>
         <p className="mt-1 text-sm text-gray-600">
           Home inspiration coming your way soon.
         </p>
@@ -91,7 +91,7 @@ const SubscriptionForm: React.FC = () => {
       <button 
         type="submit"
         disabled={isLoading}  
-        className="whitespace-nowrap p-2 inline-flex justify-center items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#1E88E5] text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+        className="whitespace-nowrap p-2 inline-flex justify-center items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#1273EB] text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
         >
           {isLoading ? 'Subscribing...' : 'Get Inspired'}
       </button>

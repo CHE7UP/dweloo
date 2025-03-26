@@ -41,7 +41,7 @@ const WhyDweloo = () => {
               <div className="flex items-start">
                 <div className="text-green-500 font-bold mr-2">✓</div>
                 <div>
-                  <span className="font-bold text-[#1976D2]">Dweloo:</span>
+                  <span className="font-bold text-[#1273EB]">Dweloo:</span>
                   <span className="ml-2 text-gray-800">{item.dweloo}</span>
                 </div>
               </div>

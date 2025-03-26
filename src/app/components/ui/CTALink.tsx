@@ -27,8 +27,8 @@ const CtaLink: React.FC<CtaLinkProps> = ({
   };
   
   const variants = {
-    text: "text-[#1976D2] font-medium hover:underline",
-    button: "bg-[#1976D2] text-white rounded-md hover:bg-[#1976D2]/90 transition-colors"
+    text: "text-[#1273EB] font-medium hover:underline",
+    button: "bg-[#1273EB] text-white rounded-md hover:bg-[#1273EB]/90 transition-colors"
   };
   
   const padding = variant === 'button' ? 'px-4 py-2' : '';

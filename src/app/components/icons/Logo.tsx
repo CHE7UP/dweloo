@@ -10,7 +10,7 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({
   size = 40,
-  color = '#0056B3',
+  color = '#1273EB',
   className = '',
   strokeWidth = 14,
   maskId, // Accept the maskId prop

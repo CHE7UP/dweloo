@@ -45,7 +45,7 @@ const services = [
     id: 5,
     title: "Custom Projects",
     description:
-      "Personalized consultation and quotes for unique home improvement projects beyond our standard services. Tell us your vision, and we'll bring it to life with quality craftsmanship.",
+      "Personal consultation and quotes for your custom home improvement project. Tell us your vision, and our craftsmen we'll bring it to life.",
     image: "https://firebasestorage.googleapis.com/v0/b/fast-ai-solutions.appspot.com/o/dweloo%2Fassets%2Fdweloo-masonry-service-card.webp?alt=media&token=e690b7fe-fec5-45da-af75-a8934d9c9bbb",
     cta: "Request a Quote",
     link: "/services/custom",
@@ -93,7 +93,7 @@ const ServicesSection = () => {
               {/* Button on Image */}
               <div className="absolute bottom-4 right-4">
                 <Link href={service.link}
-                  className="inline-flex items-center px-4 py-2 bg-white bg-opacity-95 text-sm font-medium text-[#1976D2] rounded-md shadow-sm hover:bg-blue-50 transition-all duration-300 ease-in-out border border-blue-100 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+                  className="inline-flex items-center px-4 py-2 bg-white bg-opacity-95 text-sm font-medium text-[#1273EB] rounded-md shadow-sm hover:bg-blue-50 transition-all duration-300 ease-in-out border border-blue-100 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
                 >
                   {service.cta}
                 </Link>
@@ -105,7 +105,7 @@ const ServicesSection = () => {
               <h3 className="text-2xl font-semibold text-gray-900 mb-2">
                 {service.title}
               </h3>
-              <div className="w-12 h-0.5 bg-[#1976D2] mb-4"></div>
+              <div className="w-12 h-0.5 bg-[#1273EB] mb-4"></div>
               <p className="text-gray-600">{service.description}</p>
             </div>
           </div>
