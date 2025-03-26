@@ -90,7 +90,8 @@ const Navbar = () => {
             {/* Main navigation items */}
             {navigationLinks.otherPages.map((link) => (
               <div key={link.path}>
-                <Link 
+                <Link
+                  onClick={toggleMobileMenu} 
                   href={link.path} 
                   className={`${
                     isActive(link.path) 
@@ -138,6 +139,7 @@ const Navbar = () => {
                 <div className="py-1">
                   {navigationLinks.mainServices.map((service) => (
                     <Link
+                      onClick={toggleMobileMenu} 
                       key={service.path}
                       href={service.path}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#1976D2] rounded-md focus:bg-gray-100 focus:outline-none"
