@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Car, Calendar, ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Contact Us | Dweloo Home Improvement',
@@ -7,139 +9,99 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto py-12 px-4">
-      <h1 className="text-4xl font-bold mb-8 text-center">Contact Us</h1>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div>
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-semibold mb-6">Send Us a Message</h2>
-            <form>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-gray-700 mb-2">First Name</label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-gray-700 mb-2">Last Name</label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-700 mb-2">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="phone" className="block text-gray-700 mb-2">Phone Number</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="service" className="block text-gray-700 mb-2">Service Interested In</label>
-                <select
-                  id="service"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option value="">Select a service</option>
-                  <option value="flooring">Flooring</option>
-                  <option value="painting">Painting</option>
-                  <option value="kitchen-and-bath">Kitchen & Bath</option>
-                  <option value="masonry">Masonry</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 mb-2">Your Message</label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                ></textarea>
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
+    <div className="bg-white min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-44 md:h-96 overflow-hidden">
+        <Image
+          src="/assets/images/dweloo-contact-page-hero.webp" 
+          alt="Home renovation project in progress"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 " />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-[#1273EB] drop-shadow-lg">Get in Touch</h1>
+        </div>
+      </section>
+
+      {/* Contact Options */}
+      <section className="max-w-6xl mx-auto py-16 px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {/* Phone */}
+          <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:border-[#1273EB] transition-all hover:shadow-xl group">
+            <div className="w-16 h-16 bg-[#1273EB]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#1273EB] transition-colors duration-300">
+              <Phone className="h-8 w-8 text-[#1273EB] group-hover:text-white transition-colors duration-300" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Call Us</h3>
+            <p className="text-gray-600 mb-6">Speak directly with our renovation specialists</p>
+            <a href="tel:2066192804" className="text-[#1273EB] font-semibold text-lg hover:underline inline-flex items-center">
+              (206) 619-2804
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
           </div>
+          
+          {/* Email */}
+          <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:border-[#1273EB] transition-all hover:shadow-xl group">
+            <div className="w-16 h-16 bg-[#1273EB]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#1273EB] transition-colors duration-300">
+              <Mail className="h-8 w-8 text-[#1273EB] group-hover:text-white transition-colors duration-300" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Email Us</h3>
+            <p className="text-gray-600 mb-6">Send us your questions or project details</p>
+            <a href="mailto:info@dweloo-home.com" className="text-[#1273EB] font-semibold text-lg hover:underline inline-flex items-center">
+              info@dweloo.com
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </div> 
+            {/* Live Chat */}
+            <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:border-[#1273EB] transition-all hover:shadow-xl group">
+              <div className="w-16 h-16 bg-[#1273EB]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#1273EB] transition-colors duration-300">
+                <MessageCircle className="h-8 w-8 text-[#1273EB] group-hover:text-white transition-colors duration-300" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Live Chat</h3>
+              <p className="text-gray-600 mb-6">Get immediate answers to your questions from our specialists</p>
+              <button 
+                className="text-[#1273EB] font-semibold text-lg hover:underline inline-flex items-center"
+                // onClick={() => {/* Add your chat functionality here */}}
+              >
+                Start Chatting Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </button>
+            </div>
         </div>
         
-        <div>
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-            <h2 className="text-2xl font-semibold mb-6">Our Information</h2>
+        {/* Map and Additional Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          {/* Map */}
+          <div className="lg:col-span-3 rounded-xl overflow-hidden shadow-lg h-[400px] relative">
+            <Image
+              src="/assets/images/map-location.webp"
+              alt="Map location"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 60vw"
+            />
+            <div className="absolute bottom-4 right-4">
+              <a 
+                href="https://maps.google.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-[#1273EB] py-2 px-4 rounded-lg shadow-md font-medium hover:bg-[#1273EB] hover:text-white transition-colors"
+              >
+                Get Directions
+              </a>
+            </div>
+          </div>
+          
+          {/* Info */}
+          <div className="lg:col-span-2 bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+            <h2 className="text-2xl font-bold text-gray-800 mb-8">Additional Information</h2>
             
             <div className="space-y-6">
+              {/* Hours */}
               <div className="flex items-start">
-                <div className="text-blue-600 mr-3 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
+                <Clock className="h-6 w-6 text-[#1273EB] mr-4 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-medium text-lg mb-1">Address</h3>
-                  <p className="text-gray-600">
-                    123 Renovation Avenue<br />
-                    Suite 101<br />
-                    Hometown, ST 12345
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="text-blue-600 mr-3 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-medium text-lg mb-1">Phone</h3>
-                  <p className="text-gray-600">(555) 123-4567</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="text-blue-600 mr-3 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-medium text-lg mb-1">Email</h3>
-                  <p className="text-gray-600">info@dweloo-home.com</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="text-blue-600 mr-3 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-medium text-lg mb-1">Business Hours</h3>
+                  <h3 className="font-medium text-lg mb-2">Business Hours</h3>
                   <p className="text-gray-600">
                     Monday - Friday: 8am - 6pm<br />
                     Saturday: 9am - 4pm<br />
@@ -147,19 +109,62 @@ export default function ContactPage() {
                   </p>
                 </div>
               </div>
+              
+              {/* Service Area */}
+              <div className="flex items-start">
+                <Car className="h-6 w-6 text-[#1273EB] mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-medium text-lg mb-2">Service Area</h3>
+                  <p className="text-gray-600">
+                    We proudly serve Hometown and surrounding areas within a 50-mile radius.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Appointments */}
+              <div className="flex items-start">
+                <Calendar className="h-6 w-6 text-[#1273EB] mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-medium text-lg mb-2">Appointments</h3>
+                  <p className="text-gray-600">
+                    Schedule a consultation with one of our experts for personalized guidance.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          
-          <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src="/assets/img/demo-previews/img16.jpg/800/600"
-              alt="Map location"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+        </div>
+      </section>
+      
+      {/* Quote CTA */}
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Ready to start your project?</h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Get a personalized quote for your home improvement project in just a few minutes.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/instant-flooring-quote"
+              className="bg-[#1273EB] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#0e5fc8] transition-colors"
+            >
+              Get an Instant Quote
+            </Link>
+            <button 
+              className="bg-white text-[#1273EB] border border-[#1273EB] font-bold py-3 px-8 rounded-lg hover:bg-[#1273EB] hover:text-white transition-colors inline-flex items-center justify-center"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Chat with Us
+            </button>
           </div>
         </div>
+      </section>
+      
+      {/* Fixed Chat Button */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <button className="bg-[#1273EB] text-white rounded-full p-4 shadow-lg hover:bg-[#0e5fc8] transition-all hover:shadow-xl">
+          <MessageCircle className="h-6 w-6" />
+        </button>
       </div>
     </div>
   );

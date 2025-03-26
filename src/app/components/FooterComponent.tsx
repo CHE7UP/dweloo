@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from './icons/Logo' // Import the Logo component we created earlier
 import Link from 'next/link';
 import SubscriptionForm from './forms/SubsicriptionForm';
+import LogoWithText from './icons/LogoWIthText';
 
 const FooterComponent: React.FC = () => {
   return (
@@ -13,11 +14,13 @@ const FooterComponent: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5">
             <div className="col-span-full lg:col-span-1">
               <Link className="flex-none text-xl font-semibold text-white ml-[-15px] focus:outline-none focus:opacity-80" href="/" aria-label="Dweloo">
-                <Logo 
-                className="mb-2" 
-                color='#ffffff'
-                />
-                <span className="mt-2 block">Dweloo</span>
+               <LogoWithText
+                className='ps-4'
+                 color="#1273EB"
+                 width="w-26"
+                 height="h-auto"
+                 fillColor="#1273EB"
+                 />
               </Link>
             </div>
             <div
