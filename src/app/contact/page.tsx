@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Clock, MessageCircle, Car, Calendar, ArrowRight } from 'lucide-react';
+import { Phone, Mail, Clock, MessageCircle, Car, Calendar, ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Contact Us | Dweloo Home Improvement',
@@ -87,7 +87,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="bg-white text-[#1273EB] py-2 px-4 rounded-lg shadow-md font-medium hover:bg-[#1273EB] hover:text-white transition-colors"
               >
-                Get Directions
+                Serving Greater Seattle Area 
               </a>
             </div>
           </div>

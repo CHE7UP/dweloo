@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from './icons/Logo' // Import the Logo component we created earlier
 import Link from 'next/link';
 import SubscriptionForm from './forms/SubsicriptionForm';
 import LogoWithText from './icons/LogoWIthText';
