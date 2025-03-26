@@ -5,6 +5,7 @@ import FloorPlan from './FloorPlan';
 import AnimatedHeroText from './AnimatedHeroText';
 import GetQuoteModal from './GetQuoteModal';
 import CTAButton from './ui/CTAButton';
+import { Clock } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,10 +18,11 @@ const HeroSection: React.FC = () => {
     <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Grid */}
       <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
-        <div>
+        <div >
           <AnimatedHeroText />
-          <div className="mt-4 grid gap-3 w-full sm:inline-flex">
-          <CTAButton onClick={openModal}>
+          <div className="flex justify-center items-center mt-4 w-full sm:inline-flex ">
+    <div className="flex flex-col items-center w-full sm:inline-flex mt-4">
+        <CTAButton onClick={openModal}>
             <svg 
               viewBox="0 0 384 512" 
               className="shrink-0 w-6 h-6"
@@ -34,23 +36,14 @@ const HeroSection: React.FC = () => {
               />
             </svg>
             Calculate My Project
-          </CTAButton>
-          </div>
-          <div className="mt-1 lg:mt-10 grid grid-cols-2 gap-x-5">
-            {/* Review */}
-            <div className="py-1">
-              <div className="flex gap-x-1">
-              </div>
-              <div className="mt-1">
-              </div>
-            </div>
-            <div className="py-1">
-              <div className="flex gap-x-1">
-              </div>
-              <div className="mt-5">
-              </div>
-            </div>
-          </div>
+        </CTAButton>
+        
+        <div className="flex items-center text-sm text-gray-500 mt-2">
+            <Clock className="w-4 h-4 mr-1" />
+            <span>Takes only 2 minutes</span>
+        </div>
+    </div>
+</div>
         </div>
         <div className="relative ms-4">
           <IpadMockup>
