@@ -60,13 +60,15 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">Live Chat</h3>
               <p className="text-gray-600 mb-6">Get immediate answers to your questions from our specialists</p>
-              <button 
-                className="text-[#1273EB] font-semibold text-lg hover:underline inline-flex items-center"
-                // onClick={() => {/* Add your chat functionality here */}}
-              >
-                Start Chatting Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
+              <ChatButton
+              className="bg-white text-[#1273EB] border border-[#1273EB] font-bold py-3 px-8 rounded-lg hover:bg-[#1273EB] hover:text-white transition-colors inline-flex items-center justify-center cursor-pointer"
+              buttonText={
+                <>
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Start Live Chat
+                </>
+              }             
+              />
             </div>
         </div>
         

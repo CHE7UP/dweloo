@@ -46,9 +46,10 @@ const FooterComponent: React.FC = () => {
 
               <div className="mt-3 grid space-y-3">
                 <p><Link className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/about">About Dweloo</Link></p>
-                <p><Link className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/blog">Home Improvement Blog</Link></p>
+                <p><Link className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/blog">Blog</Link></p>
                 <p><Link className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="past-project">Past Projects</Link></p>
                 <p><Link className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/careers">Careers</Link> <span className="inline-block ms-1 text-xs bg-[#1273EB] text-white py-1 px-2 rounded-lg">We&lsquo;re hiring</span></p>
+                <p><Link className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200" href="/blog">Contact</Link></p>
               </div>
             </div>
             {/* <!-- End Col --> */}
