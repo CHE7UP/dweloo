@@ -8,7 +8,7 @@ const TilingQuotePage: NextPage = () => {
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
       <header className="mb-1 text-center">
-      <h1 className="text-3xl font-bold text-gray-800 mb-2">Instant Tiling Quote</h1>
+      <h1 className="text-3xl font-bold text-gray-800 mb-2">Price Calculator Tiling Project</h1>
       </header>
 
           <TilesQuestionnaireForm />

@@ -22,7 +22,17 @@ const navigationLinks = {
   ]
 };
 
-const Navbar = () => {
+interface NavbarProps {
+  href: string;
+  ariaLabel: string;
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+
+}
+
+
+const Navbar: React.FC<NavbarProps> = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   // Generate a stable ID for the SVG mask
@@ -60,12 +70,13 @@ const Navbar = () => {
     
         {/* Button Group */}
         <div className="flex items-center gap-x-2 ml-auto py-1 lg:pl-6 lg:order-3 lg:col-span-3">
-          <button 
+          <a
+            href="tel:2066191091" 
             type="button" 
-            className="hidden lg:inline-flex py-2.5 px-4 items-center gap-x-2 text-sm font-medium rounded-full border-2 border-[#1976D2] text-[#1976D2] bg-transparent hover:bg-[#1976D2] hover:text-white transition-all duration-300 ease-in-out"
+            className="hidden lg:inline-flex py-2.5 px-4 items-center gap-x-2 text-md font-bold rounded-full border-2 border-[#1273EB] text-[#1273EB] bg-transparent hover:bg-[#1976D2] hover:text-white transition-all duration-300 ease-in-out"
           >
             (206) 619-1091
-          </button>
+          </a>
           
           {/* Mobile menu button with improved styling */}
           <button 

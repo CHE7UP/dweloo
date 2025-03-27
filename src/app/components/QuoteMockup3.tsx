@@ -17,8 +17,9 @@ const QuoteMockup3: React.FC = () => {
   <div className="flex items-center justify-between mb-1">
     <Avatar className="w-5 h-5">
       <AvatarImage 
+      alt='avatar dweloo logo'
       className="w-4 h-4 lg:w-6 lg:h-6 object-contain"
-      src="/favicons/favicon-96x96.png" /> Replace with Dweloo logo
+      src="/favicons/favicon-96x96.png" />
       <AvatarFallback>DW</AvatarFallback>
     </Avatar>
     <span className="text-[7px] lg:text-[10px] text-[#1273EB] font-medium">Invoice #420-69</span>

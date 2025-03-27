@@ -599,13 +599,13 @@ const TilesQuestionnaireForm: React.FC = () => {
       <span>Schedule</span>
       <Calendar className="ml-1" size={16} />
     </a>
-    <Link
+    {/* <Link
       href="/"
       className="flex-1 px-3 py-4 bg-white border border-gray-300 text-gray-700 text-md rounded hover:bg-gray-50 transition-colors text-center flex items-center justify-center"
     >
       <span>Browse</span>
       <Palette className="ml-1" size={16} />
-    </Link>
+    </Link> */}
   </div>
 </div>
     </div>
@@ -780,7 +780,7 @@ const TilesQuestionnaireForm: React.FC = () => {
         
         {isLastQuestion && (
           <p className="mt-4 text-xs text-gray-500 text-center">
-            By submitting, you&apos;ll receive a personalized painting quote!
+            By submitting, you&apos;ll receive a personalized tiling quote!
           </p>
         )}
         

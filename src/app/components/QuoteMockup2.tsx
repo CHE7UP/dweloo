@@ -16,7 +16,9 @@ const QuoteMockup2: React.FC = () => {
         {/* Header */}
         <div className="flex items-center justify-between mb-1">
             <Avatar className="w-5 h-5 lg:w-6 lg:h-6">
-            <AvatarImage src="/assets/img/landing-page-assets/avatar-head-dweloo.png" />
+            <AvatarImage 
+                alt='avatar dweloo worker head'
+            src="/assets/img/landing-page-assets/avatar-head-dweloo.png" />
             <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <span className="text-[7px] lg:text-[11px] text-[#1273EB] font-medium">Booking #420-69</span>

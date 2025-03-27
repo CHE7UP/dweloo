@@ -35,7 +35,7 @@ const AnimatedHeroText = () => {
     <div className="w-full max-w-4xl mx-auto text-center py-1">      
     <h1 className="text-4xl md:text-6xl font-bold text-center flex flex-wrap justify-center">
         <span className="text-gray-700 mr-2">Finally, an easy way to renovate your</span>
-        <div className="relative h-12 sm:h-14 md:h-16 lg:h-20 overflow-hidden min-w-40 sm:min-w-40 md:min-w-48 lg:min-w-56">
+        <div className="relative h-12 sm:h-14 md:h-16 lg:h-20 overflow-hidden min-w-46 sm:min-w-50 md:min-w-58 lg:min-w-66">
           <span 
             key={currentTextIndex}
             className={`absolute left-0 w-full text-[#1273EB] transition-transform duration-500 ease-in-out
