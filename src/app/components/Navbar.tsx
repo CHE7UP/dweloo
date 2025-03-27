@@ -86,8 +86,10 @@ const Navbar = () => {
         <div 
           className={`w-full basis-full grow lg:w-auto lg:basis-auto lg:order-2 lg:col-span-6 lg:block ${mobileMenuOpen ? 'block' : 'hidden'}`}
         >
+          
           <div className="flex flex-col gap-y-4 gap-x-0 mt-5 lg:flex-row lg:justify-center lg:items-center lg:gap-y-0 lg:gap-x-7 lg:mt-0">
             {/* Main navigation items */}
+            
             {navigationLinks.otherPages.map((link) => (
               <div key={link.path}>
                 <Link
@@ -113,7 +115,7 @@ const Navbar = () => {
                 onClick={toggleDropdown}
                 aria-expanded={dropdownOpen}
               >
-                Get Quote
+                Price Calculator
                 <svg 
                   className={`w-4 h-4 transition-transform duration-300 text-blue-600 ${dropdownOpen ? 'rotate-180' : ''}`}
                   xmlns="http://www.w3.org/2000/svg" 

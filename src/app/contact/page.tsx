@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, Mail, Clock, MessageCircle, Car, Calendar, ArrowRight } from 'lucide-react';
+import ChatButton from '../components/ChatButton';
 
 export const metadata = {
   title: 'Contact Us | Dweloo Home Improvement',
@@ -74,7 +75,7 @@ export default function ContactPage() {
           {/* Map */}
           <div className="lg:col-span-3 rounded-xl overflow-hidden shadow-lg h-[400px] relative">
             <Image
-              src="/assets/images/map-location.webp"
+              src="/assets/images/dweloo-service-area.webp"
               alt="Map location"
               fill
               className="object-cover"
@@ -128,7 +129,7 @@ export default function ContactPage() {
                   <h3 className="font-medium text-gray-600 text-lg mb-2">Appointments</h3>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link 
-                      href="/instant-flooring-quote"
+                      href="/schedule-consultation-seattle"
                       className="bg-[#1273EB] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#0e5fc8] transition-colors"
                     >
                     Schedule a consultation with an expert.
@@ -153,14 +154,17 @@ export default function ContactPage() {
               href="/instant-flooring-quote"
               className="bg-[#1273EB] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#0e5fc8] transition-colors"
             >
-              Get an Instant Quote
+              Calculate Your Project
             </Link>
-            <button 
-              className="bg-white text-[#1273EB] border border-[#1273EB] font-bold py-3 px-8 rounded-lg hover:bg-[#1273EB] hover:text-white transition-colors inline-flex items-center justify-center"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Chat with Us
-            </button>
+            <ChatButton
+              className="bg-white text-[#1273EB] border border-[#1273EB] font-bold py-3 px-8 rounded-lg hover:bg-[#1273EB] hover:text-white transition-colors inline-flex items-center justify-center cursor-pointer"
+              buttonText={
+                <>
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Start Live Chat
+                </>
+              }             
+              />
           </div>
         </div>
       </section>

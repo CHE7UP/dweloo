@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronRight, MessageCircle } from "lucide-react";
 import CtaLink from './ui/CTALink';
+import ChatButton from './ChatButton';
 
 // Define the FAQ item type
 interface FaqItem {
@@ -104,7 +105,7 @@ const FaQuestionsSection: React.FC = () => {
         <div>
           <p>Every home is unique, and we provide personalized quotes based on your specific needs and preferences.</p>
           <p className="mt-2">
-            <CtaLink href="/instant-flooring-quote">Get an instant quote</CtaLink> or schedule a <CtaLink href="/schedule-appointment-seattle">detailed consultation</CtaLink> for a comprehensive estimate.
+            <CtaLink href="/instant-flooring-quote">Get an instant quote</CtaLink> or schedule a <CtaLink href="/schedule-consultation-seattle">detailed consultation</CtaLink> for a comprehensive estimate.
           </p>
         </div>
       )
@@ -115,7 +116,7 @@ const FaQuestionsSection: React.FC = () => {
         <div>
           <p>Dweloo provides a wide range of home improvement services including flooring installation, kitchen remodeling, bathroom renovations, and more.</p>
           <p className="mt-2">
-            <CtaLink href="/services">Explore our services</CtaLink> or <CtaLink href="/schedule-appointment-seattle">book a consultation</CtaLink> to discuss your specific project needs.
+            <CtaLink href="/services">Explore our services</CtaLink> or <CtaLink href="/schedule-consultation-seattle">book a consultation</CtaLink> to discuss your specific project needs.
           </p>
         </div>
       )
@@ -190,9 +191,10 @@ const FaQuestionsSection: React.FC = () => {
               </div>
               <h3 className="text-xl text-gray-500 font-bold mb-2">Still have questions?</h3>
               <p className="text-gray-600 mb-4">Can&apos;t find the answer you&apos;re looking for? Please chat to our friendly team.</p>
-              <a href="/contact" className="px-6 py-2 bg-[#1273EB] text-white rounded-md hover:bg-[#1273EB]/90 transition-colors inline-block">
-                Get in touch
-              </a>
+              <ChatButton 
+                buttonText="Start Live Chat" 
+                className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors cursor-pointer"
+              />
             </div>
           </div>
         </div>
