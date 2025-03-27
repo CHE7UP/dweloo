@@ -21,25 +21,25 @@ const services = [
       "Flawless interior and exterior painting services using premium materials, delivering vibrant colors with clean edges and superior finish.",
     image: "https://firebasestorage.googleapis.com/v0/b/fast-ai-solutions.appspot.com/o/dweloo%2Fassets%2Fdweloo-painting-service-card.webp?alt=media&token=673557fd-8332-4ed3-b146-f936c05d8c40",
     cta: "Get a Free Quote",
-    link: "/services/painting",
+    link: "/instant-painting-quote",
   },
   {
     id: 3,
     title: "Trims",
     description:
       "Expert installation of baseboards, crown molding, and decorative trim with precise cuts and seamless joints for a polished, elegant finish in any room.",
-    image: "https://firebasestorage.googleapis.com/v0/b/fast-ai-solutions.appspot.com/o/dweloo%2Fassets%2Fdweloo-kitchen-bath-service-card.webp?alt=media&token=e6d40c8b-6977-4817-8e3a-4b7e1ab084b9",
-    cta: "View Our Work",
-    link: "/services/trim",
+    image: "/assets/images/dweloo-trims-project.webp",
+    cta: "Calculate My Project ",
+    link: "/instant-trims-quote",
   },
   {
     id: 4,
     title: "Tiling",
     description:
       "Professional tile installation for floors, walls, backsplashes, and showers, creating beautiful and durable surfaces with precise alignment and clean grout lines.",
-    image: "https://firebasestorage.googleapis.com/v0/b/fast-ai-solutions.appspot.com/o/dweloo%2Fassets%2Fdweloo-masonry-service-card.webp?alt=media&token=e690b7fe-fec5-45da-af75-a8934d9c9bbb",
+    image: "/assets/images/dweloo-bathrooom-project-2.webp",
     cta: "Learn More",
-    link: "/services/tiling",
+    link: "/instant-tiling-quote",
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ const services = [
       "Personal consultation and quotes for your custom home improvement project. Tell us your vision, and our craftsmen we'll bring it to life.",
     image: "https://firebasestorage.googleapis.com/v0/b/fast-ai-solutions.appspot.com/o/dweloo%2Fassets%2Fdweloo-masonry-service-card.webp?alt=media&token=e690b7fe-fec5-45da-af75-a8934d9c9bbb",
     cta: "Request a Quote",
-    link: "/services/custom",
+    link: "/custom-projects-quote",
     isWide: true,
   },
 ];
