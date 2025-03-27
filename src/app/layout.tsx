@@ -5,7 +5,6 @@ import PrelineScript from "./components/PrelineScript";
 import Navbar from "./components/Navbar";
 import FooterComponent from "./components/FooterComponent";
 import FootBar from "./components/FootBar";
-import TawkMessenger from "./components/TawkMessenger";
 
 // Configure Geist font with display strategy
 const geistSans = Geist({
@@ -45,7 +44,6 @@ export default function RootLayout({
       <body className="antialiased">
         <Navbar />
         {children}
-        <TawkMessenger />
         <FootBar />
         <FooterComponent />
         <PrelineScript />
