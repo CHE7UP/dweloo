@@ -101,7 +101,7 @@ export default function ContactPage() {
               <div className="flex items-start">
                 <Clock className="h-6 w-6 text-[#1273EB] mr-4 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-medium text-lg mb-2">Business Hours</h3>
+                  <h3 className="font-medium text-gray-600 text-lg mb-2">Business Hours</h3>
                   <p className="text-gray-600">
                     Monday - Friday: 8am - 6pm<br />
                     Saturday: 9am - 4pm<br />
@@ -114,9 +114,9 @@ export default function ContactPage() {
               <div className="flex items-start">
                 <Car className="h-6 w-6 text-[#1273EB] mr-4 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-medium text-lg mb-2">Service Area</h3>
-                  <p className="text-gray-600">
-                    We proudly serve Hometown and surrounding areas within a 50-mile radius.
+                  <h3 className="font-medium text-gray-600 text-lg mb-2">Service Area</h3>
+                  <p className="text-gray-600 font-medium ">
+                    We proudly serve the greater Seattle Area.
                   </p>
                 </div>
               </div>
@@ -125,10 +125,15 @@ export default function ContactPage() {
               <div className="flex items-start">
                 <Calendar className="h-6 w-6 text-[#1273EB] mr-4 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-medium text-lg mb-2">Appointments</h3>
-                  <p className="text-gray-600">
-                    Schedule a consultation with one of our experts for personalized guidance.
-                  </p>
+                  <h3 className="font-medium text-gray-600 text-lg mb-2">Appointments</h3>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link 
+                      href="/instant-flooring-quote"
+                      className="bg-[#1273EB] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#0e5fc8] transition-colors"
+                    >
+                    Schedule a consultation with an expert.
+                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -159,13 +164,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      
-      {/* Fixed Chat Button */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <button className="bg-[#1273EB] text-white rounded-full p-4 shadow-lg hover:bg-[#0e5fc8] transition-all hover:shadow-xl">
-          <MessageCircle className="h-6 w-6" />
-        </button>
-      </div>
     </div>
   );
 }
