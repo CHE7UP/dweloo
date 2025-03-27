@@ -62,6 +62,16 @@ body {
   background: #ffffff;
 }
 
+/* Add this to your global.css file */
+.tawk-min-container {
+  margin-bottom: 40px !important; /* Move widget higher from bottom */
+}
+
+/* Optional: Adjust the expanded chat window position */
+.tawk-card {
+  bottom: 40px !important; 
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
