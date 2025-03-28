@@ -3,9 +3,8 @@
 import React, { useState, useRef } from 'react';
 import { useFirestore } from '@/hooks/useFirestore';
 import { FormData, Question, FirestoreHookResult } from './types';
-import { Check, ArrowRight, Phone, Mail, Calendar, Palette } from 'lucide-react';
+import { Check, ArrowRight, Phone, Mail, Calendar } from 'lucide-react';
 import InstantQuoteTilesCalculator from './InstantTilingCalcualtor';
-import Link from 'next/link';
 
 // Validation utilities
 const validations = {

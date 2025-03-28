@@ -29,7 +29,7 @@ const AnimatedHeroText = () => {
     }, 3000); // Change text every 3 seconds
     
     return () => clearInterval(interval);
-  }, []);
+  }, [animatedTexts.length]);
   
   return (
     <div className="w-full max-w-4xl mx-auto text-center py-1">      

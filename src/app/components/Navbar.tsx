@@ -23,9 +23,9 @@ const navigationLinks = {
 };
 
 interface NavbarProps {
-  href: string;
-  ariaLabel: string;
-  children: React.ReactNode;
+  href?: string;
+  ariaLabel?: string;
+  children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
 
