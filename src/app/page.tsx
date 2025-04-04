@@ -8,7 +8,6 @@ import ProcessInfographic from "./components/ProcessInfographic";
 import SingleImageFeature from "./components/SingleImageFeature";
 import WhyDweloo from "./components/WhyDweloo";
 import Script from "next/script";
-import Link from "next/link";
 import LocalSeoSection from "./components/LocalSectionSeo";
 
 export default function Home() {
