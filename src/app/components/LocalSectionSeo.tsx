@@ -1,12 +1,12 @@
 "use client";
 import React from 'react';
 import Link from "next/link";
-import { MapPin, Check, Calculator, Calendar } from 'lucide-react';
+import { MapPin, Check, Calculator, Calendar, Clock } from 'lucide-react';
 
 const LocalSeoSection: React.FC = () => {
   return (
     <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 className="text-3xl font-bold mb-8 text-center md:text-left">Seattle&apos;s Trusted Home Renovation Experts</h2>
+      <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center md:text-left">Seattle&apos;s Trusted Home Renovation Experts</h2>
       
       <div className="grid md:grid-cols-2 gap-8 xl:gap-16">
         <div>
@@ -20,7 +20,7 @@ const LocalSeoSection: React.FC = () => {
           <div className="mt-8 p-6 bg-gray-50 rounded-xl shadow-sm">
             <div className="flex items-center gap-2 mb-4">
               <MapPin className="w-5 h-5 text-blue-600" />
-              <h3 className="text-lg font-semibold">Seattle Neighborhoods We Serve:</h3>
+              <h3 className="text-lg text-gray-800 font-semibold">Seattle Neighborhoods We Serve:</h3>
             </div>
             <ul className="grid grid-cols-2 gap-y-3 gap-x-6 text-gray-700">
               <li className="flex items-center">
@@ -69,7 +69,7 @@ const LocalSeoSection: React.FC = () => {
         
         <div>
           <div className="p-6 bg-gray-50 rounded-xl shadow-sm mb-8">
-            <h3 className="text-lg font-semibold mb-4">Our Seattle Home Improvement Services:</h3>
+            <h3 className="text-lg text-gray-600 font-semibold mb-4">Our Seattle Home Improvement Services:</h3>
             <ul className="space-y-4">
               <li className="flex">
                 <Check className="mt-1 mr-3 text-blue-600 flex-shrink-0" />
@@ -136,8 +136,9 @@ const LocalSeoSection: React.FC = () => {
                 Get an Instant Quote
               </Link>
               <div className="flex items-center text-sm text-gray-500 mt-2">
-                <span>Takes about 2 minutes</span>
-              </div>
+            <Clock className="w-4 h-4 mr-1" />
+            <span>Takes about 2 minutes</span>
+        </div>
             </div>
           </div>
         </div>
