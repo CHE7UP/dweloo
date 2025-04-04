@@ -1,69 +1,62 @@
-// import CardOnBackround from "./components/CardOnBackround";
+import CardOnBackround from "./components/CardOnBackround";
 import CardSection from "./components/CardSection";
 import DwelooCraftsmenQuality from "./components/DwelooCraftsmenQuality";
 import FaQuestionsSection from "./components/FaQuestionsSection";
 import DwelooFeatures from "./components/Features";
 import HeroSection from "./components/HeroSection";
-// import IconSectionGradient from "./components/IconSectionGradient";
 import ProcessInfographic from "./components/ProcessInfographic";
 import SingleImageFeature from "./components/SingleImageFeature";
-import CardOnBackround from "./components/CardOnBackround";
 import WhyDweloo from "./components/WhyDweloo";
-// import VerticalTabs from "./components/VerticalTabs";
-
-// export default function Home() {
-//   return (
-//     <div >
-//       <HeroSection/>
-//       <CardSection/>
-//       <ProcessInfographic/> 
-//       <SingleImageFeature/>
-//       <DwelooFeatures />
-//       <DwelooCraftsmenQuality/>
-//       {/* <VerticalTabs/> */}
-//       {/* Uncomment the line below to include the IconSectionGradient component */}
-
-//       {/* <IconSectionGradient/> */}
-   
-//        <CardOnBackround  />
-//        <WhyDweloo />
-//       {/* <FaqSection/> */}
-//       <FaQuestionsSection/>
-//     </div>
-//   );
-// }
-
 import Script from "next/script";
+import Link from "next/link";
+import LocalSeoSection from "./components/LocalSectionSeo";
 
 export default function Home() {
-  // Business Structured Data - Updated with actual details from your content
+  // Business Structured Data - Enhanced for local SEO
   const businessStructuredData = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    name: "Dweloo",
+    name: "Dweloo Seattle Home Renovation",
     url: "https://dweloo.com",
-    logo: "https://dweloo.com/favicons/icon.svg", // Updated to use your favicon path
-    description: "Dweloo delivers hassle-free home improvement and renovation services in Seattle. From flooring and painting to custom renovations, we provide transparent pricing, vetted craftsmen, and fast 10-day installations.",
+    logo: "https://dweloo.com/favicons/icon.svg",
+    description: "Seattle's trusted home renovation experts. Dweloo delivers hassle-free flooring, painting, trims, tiling, and custom renovations with transparent pricing and 10-day installations.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "", // Add your street address
+      streetAddress: "1037 NE 65th St",
       addressLocality: "Seattle",
       addressRegion: "WA",
       postalCode: "98115",
       addressCountry: "US",
     },
-    telephone: "+12066191091", // Updated with your actual phone number
+    telephone: "+12066191091",
+    email: "info@dweloo.com",
     priceRange: "$$",
     sameAs: [
-      // Add your social media profiles if available
       "https://twitter.com/dweloo",
-      // Add other social profiles here
+      "https://www.facebook.com/dweloo",
+      "https://www.instagram.com/dweloo",
+      "https://www.linkedin.com/company/dweloo",
+      "https://www.pinterest.com/dweloo"
     ],
-    areaServed: {
-      "@type": "City",
-      name: "Seattle"
-    },
-    openingHours: "Mo-Fr 09:00-18:00", // Add your business hours
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Seattle"
+      },
+      {
+        "@type": "City",
+        name: "Bellevue"
+      },
+      {
+        "@type": "City",
+        name: "Kirkland"
+      },
+      {
+        "@type": "City",
+        name: "Redmond"
+      }
+    ],
+    openingHours: "Mo-Fr 09:00-18:00",
     paymentAccepted: "Cash, Credit Card, Financing Available",
     aggregateRating: {
       "@type": "AggregateRating",
@@ -88,105 +81,122 @@ export default function Home() {
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Home Improvement Services",
+      name: "Seattle Home Improvement Services",
       itemListElement: [
         {
           "@type": "OfferCatalog",
-          name: "Flooring",
-          description: "Premium installation of hardwood, vinyl, and laminate flooring with expert craftsmanship for lasting beauty and durability in any space."
+          name: "Flooring Installation Seattle",
+          description: "Premium installation of hardwood, vinyl, and laminate flooring with expert craftsmanship for lasting beauty and durability in Seattle homes."
         },
         {
           "@type": "OfferCatalog",
-          name: "Painting",
-          description: "Flawless interior and exterior painting services using premium materials, delivering vibrant colors with clean edges and superior finish."
+          name: "Seattle Painting Services",
+          description: "Flawless interior and exterior painting services in Seattle using premium materials, delivering vibrant colors with clean edges and superior finish."
         },
         {
           "@type": "OfferCatalog",
-          name: "Tiling",
-          description: "Professional tile installation for floors, walls, backsplashes, and showers, creating beautiful and durable surfaces with precise alignment and clean grout lines."
+          name: "Tile Installation Seattle",
+          description: "Professional tile installation for floors, walls, backsplashes, and showers in Seattle homes, creating beautiful and durable surfaces with precise alignment."
         },
         {
           "@type": "OfferCatalog",
-          name: "Trims",
-          description: "Expert installation of baseboards, crown molding, and decorative trim with precise cuts and seamless joints for a polished, elegant finish in any room."
+          name: "Trim Installation Seattle",
+          description: "Expert installation of baseboards, crown molding, and decorative trim in Seattle homes with precise cuts and seamless joints for a polished, elegant finish."
         },
         {
           "@type": "OfferCatalog",
-          name: "Custom Renovations",
-          description: "Personal consultation and quotes for your custom home improvement project. Tell us your vision, and our craftsmen we'll bring it to life."
+          name: "Custom Renovations Seattle",
+          description: "Personal consultation and quotes for your custom home improvement project in Seattle. Tell us your vision, and our expert Seattle craftsmen will bring it to life."
         }
       ]
     }
   };
 
-  // FAQ Structured Data - Updated with actual content from your page
+  // FAQ Structured Data - Enhanced with local terms
   const faqStructuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
       {
         "@type": "Question",
-        name: "How do I schedule a free consultation?",
+        name: "How do I schedule a free home renovation consultation in Seattle?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "You can schedule your virtual or in-person consultation for the date and time that works best for you. Book your free consultation or call us at (206) 619-2804."
+          text: "You can schedule your virtual or in-person consultation in Seattle for the date and time that works best for you. Book your free consultation on our website or call us at (206) 619-2804."
         },
       },
       {
         "@type": "Question",
-        name: "How much will my project cost?",
+        name: "How much will my Seattle home improvement project cost?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Every home is unique, and we provide personalized quotes based on your specific needs and preferences. Get an instant quote or schedule a detailed consultation for a comprehensive estimate."
+          text: "Every Seattle home is unique, and we provide personalized quotes based on your specific needs and preferences. Get an instant quote on our website or schedule a detailed consultation for a comprehensive estimate tailored to your Seattle home."
         },
       },
       {
         "@type": "Question",
-        name: "What kind of services does Dweloo provide?",
+        name: "What kind of home renovation services does Dweloo provide in Seattle?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Dweloo provides a wide range of home improvement services including flooring installation, painting, tiling, trims, and custom renovations tailored to your specific needs."
+          text: "Dweloo provides a wide range of home improvement services in Seattle including flooring installation, interior and exterior painting, tiling, trims and moldings, and custom renovations tailored to your specific Seattle home needs."
         },
       },
       {
         "@type": "Question",
-        name: "Do you offer financing?",
+        name: "Do you offer financing for home improvements in Seattle?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, Dweloo offers flexible financing options with easy monthly installments to make your home improvement dreams affordable."
+          text: "Yes, Dweloo offers flexible financing options for Seattle homeowners with easy monthly installments to make your home improvement dreams affordable. We work with several financing partners to find the best option for your budget."
         },
       },
       {
         "@type": "Question",
-        name: "Who are your craftsmen?",
+        name: "Who are your Seattle home renovation craftsmen?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Our craftsmen are experienced professionals who are fully licensed, bonded, and insured. Each specializes in their respective field and is strictly vetted to ensure they meet Dweloo's high standards."
+          text: "Our Seattle craftsmen are experienced local professionals who are fully licensed, bonded, and insured in Washington state. Each specializes in their respective field and is strictly vetted to ensure they meet Dweloo's high standards for Seattle home renovations."
         },
       },
       {
         "@type": "Question",
-        name: "What happens if I'm not satisfied with your work?",
+        name: "What happens if I'm not satisfied with your Seattle home renovation work?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "At Dweloo, customer satisfaction is our priority. We back our work with a lifetime craftsmanship guarantee and a commitment to resolving any issues for your complete satisfaction."
+          text: "At Dweloo, Seattle customer satisfaction is our priority. We back our work with a lifetime craftsmanship guarantee and a commitment to resolving any issues for your complete satisfaction. Our team will address any concerns within 48 hours."
+        },
+      },
+      {
+        "@type": "Question", 
+        name: "Which Seattle neighborhoods do you serve?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Dweloo serves all Seattle neighborhoods including Capitol Hill, Ballard, Fremont, Queen Anne, Green Lake, Wallingford, University District, Magnolia, West Seattle, and surrounding areas like Bellevue, Kirkland, and Redmond."
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does a typical home renovation project take in Seattle?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Most of our Seattle home improvement projects are completed within 10 days from start to finish. Our efficient process allows us to deliver high-quality results faster than typical contractors while working around your schedule."
         },
       },
     ],
   };
 
-  // LocalBusiness Structured Data - Additional schema for local SEO
+  // LocalBusiness Structured Data - Enhanced for local SEO
   const localBusinessData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Dweloo",
+    name: "Dweloo Seattle Home Renovation",
     image: "https://dweloo.com/dweloo-og.webp",
     "@id": "https://dweloo.com",
     url: "https://dweloo.com",
     telephone: "+12066191091",
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "1037 NE 65th St", // Add your street address
+      streetAddress: "1037 NE 65th St",
       addressLocality: "Seattle",
       addressRegion: "WA",
       postalCode: "98115",
@@ -194,38 +204,80 @@ export default function Home() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "", // Add your latitude
-      longitude: "" // Add your longitude
+      latitude: "47.675655",
+      longitude: "-122.316512"
     },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      opens: "09:00",
-      closes: "18:00"
-    },
-    priceRange: "$$"
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        opens: "09:00",
+        closes: "18:00"
+      }
+    ],
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Seattle"
+      },
+      {
+        "@type": "City",
+        name: "Bellevue"
+      },
+      {
+        "@type": "City",
+        name: "Kirkland"
+      }
+    ],
+    department: [
+      {
+        "@type": "HomeAndConstructionBusiness",
+        name: "Dweloo Flooring",
+        description: "Expert flooring installation services in Seattle"
+      },
+      {
+        "@type": "HomeAndConstructionBusiness",
+        name: "Dweloo Painting",
+        description: "Professional painting services for Seattle homes"
+      },
+      {
+        "@type": "HomeAndConstructionBusiness",
+        name: "Dweloo Tiling",
+        description: "Premium tile installation services in Seattle"
+      }
+    ]
   };
   
-  // Service Structured Data - For improved service visibility
+  // Service Structured Data - Enhanced for better visibility
   const serviceStructuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Home Renovation Services",
+    serviceType: "Seattle Home Renovation Services",
     provider: {
       "@type": "LocalBusiness",
-      name: "Dweloo"
+      name: "Dweloo Seattle"
     },
-    areaServed: {
-      "@type": "City",
-      name: "Seattle"
-    },
-    description: "Hassle-free home improvement services including flooring, painting, tiling, trims, and custom renovations with transparent pricing and 10-day installations.",
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Seattle"
+      },
+      {
+        "@type": "City",
+        name: "Bellevue"
+      },
+      {
+        "@type": "City",
+        name: "Kirkland"
+      }
+    ],
+    description: "Hassle-free home improvement services in Seattle including flooring, painting, tiling, trims, and custom renovations with transparent pricing and 10-day installations.",
     offers: {
       "@type": "Offer",
       price: "7250",
@@ -288,6 +340,8 @@ export default function Home() {
         <CardOnBackround />
         <WhyDweloo />
         <FaQuestionsSection />
+        <LocalSeoSection />
+ 
       </div>
     </>
   );

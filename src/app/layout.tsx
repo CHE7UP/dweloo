@@ -6,36 +6,39 @@ import Navbar from "./components/Navbar";
 import FooterComponent from "./components/FooterComponent";
 import FootBar from "./components/FootBar";
 import Script from "next/script";
+import Image from "next/image";
 
 // Configure Geist font with display strategy
 const geistSans = Geist({
   subsets: ["latin"],
-  display: "swap", // Add display strategy
-  adjustFontFallback: false, // Disable automatic fallback adjustment
-  preload: true, // Ensure proper preloading
+  display: "swap",
+  adjustFontFallback: false,
+  preload: true,
 });
-
 
 export const metadata: Metadata = {
   title: {
-    default: "Dweloo | Hassle-Free Home Renovation",
-    template: "%s | Dweloo",
+    default: "Dweloo | Expert Home Improvement Services in Seattle",
+    template: "%s | Dweloo Seattle Home Renovation",
   },
   description:
-    "Finally, an easy way to renovate your house. Dweloo delivers expert home improvements — flooring, painting, trims, tiling, siding, and custom projects — without the headaches. Transparent pricing, vetted craftsmen, and 10-day installs.",
+    "Seattle's trusted home renovation experts. Dweloo delivers hassle-free flooring, painting, trims, tiling, and custom renovations with transparent pricing and 10-day installations.",
   keywords: [
-    "home renovation",
-    "wall renovation",
+    "Seattle home renovation",
+    "home improvement Seattle",
     "Seattle renovation services",
-    "flooring installation",
-    "interior painting",
-    "trims and molding",
-    "tiling services",
-    "custom home improvement",
+    "flooring installation Seattle",
+    "Seattle interior painting",
+    "Seattle trims and molding",
+    "tiling services Seattle",
+    "custom home renovation Seattle",
     "licensed contractors Seattle",
-    "quick home renovation",
-    "home improvement services",
-    "siding installation",
+    "quick home renovation Seattle",
+    "home improvement services Seattle",
+    "Seattle siding installation",
+    "Seattle home remodeling",
+    "Seattle kitchen renovation",
+    "bathroom remodel Seattle",
   ],
   applicationName: "Dweloo",
   icons: {
@@ -50,17 +53,17 @@ export const metadata: Metadata = {
   },
   manifest: "/favicons/manifest.json",
   openGraph: {
-    title: "Dweloo | Finally, an Easy Way to Renovate Your House",
+    title: "Dweloo | Seattle's Trusted Home Renovation Experts",
     description:
-      "Expert home improvements in Seattle made easy. Transparent pricing, licensed craftsmen, and flawless results. Start with a 2-minute project calculator.",
-    url: "https://www.dweloo.com/instant-flooring-quote", // Replace with your actual domain
-    siteName: "Dweloo",
+      "Expert home improvements in Seattle made easy. Transparent pricing, licensed craftsmen, and flawless results in just 10 days. Get your free quote today.",
+    url: "https://www.dweloo.com",
+    siteName: "Dweloo Seattle Home Renovation",
     images: [
       {
-        url: "https://dweloo.com/dweloo-og.webp", // Replace with actual image
+        url: "https://dweloo.com/dweloo-og.webp",
         width: 1200,
         height: 630,
-        alt: "Dweloo - Home Renovation Made Easy",
+        alt: "Dweloo - Seattle Home Renovation Made Easy",
       },
     ],
     type: "website",
@@ -68,21 +71,30 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dweloo | Home Improvement Made Easy",
+    title: "Dweloo | Seattle Home Improvement Made Easy",
     description:
       "Stress-free home renovations in Seattle with fast 10-day installs and guaranteed pricing. Calculate your project in minutes.",
-    images: ["https://dweloo.com/og-image.jpg"], // Replace with actual image
-    creator: "@dweloo", // Optional if you have a Twitter handle
+    images: ["https://dweloo.com/dweloo-og.webp"],
+    creator: "@dweloo",
   },
   robots: {
     index: true,
     follow: true,
     nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    }
+  },
+  alternates: {
+    canonical: "https://www.dweloo.com",
   },
   other: {
     "apple-mobile-web-app-title": "Dweloo",
-    "application-name": "Dweloo",
-    "theme-color": "#ffffff", // You can match this with your site background
+    "application-name": "Dweloo Seattle Home Renovation",
+    "theme-color": "#ffffff",
     "msapplication-TileColor": "#ffffff",
   },
 };
@@ -94,30 +106,73 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={geistSans.className}>
-            <Script id="facebook-pixel" strategy="afterInteractive">
-        {`
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-          n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
-          'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '3034851043359739');
-          fbq('track', 'PageView');
-        `}
-      </Script>
-      <Script id="facebook-pixel-noscript" strategy="afterInteractive">
-        {`
-          <noscript><img height="1" width="1" style="display:none"
-          src="https://www.facebook.com/tr?id=3034851043359739&ev=PageView&noscript=1"
-          /></noscript>
-        `}
-      </Script>
+      <head>
+        <link rel="canonical" href="https://www.dweloo.com" />
+      </head>
       <body className="antialiased">
+        {/* Facebook Pixel - Fixed Implementation */}
+        <Script id="facebook-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '3034851043359739');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        
+        {/* Google Tag Manager */}
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-XXXXXXX');
+          `}
+        </Script>
+        
+        {/* Facebook Pixel NoScript - Using div instead of img since Next.js Image doesn't work in noscript */}
+        <noscript>
+          <div 
+            style={{ 
+              position: 'absolute',
+              height: '1px',
+              width: '1px',
+              overflow: 'hidden' 
+            }}
+          >
+            {/* This approach avoids using the img tag while still maintaining the Facebook pixel tracking */}
+            <Image 
+              src="https://www.facebook.com/tr?id=3034851043359739&ev=PageView&noscript=1"
+              alt=""
+              width={1}
+              height={1}
+              style={{ display: 'none' }}
+              unoptimized
+            />
+          </div>
+        </noscript>
+        
+        {/* Google Tag Manager NoScript */}
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+            height="0" 
+            width="0" 
+            style={{ display: 'none', visibility: 'hidden' }}>
+          </iframe>
+        </noscript>
+        
         <Navbar />
-        {children}
+        <main itemScope itemType="https://schema.org/WebPage">
+          {children}
+        </main>
         <FootBar />
         <FooterComponent />
         <PrelineScript />
