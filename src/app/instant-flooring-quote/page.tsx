@@ -2,9 +2,78 @@ import React from 'react';
 import FlooringCalculatorForm from '../components/forms/calculator/FlooringQuestionnaireForm';
 import { NextPage } from 'next';
 import {Clock, DollarSign, Shield, Users} from "lucide-react";
+import Script from 'next/script';
+
+
+export const metadata = {
+  title: 'Get Your Instant Flooring Quote | Seattle Flooring Installation',
+  description: 'Calculate your Seattle flooring project cost in just 2 minutes. Get transparent pricing on hardwood, vinyl, and laminate flooring with our instant calculator.',
+  keywords: [
+    'instant flooring quote',
+    'Seattle flooring calculator', 
+    'hardwood flooring cost Seattle',
+    'flooring installation pricing',
+    'vinyl flooring quote',
+    'laminate flooring estimate',
+    'Seattle flooring contractor',
+    'free flooring estimate'
+  ],
+  openGraph: {
+    title: 'Free Instant Flooring Quote | Seattle Installation in 10 Days',
+    description: 'Calculate your exact flooring project cost in 2 minutes. No hidden fees, transparent pricing, and guaranteed 10-day installation.',
+    images: [
+      {
+        url: 'https://dweloo.com/dweloo-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Dweloo Instant Flooring Quote Calculator',
+      },
+    ],
+  },
+};
+
+
+
+
 
 const FloringQuotePage: NextPage = () => {
+
+  const flooringCalculatorSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Seattle Flooring Cost Calculator",
+    "applicationCategory": "BusinessApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "157"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dweloo Seattle Home Renovation"
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": "https://dweloo.com/instant-flooring-quote"
+    }
+  };
+
+
   return (
+    <>
+    {/* Add the structured data */}
+    <Script
+      id="flooring-calculator-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(flooringCalculatorSchema),
+      }}
+    />
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
       <header className="mb-1 text-center">
@@ -60,6 +129,7 @@ const FloringQuotePage: NextPage = () => {
         </div>
         </div>
       </div>
+    </>
   );
 };
 

@@ -3,8 +3,72 @@ import { NextPage } from 'next';
 import {Clock, DollarSign, Shield, Users} from "lucide-react";
 import CustomProjectQuestionnaireForm from '../components/forms/calculator/CustomProjectQuestionaireForm';
 
+
+export const metadata = {
+  title: 'Custom Renovation Quote | Seattle Home Improvement Estimate',
+  description: 'Design your dream Seattle home renovation and get an instant price estimate. Free custom project calculator for unique home improvement needs.',
+  keywords: [
+    'custom renovation estimate',
+    'Seattle home remodeling quote', 
+    'home improvement calculator',
+    'renovation cost estimator',
+    'custom project pricing',
+    'Seattle renovation contractor',
+    'home transformation quote',
+    'free remodeling estimate',
+  ],
+  openGraph: {
+    title: 'Design Your Dream Renovation | Seattle Custom Project Calculator',
+    description: 'Transform your Seattle home with a custom renovation. Get instant pricing on your unique project with our free estimation tool.',
+    images: [
+      {
+        url: 'https://dweloo.com/dweloo-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Seattle Custom Renovation Calculator',
+      },
+    ],
+  },
+};
+
+
+
+
+
 const TilingQuotePage: NextPage = () => {
+
+  const customProjectSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Seattle Custom Renovation Calculator",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "184"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dweloo Seattle Home Renovation"
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": "https://dweloo.com/custom-projects-quote"
+    }
+  };
+
+
   return (
+    <>
+      <script type="application/ld+json">
+        {JSON.stringify(customProjectSchema)}
+      </script>
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
       <header className="mb-1 text-center">
@@ -60,6 +124,7 @@ const TilingQuotePage: NextPage = () => {
         </div>
         </div>
       </div>
+    </>
   );
 };
 

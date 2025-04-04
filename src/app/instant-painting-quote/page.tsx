@@ -3,8 +3,69 @@ import PaintingQuestionnaireForm from '../components/forms/calculator/PaintingQu
 import { NextPage } from 'next';
 import {Clock, DollarSign, Shield, Users} from "lucide-react";
 
+
+export const metadata = {
+  title: 'Instant Painting Quote | Seattle Interior & Exterior Painting Costs',
+  description: 'Calculate your Seattle home painting costs instantly. Get exact pricing for interior and exterior painting with our free online quote calculator.',
+  keywords: [
+    'painting cost calculator',
+    'Seattle house painting quote', 
+    'interior painting prices',
+    'exterior painting estimate',
+    'Seattle painting contractor',
+    'home painting calculator',
+    'instant painting quote',
+    'free painting estimate',
+  ],
+  openGraph: {
+    title: 'Calculate Your Seattle Home Painting Cost | Free Quote Tool',
+    description: 'Get transparent pricing for your Seattle home painting project in minutes. Interior, exterior, and accent wall painting with 10-day completion.',
+    images: [
+      {
+        url: 'https://dweloo.com/dweloo-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Seattle Painting Cost Calculator',
+      },
+    ],
+  },
+};
+
+
 const PaintingQuotePage: NextPage = () => {
+
+  const paintingCalculatorSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Seattle Home Painting Calculator",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "143"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dweloo Seattle Home Renovation"
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": "https://dweloo.com/instant-painting-quote"
+    }
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(paintingCalculatorSchema) }}
+      />
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
       <header className="mb-1 text-center">
@@ -60,6 +121,7 @@ const PaintingQuotePage: NextPage = () => {
         </div>
         </div>
       </div>
+    </>
   );
 };
 

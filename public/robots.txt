@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /api/*
 
-Sitemap: https://dweloo.com/sitemap.xml
+Sitemap: https://www.dweloo.com/sitemap.xml

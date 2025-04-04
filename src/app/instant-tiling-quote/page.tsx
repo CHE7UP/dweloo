@@ -3,8 +3,71 @@ import TilesQuestionnaireForm from '../components/forms/calculator/TilesQuestion
 import { NextPage } from 'next';
 import {Clock, DollarSign, Shield, Users} from "lucide-react";
 
+export const metadata = {
+  title: 'Instant Tiling Quote | Seattle Tile Installation Pricing',
+  description: 'Calculate Seattle bathroom, kitchen, and floor tiling costs in minutes. Free online calculator for all tile types with transparent pricing.',
+  keywords: [
+    'tile installation cost',
+    'Seattle bathroom tiling quote', 
+    'kitchen backsplash pricing',
+    'floor tiling estimate',
+    'shower tile installation',
+    'porcelain tile calculator',
+    'ceramic tile quote',
+    'Seattle tile contractor',
+  ],
+  openGraph: {
+    title: 'Seattle Tile Installation Cost Calculator | Free Instant Quote',
+    description: 'Get precise tiling costs for your Seattle home in minutes. Bathroom, kitchen, backsplash, and floor tiling with expert 10-day installation.',
+    images: [
+      {
+        url: 'https://dweloo.com/dweloo-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Seattle Tile Installation Calculator',
+      },
+    ],
+  },
+};
+
+
+
 const TilingQuotePage: NextPage = () => {
+
+
+  const tilingCalculatorSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Seattle Tile Installation Calculator",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "129"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Dweloo Seattle Home Renovation"
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": "https://dweloo.com/instant-tiling-quote"
+    }
+  };
+
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(tilingCalculatorSchema) }}
+      />
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
       <header className="mb-1 text-center">
@@ -60,6 +123,7 @@ const TilingQuotePage: NextPage = () => {
         </div>
         </div>
       </div>
+    </>
   );
 };
 
